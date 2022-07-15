@@ -7,8 +7,14 @@
 
 	<insert id="insert" parameterType="UserVO">
 		<![CDATA[
-			 insert into bigdata (title, category, price)
-			 values (#{title}, #{category}, #{price})			 
+			insert into user(uId, uPw, uName, uBYear, uBMonth, uBDay
+			 				, uPhone1, uPhone2, uPhone3, uAddr1, uAddr2
+			 				, uAddr3, uEmail, uEmail_domain)
+			values (#{uId}, #{uPw}, #{uName}
+					, #{uBYear}, #{uBMonth}, #{uBDay}
+					, #{uPhone1}, #{uPhone2}, #{uPhone3}
+        			,#{uAddr1}, #{uAddr2}, #{uAddr3}
+        			, #{uEmail}, #{uEmail_domain} );
 		]]>
 	</insert>	
 	

@@ -9,7 +9,7 @@
 <body>
 
 <a href="">로고IMG</a>
-
+<a href="signUp">회원가입</a>
 <a href="">로그인</a>
 <!-- 로그인 시 '로그인' 대신 아래 내용 작업(Javascript)
 <a href="">마이페이지</a>
