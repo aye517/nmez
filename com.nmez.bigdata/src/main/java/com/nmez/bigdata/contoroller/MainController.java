@@ -17,8 +17,9 @@ public class MainController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String main() {
-		return "main/Header";
+		return "/main/Header";
 	}
+	
 	
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
 	public ModelAndView signUp(UserVO vo) { //회원가입 실패시 입력정보 전달
