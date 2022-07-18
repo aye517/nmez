@@ -8,7 +8,20 @@ public class UserVO {
 	  int uAddr1;
 	  String uAddr2, uAddr3;
 	  String uEmail, uEmail_domain;
+	  float uAddr_x, uAddr_y;
 	  
+	public float getuAddr_x() {
+		return uAddr_x;
+	}
+	public void setuAddr_x(float uAddr_x) {
+		this.uAddr_x = uAddr_x;
+	}
+	public float getuAddr_y() {
+		return uAddr_y;
+	}
+	public void setuAddr_y(float uAddr_y) {
+		this.uAddr_y = uAddr_y;
+	}
 	public String getuId() {
 		return uId;
 	}
@@ -98,9 +111,10 @@ public class UserVO {
 		return "UserVO [uId=" + uId + ", uPw=" + uPw + ", uName=" + uName + ", uBYear=" + uBYear + ", uBMonth="
 				+ uBMonth + ", uBDay=" + uBDay + ", uPhone1=" + uPhone1 + ", uPhone2=" + uPhone2 + ", uPhone3="
 				+ uPhone3 + ", uAddr1=" + uAddr1 + ", uAddr2=" + uAddr2 + ", uAddr3=" + uAddr3 + ", uEmail=" + uEmail
-				+ ", uEmail_domain=" + uEmail_domain + "]";
+				+ ", uEmail_domain=" + uEmail_domain + ", uAddr_x=" + uAddr_x + ", uAddr_y=" + uAddr_y + "]";
 	}
 
+	
 	
 	
 }

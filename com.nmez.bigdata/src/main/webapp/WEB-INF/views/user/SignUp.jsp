@@ -1,3 +1,4 @@
+<%@page import="com.nmez.bigdata.api.GeocodingApi"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,7 +52,6 @@ function findAddr(){
             // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
             var roadAddr = data.roadAddress; // 도로명 주소 변수
             var jibunAddr = data.jibunAddress; // 지번 주소 변수
-            
             document.getElementById('uAddr1').value = data.zonecode;
             if(roadAddr !== ''){
                 document.getElementById("uAddr2").value = roadAddr;
@@ -62,9 +62,46 @@ function findAddr(){
         }
     }).open();
 }
+
+
 </script>
 
 
+<!-- ID중복확인, PW일치 확인 ajax -->
+<script type="text/javascript">
+
+function uIdCheck() {
+	if ($('#uId').val().length < 6){
+		$("#checkId").html('6자 이상 입력하세요');
+		$("#checkId").attr('color','red');
+	}else{
+		console.log("ajax실행")
+		let uId = $('#uId').val();
+		$.ajax({
+			url : "bigdata/uIdCheck",
+			type : "post",
+			contentType : 'application/json',
+			data : {uId : uId},
+			dataType : 'text',
+			success : function(result) {
+				if(result == 1) {
+					$("#checkId").html('사용할 수 없는 아이디입니다.');
+					$("#checkId").attr('color','red');
+				}else{
+					$("#checkId").html('사용할 수 있는 아이디입니다.');
+					s("#checkId").attr('color','blue');
+				}
+			},
+			error : function() {
+				console.log("중복체크 요청 실패");
+			}		
+			})
+	}
+};
+
+
+
+</script>
 </head>
 <body>
 
@@ -73,14 +110,14 @@ function findAddr(){
 	<textarea rows="5" cols="30">
 	개인정보 및 위치정보 제공 동의
 	</textarea> <br>
-	<input type="checkbox"> 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
+	<input type="checkbox" > 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
 	
 	<hr>
 	<form action="signUp" method="post">
 	<!-- *값은 NOT NULL -->
 	<!-- 모든 input값에 공백처리 -->
-	*아이디 <input type="text" name="uId" placeholder="아이디는 8~16자 영문, 영문+숫자"> 
-	<!-- 아이디 중복체크 ajax 구현 -->
+	*아이디 <input id="uId" type="text" name="uId" oninput="uIdCheck()" maxlength="18" placeholder="아이디는 6~16자 영문, 영문+숫자"> 
+	<font id="checkId" size=2></font>
 	<br>
 	*비밀번호 <input type="password" name="uPw" placeholder="비밀번호는 영문+숫자+특수문자 조합">
 	<br>
@@ -111,6 +148,8 @@ function findAddr(){
 	  <input type="button" onclick="findAddr()" value="우편번호 찾기"><br>
 	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly> <br>
 	  <input id="uAddr3" type="text" name="uAddr3" placeholder="상세주소">
+	  <input id="uAddr_x" type="hidden">
+	  <input id="uAddr_y" type="hidden">
 	<br>
 	이메일
 	<!-- 직접입력시 형식 준수여부 .을 포함? -->
@@ -125,6 +164,7 @@ function findAddr(){
 		<option value="type">직접 입력</option>
 	</select>
 	<br>
+	<!-- 입력값 조건 만족 안됐을 시  -->
 	<input type="submit" value="회원가입하기">
 	</form>
 </body>
@@ -146,6 +186,35 @@ domainListEl.addEventListener('change', (event) => {
     domainInputEl.readOnly=false;
   }
 })
+</script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=f10f4o1ql4&submodules=geocoder"></script>
+
+<!-- 네이버 지오코드 API -->
+<script type="text/javascript">
+$('#uAddr2').on('focus keyup', function() {
+	alert("get coords 실행")
+	var uAddr = $('#uAddr2').val();
+	console.log("geocode api 실행")
+	naver.maps.Service.geocode({
+	    query: uAddr
+	}, function(status, response) {
+	    if (status !== naver.maps.Service.Status.OK) {
+	        return alert('Something wrong!');
+	    }
+
+	    var result = response.v2, // 검색 결과의 컨테이너
+	        items = result.addresses; // 검색 결과의 배열
+	        let uAddr_x = parseFloat(items[0].x);
+	        let uAddr_y = parseFloat(items[0].y);
+	      
+	    // do Something
+	    console.log(uAddr_x, uAddr_y);
+	    $('#uAddr_x').val() = uAddr_x;
+	    $('#uAddr_y').val() = uAddr_y;
+	    
+	});
+});
+
 </script>
 
 </html>

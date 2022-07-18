@@ -9,13 +9,20 @@
 		<![CDATA[
 			insert into user(uId, uPw, uName, uBYear, uBMonth, uBDay
 			 				, uPhone1, uPhone2, uPhone3, uAddr1, uAddr2
-			 				, uAddr3, uEmail, uEmail_domain)
+			 				, uAddr3, uEmail, uEmail_domain, uAddr_x, uAddr_y)
 			values (#{uId}, #{uPw}, #{uName}
 					, #{uBYear}, #{uBMonth}, #{uBDay}
 					, #{uPhone1}, #{uPhone2}, #{uPhone3}
         			,#{uAddr1}, #{uAddr2}, #{uAddr3}
-        			, #{uEmail}, #{uEmail_domain} );
+        			, #{uEmail}, #{uEmail_domain}
+        			, #{uAddr_x}, #{uAddr_y} );
 		]]>
 	</insert>	
+
+	<select id="uIdCheck" parameterType="String" resultType="int">
+		<![CDATA[
+			select count(uId) from user where uId = #{uId};
+		]]>
+	</select>
 	
 </mapper>

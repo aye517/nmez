@@ -1,6 +1,6 @@
 package com.nmez.bigdata.dao;
 
-import javax.inject.Inject;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +21,11 @@ public class UserDAO {
 	
 	public int userSingUp(UserVO vo) {
 		return sqlSessionTemplate.insert("UserVO.insert", vo);
+		
 	}
-}
+
+	public int userIdCheck(String uId) {
+		return sqlSessionTemplate.selectOne("uIdCheck", uId);
+	}
+				
+} //class end

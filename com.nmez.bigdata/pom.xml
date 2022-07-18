@@ -107,6 +107,21 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>2.12.3</version>
 		</dependency>
+		
+		<!-- Jython -->
+		<!-- https://mvnrepository.com/artifact/org.python/jython -->
+		<dependency>
+		    <groupId>org.python</groupId>
+		    <artifactId>jython</artifactId>
+		    <version>2.7.2</version>
+		</dependency>
+		
+		<!-- Geocoding ; 주소 위경도 변환 -->
+		<dependency>
+		  <groupId>com.google.code.geocoder-java</groupId>
+		  <artifactId>geocoder-java</artifactId>
+		  <version>0.16</version>
+		</dependency>
 
 		<!-- Tiles -->
 		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
