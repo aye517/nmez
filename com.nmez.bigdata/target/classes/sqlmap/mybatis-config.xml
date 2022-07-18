@@ -6,11 +6,11 @@
 
 	<typeAliases>
 		<typeAlias type="com.nmez.bigdata.vo.UserVO" alias="UserVO"/>
-
+		<typeAlias type="com.nmez.bigdata.vo.DataVO" alias="DataVO"/>
 	</typeAliases>
   
   <mappers>
-      <mapper resource="/sqlmap/mapper/UserVO_mapper.xml" />
-
+		<mapper resource="/sqlmap/mapper/UserVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/DataVO_mapper.xml" />
   </mappers>
 </configuration>

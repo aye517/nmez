@@ -1,6 +1,7 @@
 <%@page import="com.nmez.bigdata.api.GeocodingApi"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +9,13 @@
 <title>SignUp.jsp</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCVT0MZOPAQhunhMdmo8N6gjvCW42QQH4"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001"></script>
+
 
 <!-- 생년월일 select option -->
 <script type="text/javascript">
-$(document).ready(function(){            
+$(document).ready(function(){        
     var now = new Date();
     var year = now.getFullYear();
     var mon = (now.getMonth() + 1) > 9 ? ''+(now.getMonth() + 1) : '0'+(now.getMonth() + 1); 
@@ -66,6 +70,9 @@ function findAddr(){
 
 </script>
 
+<!-- 좌표 가져오기 -->
+<script type="text/javascript">
+</script>
 
 <!-- ID중복확인, PW일치 확인 ajax -->
 <script type="text/javascript">
@@ -187,34 +194,6 @@ domainListEl.addEventListener('change', (event) => {
   }
 })
 </script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=f10f4o1ql4&submodules=geocoder"></script>
 
-<!-- 네이버 지오코드 API -->
-<script type="text/javascript">
-$('#uAddr2').on('focus keyup', function() {
-	alert("get coords 실행")
-	var uAddr = $('#uAddr2').val();
-	console.log("geocode api 실행")
-	naver.maps.Service.geocode({
-	    query: uAddr
-	}, function(status, response) {
-	    if (status !== naver.maps.Service.Status.OK) {
-	        return alert('Something wrong!');
-	    }
-
-	    var result = response.v2, // 검색 결과의 컨테이너
-	        items = result.addresses; // 검색 결과의 배열
-	        let uAddr_x = parseFloat(items[0].x);
-	        let uAddr_y = parseFloat(items[0].y);
-	      
-	    // do Something
-	    console.log(uAddr_x, uAddr_y);
-	    $('#uAddr_x').val() = uAddr_x;
-	    $('#uAddr_y').val() = uAddr_y;
-	    
-	});
-});
-
-</script>
 
 </html>
