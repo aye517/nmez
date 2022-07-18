@@ -7,104 +7,14 @@
 <title>Header.jsp</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Jua&family=Source+Sans+Pro:wght@200&display=swap"
-	rel="stylesheet">
-<script type="text/javascript" src="js/main.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/ff98a1e189.js"
 	crossorigin="anonymous"></script>
-<style type="text/css">
+<link rel="stylesheet" href="resources/css/style.css">
 
-body {
-	margin: 0;
-	font-family: 'Hahmlet', serif; font-family : 'Jua', sans-serif;
-	font-family: 'Source Sans Pro', sans-serif;
-	font-family: 'Jua', sans-serif;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-}
-
-.navbar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #263343;
-	padding: 8px 12px;
-}
-
-.navbar_logo {
-	font-size: 24px;
-	color: white;
-}
-
-.navbar_logo i {
-	color: #d49466;
-}
-
-.navbar_menu {
-	display: flex;
-	list-style: none;
-	padding-left: 0;
-}
-
-.navbar_menu li {
-	padding: 8px 12px;
-}
-
-.navbar_icons {
-	list-style: none;
-	color: white;
-	display: flex;
-	padding-left: 0;
-}
-
-.navbar_icons li {
-	padding: 8px 12px;
-}
-.navbar_menu li:hover{
-	background-color: #d49466;
-	border-radius: 4px;
-}
-.navbar_toogleBtn{
-	display:none;
-	position: absolute;
-	right: 32px;
-	font-size: 24px;
-	color: #d49466;
-	}
-@media screen and (max-width:768px){
-	.navbar{
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 8px 24px;
-	}
-	.navbar_menu{
-	
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	}
-	.navbar_menu li{
-	width:100%;
-	text-align: center;
-	}
-	.navbar_icons{
-	
-	justify-content: center;
-	width: 100%;
-	}
-	.navbar_toogleBtn{
-	display: block;
-	}
-}	
-
-</style>
 </head>
 
-<body>
+<body id="header">
 	<nav class="navbar">
 		<div class="navbar_logo">
 			<i class="fa-brands fa-bilibili"></i> <a href="main">NMEZ</a>
@@ -123,5 +33,8 @@ a {
 		</ul>
 		<a href="#" class="navbar_toogleBtn"><i class="fa-solid fa-bars"></i></a>
 	</nav>
+	<main>
+
+</main>   
 </body>
 </html>
