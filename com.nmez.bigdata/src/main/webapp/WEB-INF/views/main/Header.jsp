@@ -11,13 +11,14 @@
 <script src="https://kit.fontawesome.com/ff98a1e189.js"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="resources/css/style.css">
-
+<script src="resources/js/main.js" defer="defer"></script>
 </head>
 
 <body id="header">
 	<nav class="navbar">
 		<div class="navbar_logo">
-			<i class="fa-brands fa-bilibili"></i> <a href="/bigdata/logo">NMEZ</a>
+			<i class="fa-brands fa-bilibili"></i> 
+			<a href="/bigdata/logo">NMEZ</a>
 		</div>
 
 		<ul class="navbar_menu">

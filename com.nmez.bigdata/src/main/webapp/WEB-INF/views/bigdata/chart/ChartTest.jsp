@@ -12,7 +12,7 @@
 </head>
 <body>
 
-</div>
+
 <script type="text/javascript">
 
 new Chart(document.getElementById("line_chart"),{
