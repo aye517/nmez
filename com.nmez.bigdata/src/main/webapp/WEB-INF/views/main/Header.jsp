@@ -17,7 +17,7 @@
 <body id="header">
 	<nav class="navbar">
 		<div class="navbar_logo">
-			<i class="fa-brands fa-bilibili"></i> <a href="main">NMEZ</a>
+			<i class="fa-brands fa-bilibili"></i> <a href="/bigdata/logo">NMEZ</a>
 		</div>
 
 		<ul class="navbar_menu">

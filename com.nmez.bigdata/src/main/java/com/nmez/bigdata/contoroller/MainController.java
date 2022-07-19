@@ -20,6 +20,11 @@ public class MainController {
 		return "/main/Header";
 	}
 	
+	@RequestMapping(value = "/logo", method = RequestMethod.GET)
+	public String logoMain() {
+		return "/main/Main";
+	}
+	
 	
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
 	public ModelAndView signUp(UserVO vo) { //회원가입 실패시 입력정보 전달

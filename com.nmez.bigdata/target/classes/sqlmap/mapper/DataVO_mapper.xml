@@ -5,9 +5,9 @@
     
 <mapper namespace="DataVO">
 
-	<select id="dataSelect" parameterType="DataVO">
+	<select id="test" parameterType="DataVO">
 		<![CDATA[
-			select * from data where dId = #{dId};
+			select * from test where t_local_code = #{t_local_code};
 		]]>
 	</select>
 	
