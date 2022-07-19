@@ -11,13 +11,10 @@
 <link rel="stylesheet" href="resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<<<<<<< HEAD
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCVT0MZOPAQhunhMdmo8N6gjvCW42QQH4"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001"></script>
 
 
-=======
->>>>>>> branch 'master' of http://github.com/aye517/nmez.git
 <!-- 생년월일 select option -->
 <script type="text/javascript">
 $(document).ready(function(){        
@@ -79,9 +76,7 @@ function findAddr(){
 <!-- 좌표 가져오기 -->
 <script type="text/javascript">
 </script>
-=======
-</script> 
->>>>>>> branch 'master' of http://github.com/aye517/nmez.git
+
 
 <!-- ID중복확인, PW일치 확인 ajax -->
 <script type="text/javascript">

@@ -15,12 +15,17 @@ public class DataController {
 //		System.out.println("Main Controller 생성");
 	}
 	
-	@RequestMapping(value = "/DataMain", method = RequestMethod.GET)
-	public String signUp(UserVO vo) {
+	@RequestMapping(value = "/MapTest", method = RequestMethod.GET)
+	public String mapTest(UserVO vo) {
 
-		return "/bigdata/DataMain";
+		return "/bigdata/map/MapTest";
 	}
 	
+	@RequestMapping(value = "/ChartTest", method = RequestMethod.GET)
+	public String chartTest(UserVO vo) {
+
+		return "/bigdata/chart/ChartTest";
+	}
 	
 	
 	

@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>DataMain.jsp</title>
+<title>MapTest.jsp</title>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001"></script>
 
 
 </head>
 <body>
-hi
+hi, Map Test
 <div id="map" style="width:500px;height:400px;"></div>
 <!-- 검색창 -->
 <input type="text">
