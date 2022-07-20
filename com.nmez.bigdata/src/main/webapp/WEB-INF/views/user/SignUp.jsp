@@ -244,7 +244,7 @@ function uIdCheck() {
 			</div>
 			<br>
 			<!-- 입력값 조건 만족 안됐을 시  -->
-			<input type="submit" value="회원가입하기">
+			<input class="joinbutton" type="submit" value="회원가입하기">
 		</form>
 		</div>
 		</div>
