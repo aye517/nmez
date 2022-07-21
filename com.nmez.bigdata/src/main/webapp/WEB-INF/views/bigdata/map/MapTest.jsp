@@ -146,7 +146,7 @@ function displayCenterInfo(result, status) {
             // 행정동의 region_type 값은 'H' 이므로
             if (result[i].region_type === 'H') {
                 infoDiv.innerHTML = result[i].address_name;
-                
+                console.log()
                 break;
             }
         }

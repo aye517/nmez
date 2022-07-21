@@ -18,8 +18,10 @@
 				<i class="fa-brands fa-twitter"></i> <i
 					class="fa-brands fa-facebook-square"></i> <img
 					src="https://cdn-icons-png.flaticon.com/512/2111/2111466.png">
+					<!--
 				<img
 					src="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-5line-4102577_113787.png">
+			  	-->
 			</div>
 			<span>copyright 2022 by NMEZ. All Rights Reserved.</span>
 	</div>

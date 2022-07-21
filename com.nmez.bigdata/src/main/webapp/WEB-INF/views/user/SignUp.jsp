@@ -1,4 +1,3 @@
-<%@page import="com.nmez.bigdata.api.GeocodingApi"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -11,13 +10,14 @@
 <link rel="stylesheet" href="/bigdata/resources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCVT0MZOPAQhunhMdmo8N6gjvCW42QQH4"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001"></script>
-
+<script src="https://developers.kakao.com/sdk/js/kakao.js">
+Kakao.init('e9b8314301529a33db2e3f1e889eb001');
+console.log(Kakao.isInitialized());
+</script>
 
 <!-- 생년월일 select option -->
 <script type="text/javascript">
-$(document).ready(function(){        
+$(document).ready(function(){
     var now = new Date();
     var year = now.getFullYear();
     var mon = (now.getMonth() + 1) > 9 ? ''+(now.getMonth() + 1) : '0'+(now.getMonth() + 1); 
@@ -45,6 +45,7 @@ $(document).ready(function(){
 })
 </script>
 
+<<<<<<< HEAD
 <!-- 다음API -->
 <script type="text/javascript">
 function findAddr(){
@@ -73,22 +74,51 @@ function findAddr(){
 
 </script>
 
+=======
+>>>>>>> branch 'master' of https://github.com/aye517/nmez.git
 <!-- 좌표 가져오기 -->
-<script type="text/javascript">
+<script>
+
+function getCoords() {
+	console.log("좌표담기");
+	var uAddr = $('#uAddr2').val();
+	var uAddr_x, uAddr_y;
+	console.log(uAddr);
+	$.ajax({		 
+		url:'https://dapi.kakao.com/v2/local/search/address.json?query='+ encodeURIComponent(uAddr),
+		headers: { 'Authorization': 'KakaoAK 0524e1eab081ae2ac905d6a5b76e3601'},
+		type: 'GET',
+		dataType : "json",
+		success : function(data){
+		//console.log(data);
+		//console.log(data.documents[0].x);
+		//console.log(data.documents[0].y);
+		$('#uAddr_x').val(data.documents[0].x);
+		$('#uAddr_y').val(data.documents[0].y);
+		}
+	});
+
+};
 </script>
 
-<!-- ID중복확인, PW일치 확인 ajax -->
+<!-- 입력값 검증 -->
 <script type="text/javascript">
+//정보제공동의체크 안했을 시 입력 불가
+$(document).ready(function() {
+	//console.log("readonly실행")
+	$('input').attr('readonly', true);
+})
+
 var idCheck = false;
 var pwCheck = false;
-var nameCheck = false;
 
 function uIdCheck() {
 	if ($('#uId').val().length < 6){
 		$("#checkId").html('6자 이상 입력하세요');
 		$("#checkId").attr('color','red');
+		idCheck = false
 	}else{
-		console.log("ajax실행")
+		//console.log("ajax실행")
 		let uId = $('#uId').val();
 		$.ajax({
 			url : "bigdata/uIdCheck",
@@ -110,59 +140,196 @@ function uIdCheck() {
 			error : function() {
 				console.log("중복체크 요청 실패");
 			}		
-			})
+		})
 	}
 };
 
 //비밀번호 check
 $(function(){
-		$('#uPwCheck').blur(function(){
-		   if($('#uPw').val() != $('#uPwCheck').val()){
-		    	if($('#uPwCheck').val()!='' && $('#uPwCheck').val()!=null){
-			    alert("비밀번호가 일치하지 않습니다.");
-		    	    $('#uPwCheck').val('');
-		    	    $('#uPwCheck').prop('readonly', false); //비밀번호 새로 입력했을때 readonly 해제
-		         	$('#uPwCheck').focus();
-		    	    pwCheck = false;
-		    	    //console.log('pwChecked='+pwCheck);
-		       }
-		   }else{
-		    	   alert('비밀번호가 일치합니다.');
-		    	   $('#uPwCheck').prop('readonly', true); //비밀번호 확인완료시 readonly처리
-		    	   $('#uName').focus();
-		    	   pwCheck = true;
-		    	   //console.log('pwChecked='+pwCheck);
-		    }
+	$('#uPw').on("change keyup paste", function(){
+		if ($('#uPw').val().length < 8 && $('#uPw').val().length != ''){
+			$("#pwalert").html('8자 이상 입력하세요');
+			$("#pwalert").attr('color','red');
+			$('#uPw').focus();
+			pwCheck = false
+		}else{
+			$("#pwalert").html('');
+			uPwCheck();
+		}
 		})
-		   console.log('pwChecked='+pwCheck);
+		//console.log('pwChecked='+pwCheck);
 	});
+	
+	
+function uPwCheck() {
+	$('#uPwCheck').blur(function uPwcheck() {
+		if($('#uPw').val() != $('#uPwCheck').val()){
+	    	if($('#uPwCheck').val()!='' && $('#uPwCheck').val()!=null){
+	    		$("#checkPw").html('비밀번호가 일치하지 않습니다.');
+				$("#checkPw").attr('color','red');
+	    	    $('#uPwCheck').val('');
+	    	    $('#uPwCheck').prop('readonly', false); //비밀번호 새로 입력했을때 readonly 해제
+	         	$('#uPwCheck').focus();
+	    	    pwCheck = false;
+	       }
+	   }else{
+			$("#checkPw").html('비밀번호가 일치합니다.');
+			$("#checkPw").attr('color','blue');
+	    	$('#uPwCheck').prop('readonly', true); //비밀번호 확인완료시 readonly처리
+	    	$('#uName').focus();
+	    	pwCheck = true;
+	    	//console.log('pwChecked='+pwCheck);
+	    }
+	});
+};
 
+//입력값 무결성 check
+var nameCheck = false;
+var phoneCheck1 = false;
+var phoneCheck2 = false;
+var addrCheck = false;
+
+//이름에 한글, 영어만 사용가능
+$(function(){
+	$('#uName').on("change keyup paste", function(){
+	var name = $('#uName').val();
+	if (name != null && name != ''){
+		if (!(event.keyCode >= 37 && event.keyCode <= 40)) {
+			var inputVal = $(this).val();
+			$(this).val(inputVal.replace(/[^(ㄱ-힣a-zA-Z)]/gi, ''));
+		}
+		nameCheck = true;
+	}else{
+		nameCheck = false;
+	}
+	console.log('nameChecked='+ nameCheck);
+	})
+});
+
+
+$(function(){
+	$('#uPhone2').on("change keyup paste", function(){
+		phoneCheck1 = false;
+		var p2 = $('#uPhone2').val();
+		if (p2 != null && p2 != ''){
+			if(p2.length < 3){
+				phoneCheck1 = false;
+			}else if(p2.length == 4){
+				phoneCheck1 = true;
+				$('#uPhone3').focus();
+			}
+		};
+		console.log('PhoneChecked='+ phoneCheck1);
+	});
+});
+
+$(function(){
+	$('#uPhone3').on("change keyup paste", function(){
+		phoneCheck2 = false;
+		var p3 = $('#uPhone3').val();
+		if (p3 != null && p3 != ''){
+			if(p3.length < 4){
+				phoneCheck2 = false;
+			}else{
+				phoneCheck2 = true;			
+		}
+		console.log('PhoneChecked='+ phoneCheck2);
+		}
+	});
+});
+
+function findAddr(){
+	new daum.Postcode({
+        oncomplete: function(data) {
+        	//console.log(data);
+            var roadAddr = data.roadAddress; // 도로명 주소 변수
+            var jibunAddr = data.jibunAddress; // 지번 주소 변수
+            document.getElementById('uAddr1').value = data.zonecode;
+            if(roadAddr !== ''){
+                document.getElementById("uAddr2").value = roadAddr;
+                addrCheck = true;
+            } 
+            else if(jibunAddr !== ''){
+                document.getElementById("uAddr2").value = jibunAddr;
+                addrCheck = true;
+            }
+            getCoords();
+            console.log();
+            console.log();
+            console.log('AddrChecked='+ addrCheck);
+            
+        }
+    }).open();
+};
+
+//check box 표시 여부
+var agreeChecked = false;
+
+function isChecked() {
+	if($('#agreeCheck').is(':checked')){
+		agreeChecked = true;
+		$('input').attr('readonly', false);
+	}else{
+		agreeChecked = false;
+		$('input').attr('readonly', true);
+	}
+	console.log('AgreeChecked='+ agreeChecked);
+};
+
+
+function finalCheck() {
+	if(agreeChecked != true) {
+		alert("개인정보 동의해야 가입 가능");
+		return false;
+	}else if(idCheck != true){
+		alert("아이디를 확인해주세요");	
+		return false;
+	}else if(pwCheck != true){
+		alert("비밀번호를 확인해주세요");
+		return false;
+	}else if(nameCheck != true){
+		alert("이름을 입력하세요");
+		return false;
+	}else if(phoneCheck1 != true || phoneCheck2 != true){
+		alert("전화번호를 올바르게 입력하세요");
+		return false;
+	}else if(addrCheck != true){
+		alert("주소가 입력되지 않았습니다.")
+		return false;
+	}
+	return true;
+	
+}
 
 </script>
 </head>
+
 <body id="signUp_main">
+
 <main>
 	<h1>회원가입</h1>
-	
-	<textarea rows="5" cols="30">
+	<textarea rows="5" cols="60">
 	개인정보 및 위치정보 제공 동의
+	1. nmez~
+	2. 동의 안하면 정보 입력 못함..
 	</textarea> <br>
-	<input type="checkbox" > 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
+	<input id="agreeCheck" onclick="isChecked()" type="checkbox" > 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
 	
 	<hr>
-	<form action="signUp" method="post">
-	<!-- *값은 NOT NULL -->
+	<form action="signUp" id="signUp" method="post" onsubmit="return finalCheck();">
+
 	<!-- 모든 input값에 공백처리 -->
-	*아이디 <input id="uId" type="text" name="uId" oninput="uIdCheck()" maxlength="18" placeholder="아이디는 6~16자 영문, 영문+숫자"> 
+	*아이디 <input id="uId" type="text" name="uId" oninput="uIdCheck()" 
+	maxlength="18" placeholder="6~16자 아이디 입력"  style="ime-mode:disabled;"> 
 	<font id="checkId" size=2></font>
 	<br>
-	*비밀번호 <input type="password" id="uPw" name="uPw" placeholder="비밀번호는 영문+숫자+특수문자 조합">
+	*비밀번호 <input type="password" id="uPw" name="uPw" placeholder="8~16자 비밀번호 입력">
+	<font id="pwalert" size=2></font>
 	<br>
-	*비밀번호 확인 <input type="password" id="uPwCheck" name="uPwCheck">
+	*비밀번호 확인 <input type="password" id="uPwCheck" name="uPwCheck" placeholder="비밀번호 확인">
 	<font id="checkPw" size=2></font>
-	<!-- 비밀번호 중복체크 ajax 구현 -->
 	<br>
-	*이름 <input type="text" id="uName" name="uName"> <!-- 숫자 포함할경우 alert -->
+	*이름 <input type="text" id="uName" name="uName" style="ime-mode:active;">
 	<br>
 	*생년월일
 	<select id="uBYear" name="uBYear"></select>년
@@ -170,31 +337,31 @@ $(function(){
 	<select id="uBDay" name="uBDay"></select>일
 	
 	<br>
-	<!-- 숫자가 아닐경우 입력X or alert -->
-	*전화번호
+	*휴대전화
 	<select name="uPhone1">
 	<option value="010">010</option>
 	<option value="011">011</option>
 	<option value="016">016</option>
 	<option value="017">017</option>
-	</select>-
-	<input type="text" name="uPhone2">-
-	<input type="text" name="uPhone3">
+	</select> - 
+	<input id="uPhone2" type="text" maxlength="4" name="uPhone2"
+	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" > -
+	<input id="uPhone3" type="text" maxlength="4" name="uPhone3"
+	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
 	<br>
 	*주소
 	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" readonly>
 	  <input type="button" onclick="findAddr()" value="우편번호 찾기"><br>
 	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly> <br>
-	  <input id="uAddr3" type="text" name="uAddr3" placeholder="상세주소">
-	  <input id="uAddr_x" type="hidden">
-	  <input id="uAddr_y" type="hidden">
+	  <input type="text" name="uAddr3" placeholder="상세주소">
+	  <input id="uAddr_x" name="uAddr_x" type="hidden">
+	  <input id="uAddr_y" name="uAddr_y" type="hidden">
 	<br>
 	이메일
-	<!-- 직접입력시 형식 준수여부 .을 포함? -->
 	<input type="text" name="uEmail"> @
-	<input type="text" id="domain-txt" readonly="readonly" name="uEmail_domain">
+	<input type="email" id="domain-txt" readonly="readonly" name="uEmail_domain">
 	<select id="domain-list">
-		<option value="naver.com">naver.com</option>
+		<option value="naver.com" selected="selected">naver.com</option>
 		<option value="google.com">google.com</option>
 		<option value="hanmail.net">hanmail.net</option>
 		<option value="nate.com">nate.com</option>
@@ -205,16 +372,7 @@ $(function(){
 	<!-- 입력값 조건 만족 안됐을 시  -->
 	<input type="submit" value="회원가입하기">
 	</form>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
-	<p>엡벨ㄹ베베벨벨</p>
+
 </main>
 	
 </body>
@@ -238,6 +396,8 @@ domainListEl.addEventListener('change', (event) => {
   }
 })
 </script>
+
+
 
 
 </html>
