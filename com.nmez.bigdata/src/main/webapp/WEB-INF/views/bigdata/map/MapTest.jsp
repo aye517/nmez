@@ -2583,7 +2583,7 @@
         	map : map,
             position : new kakao.maps.LatLng(position.lat, position.lng),
 
-        });
+        }); 
         
         
         
