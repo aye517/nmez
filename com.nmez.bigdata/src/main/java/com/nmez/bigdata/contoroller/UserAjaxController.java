@@ -27,9 +27,9 @@ public class UserAjaxController {
 	@RequestMapping(value = "bigdata/uIdCheck")
 	public int uIdCheck(@RequestBody String uId) {
 		String sUid = uId.substring(4);
-		System.out.println("id 중복체크 id =" + sUid);
+		//System.out.println("id 중복체크 id =" + sUid);
 		int rs = userService.userIdCheck(sUid);
-		System.out.println("id 중복 체크 메서드 실행" + sUid + rs);
+		//System.out.println("id 중복 체크 메서드 실행" + sUid + rs);
 		return rs;
 	}
 	

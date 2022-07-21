@@ -8,18 +8,19 @@ public class UserVO {
 	  int uAddr1;
 	  String uAddr2, uAddr3;
 	  String uEmail, uEmail_domain;
-	  float uAddr_x, uAddr_y;
+	  String uAddr_x;
+	String uAddr_y;
 	  
-	public float getuAddr_x() {
+	public String getuAddr_x() {
 		return uAddr_x;
 	}
-	public void setuAddr_x(float uAddr_x) {
+	public void setuAddr_x(String uAddr_x) {
 		this.uAddr_x = uAddr_x;
 	}
-	public float getuAddr_y() {
+	public String getuAddr_y() {
 		return uAddr_y;
 	}
-	public void setuAddr_y(float uAddr_y) {
+	public void setuAddr_y(String uAddr_y) {
 		this.uAddr_y = uAddr_y;
 	}
 	public String getuId() {
