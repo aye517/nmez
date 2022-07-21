@@ -17,7 +17,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String main() {
-		return "/main/Header";
+		return "/main/Main";
 	}
 	
 	@RequestMapping(value = "/logo", method = RequestMethod.GET)

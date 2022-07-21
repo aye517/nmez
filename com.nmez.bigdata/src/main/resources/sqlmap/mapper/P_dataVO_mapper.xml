@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   
+
+<mapper namespace="P_dataVO">
+
+	<select id="data" resultType="P_dataVO">
+		<![CDATA[
+			select * from pie
+			where p_code = #{p_code};
+		]]>
+	</select>
+	
+</mapper>

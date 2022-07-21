@@ -1,7 +1,7 @@
 <%@page import="com.nmez.bigdata.api.GeocodingApi"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,15 +9,10 @@
 <title>SignUp.jsp</title>
 <%@ include file="../main/Header.jsp"%>
 <link rel="stylesheet" href="resources/css/style.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-	crossorigin="anonymous"></script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script type="text/javascript"
-	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCVT0MZOPAQhunhMdmo8N6gjvCW42QQH4"></script>
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCCVT0MZOPAQhunhMdmo8N6gjvCW42QQH4"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001"></script>
 
 
 <!-- 생년월일 select option -->
@@ -73,7 +68,7 @@ function findAddr(){
         }
     }).open();
 }
-
+<<<<<<< HEAD
 
 
 </script>
@@ -82,9 +77,11 @@ function findAddr(){
 <script type="text/javascript">
 </script>
 
-
 <!-- ID중복확인, PW일치 확인 ajax -->
 <script type="text/javascript">
+var idCheck = false;
+var pwCheck = false;
+var nameCheck = false;
 
 function uIdCheck() {
 	if ($('#uId').val().length < 6){
@@ -97,15 +94,17 @@ function uIdCheck() {
 			url : "bigdata/uIdCheck",
 			type : "post",
 			contentType : 'application/json',
-			data : {uId : uId},
+			data : {"uId" : uId},
 			dataType : 'text',
 			success : function(result) {
 				if(result == 1) {
 					$("#checkId").html('사용할 수 없는 아이디입니다.');
 					$("#checkId").attr('color','red');
+					idCheck = false;
 				}else{
 					$("#checkId").html('사용할 수 있는 아이디입니다.');
-					s("#checkId").attr('color','blue');
+					$("#checkId").attr('color','blue');
+					idCheck = true;
 				}
 			},
 			error : function() {
@@ -115,141 +114,109 @@ function uIdCheck() {
 	}
 };
 
+//비밀번호 check
+$(function(){
+		$('#uPwCheck').blur(function(){
+		   if($('#uPw').val() != $('#uPwCheck').val()){
+		    	if($('#uPwCheck').val()!='' && $('#uPwCheck').val()!=null){
+			    alert("비밀번호가 일치하지 않습니다.");
+		    	    $('#uPwCheck').val('');
+		    	    $('#uPwCheck').prop('readonly', false); //비밀번호 새로 입력했을때 readonly 해제
+		         	$('#uPwCheck').focus();
+		    	    pwCheck = false;
+		    	    //console.log('pwChecked='+pwCheck);
+		       }
+		   }else{
+		    	   alert('비밀번호가 일치합니다.');
+		    	   $('#uPwCheck').prop('readonly', true); //비밀번호 확인완료시 readonly처리
+		    	   $('#uName').focus();
+		    	   pwCheck = true;
+		    	   //console.log('pwChecked='+pwCheck);
+		    }
+		})
+		   console.log('pwChecked='+pwCheck);
+	});
 
 
 </script>
 </head>
-<body id="userSignUp_body">
-	<div id="wrap" class="wrapper">
-		<h1>회원가입</h1>
-	</div>
-
-	<div class="permit">
-		<div class="permit_box">
-			<textarea rows="5" cols="30">
+<body id="signUp_main">
+<main>
+	<h1>회원가입</h1>
+	
+	<textarea rows="5" cols="30">
 	개인정보 및 위치정보 제공 동의
-	</textarea>
-			<br>
-			<div class="checkbox_div">
-				<input type="checkbox">
-				<h5>동의합니다</h5>
-				<!-- 미동의 시 가입불가 처리하기 -->
-			</div>
-		</div>
-	</div>
-
+	</textarea> <br>
+	<input type="checkbox" > 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
+	
 	<hr>
-	<div class="userForm">
-		<div class="row_group">
-			<div class="userInput">
-			
-		<form action="signUp" method="post">
-			<!-- *값은 NOT NULL -->
-			<!-- 모든 input값에 공백처리 -->
-			<h5 class="list">*아이디<span id="idError"></span></h5>
-			<span class="box_int_id">
-			<input id="uId" type="text" name="uId" oninput="uIdCheck()"
-				maxlength="18" placeholder="아이디는 6~16자 영문, 영문+숫자" class="int"> 
-				<font id="checkId" size=2></font> <br>
-			</span>
-			
-			<div class="userInput">
-			<h5 class="list">*비밀번호<span id="pwError"></span></h5>
-			<span class="box_int_pass">
-			<input type="password" name="uPw" placeholder="비밀번호는 영문+숫자+특수문자 조합" maxlength="20" id="pswd1" class="int">
-			</span>
-			</div>
-			
-			<div class="userInput">
-			<h5 class="list">*비밀번호 확인<span class="box_int_pass_check"></span></h5>
-			<span>
-			<input type="password" name="uPwCheck" maxlength="20" id="pswd2" class="int">
-			</span>
-			<!-- 비밀번호 중복체크 ajax 구현 -->
-			</div>
-			
-			<div class="userInput">
-			<h5 class="list">*이름<span id="nameError"></span></h5>
-			<span>
-			<input type="text" name="uName" maxlength="20" id="name" class="int">
-			</span>
-			</div>
-			<!-- 숫자 포함할경우 alert -->
-			
-			<h5>*생년월일</h5>
-			<div class="bir_wrap">
-			<div id="bir_yy">
-			<span class="box">
-				<select id="uBYear" name="uBYear" class="sel"></select>년 
-			</span>
-			</div>
-			
-			<div id="bir_mm" class="sel">
-			<span class="box"> 
-				<select id="uBMonth"name="uBMonth"></select>월 
-				</span>
-			</div>
-			<div id="bir_dd" class="sel">
-				<span class="box">
-				<select id="uBDay" name="uBDay"></select>일
-				</span>
-			</div>
-			</div>
-
-			<!-- 숫자가 아닐경우 입력X or alert -->
-			<div class="userInput">
-				<h5>*전화번호</h5>
-			<div class="uPhone_div">
-				<select name="uPhone1" class="sel">
-					<option value="010">010</option>
-					<option value="011">011</option>
-					<option value="016">016</option>
-					<option value="017">017</option>
-				</select> - <input type="text" name="uPhone2" class="int"> - <input type="text"
-					name="uPhone3" class="int">
-			</div>
-			</div>
-			
-			<div class="userInput">
-				<h5 class="list">*주소 <span id="address"></span></h5>
-				<div id="address" class="int_id">
-				<span>
-				<input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호"readonly 
-				class="int" > 
-				<input type="button" onclick="findAddr()"value="우편번호 찾기" class="d_form mini">
-				</span>
-				<br> 
-				<input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly class="int"> 
-				<br> 
-				<input id="uAddr3" type="text" name="uAddr3" placeholder="상세주소" class="int"> 
-				<input id="uAddr_x" type="hidden"> <input id="uAddr_y" type="hidden">
-				</div>
-			</div>
-			
-			<div class="userInput">
-			<h5 class="list">이메일 <span id="emailError"></span></h5>
-			<!-- 직접입력시 형식 준수여부 .을 포함? -->
-			<span>
-			<input type="text" name="uEmail" maxlength="20" class="int_mail" id="email"> <span>@</span> 
-			<input type="text"id="domain-txt" readonly="readonly" name="uEmail_domain"class="int_mail"> 
-				<select id="domain-list">
-				<option value="naver.com">naver.com</option>
-				<option value="google.com">google.com</option>
-				<option value="hanmail.net">hanmail.net</option>
-				<option value="nate.com">nate.com</option>
-				<option value="kakao.com">kakao.com</option>
-				<option value="type">직접 입력</option>
-			</select> 
-			</span>
-			</div>
-			<br>
-			<!-- 입력값 조건 만족 안됐을 시  -->
-			<input class="joinbutton" type="submit" value="회원가입하기">
-		</form>
-		</div>
-		</div>
-	</div>
-
+	<form action="signUp" method="post">
+	<!-- *값은 NOT NULL -->
+	<!-- 모든 input값에 공백처리 -->
+	*아이디 <input id="uId" type="text" name="uId" oninput="uIdCheck()" maxlength="18" placeholder="아이디는 6~16자 영문, 영문+숫자"> 
+	<font id="checkId" size=2></font>
+	<br>
+	*비밀번호 <input type="password" id="uPw" name="uPw" placeholder="비밀번호는 영문+숫자+특수문자 조합">
+	<br>
+	*비밀번호 확인 <input type="password" id="uPwCheck" name="uPwCheck">
+	<font id="checkPw" size=2></font>
+	<!-- 비밀번호 중복체크 ajax 구현 -->
+	<br>
+	*이름 <input type="text" id="uName" name="uName"> <!-- 숫자 포함할경우 alert -->
+	<br>
+	*생년월일
+	<select id="uBYear" name="uBYear"></select>년
+	<select id="uBMonth" name="uBMonth"></select>월
+	<select id="uBDay" name="uBDay"></select>일
+	
+	<br>
+	<!-- 숫자가 아닐경우 입력X or alert -->
+	*전화번호
+	<select name="uPhone1">
+	<option value="010">010</option>
+	<option value="011">011</option>
+	<option value="016">016</option>
+	<option value="017">017</option>
+	</select>-
+	<input type="text" name="uPhone2">-
+	<input type="text" name="uPhone3">
+	<br>
+	*주소
+	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" readonly>
+	  <input type="button" onclick="findAddr()" value="우편번호 찾기"><br>
+	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly> <br>
+	  <input id="uAddr3" type="text" name="uAddr3" placeholder="상세주소">
+	  <input id="uAddr_x" type="hidden">
+	  <input id="uAddr_y" type="hidden">
+	<br>
+	이메일
+	<!-- 직접입력시 형식 준수여부 .을 포함? -->
+	<input type="text" name="uEmail"> @
+	<input type="text" id="domain-txt" readonly="readonly" name="uEmail_domain">
+	<select id="domain-list">
+		<option value="naver.com">naver.com</option>
+		<option value="google.com">google.com</option>
+		<option value="hanmail.net">hanmail.net</option>
+		<option value="nate.com">nate.com</option>
+		<option value="kakao.com">kakao.com</option>
+		<option value="type">직접 입력</option>
+	</select>
+	<br>
+	<!-- 입력값 조건 만족 안됐을 시  -->
+	<input type="submit" value="회원가입하기">
+	</form>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+	<p>엡벨ㄹ베베벨벨</p>
+</main>
+	
 </body>
 <%@ include file="../main/Footer.jsp"%>
 
