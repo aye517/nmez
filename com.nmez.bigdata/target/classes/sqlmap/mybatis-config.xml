@@ -7,10 +7,17 @@
 	<typeAliases>
 		<typeAlias type="com.nmez.bigdata.vo.UserVO" alias="UserVO"/>
 		<typeAlias type="com.nmez.bigdata.vo.DataVO" alias="DataVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.T_dataVO" alias="T_dataVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.S_dataVO" alias="S_dataVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.P_dataVO" alias="P_dataVO"/>
 	</typeAliases>
   
   <mappers>
 		<mapper resource="/sqlmap/mapper/UserVO_mapper.xml" />
 		<mapper resource="/sqlmap/mapper/DataVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/T_dataVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/S_dataVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/P_dataVO_mapper.xml" />
+		
   </mappers>
 </configuration>
