@@ -26,7 +26,7 @@ public class DataController {
 //		System.out.println("Data Controller 생성");
 	}
 	
-	@RequestMapping(value = "/mapTest", method = RequestMethod.GET)
+	@RequestMapping(value = "/MapTest", method = RequestMethod.GET)
 	public String mapTest(DataVO vo) {
 
 		return "/bigdata/map/MapTest";
