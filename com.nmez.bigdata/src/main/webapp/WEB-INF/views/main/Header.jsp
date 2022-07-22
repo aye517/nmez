@@ -10,8 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/ff98a1e189.js"
 	crossorigin="anonymous"></script>
+<script src="resources/js/main.js" defer="defer"></script>
 <link rel="stylesheet" href="resources/css/style.css">
-
+ 
 </head>
 
 <body id="header">
