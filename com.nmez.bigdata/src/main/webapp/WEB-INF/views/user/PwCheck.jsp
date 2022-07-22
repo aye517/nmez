@@ -9,7 +9,7 @@
 <body>
 	<form action="pwCheck" method="post">
 	    비밀번호 입력 <input type="password" name="uPw">
-	    <input type="submit" value="입력">
+	    <input type="submit" value="입력"> 
 	    </form>
 </body>
 </html>
