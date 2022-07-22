@@ -12,7 +12,7 @@
 	crossorigin="anonymous"></script>
 <script src="resources/js/main.js" defer="defer"></script>
 <link rel="stylesheet" href="resources/css/style.css">
-
+ 
 </head>
 
 <body id="header">

@@ -27,7 +27,7 @@
 			  	-->
 			</div>
 			<span><h5>copyright 2022 by NMEZ. All Rights Reserved.</h5></span>
-	</div>
+	</div> 
 
 		</div>
 

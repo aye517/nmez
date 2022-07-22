@@ -9,7 +9,7 @@
 <body id="signUp_main">
 <%@ include file="Header.jsp"%>
 <main>
-
+ 
 	<br>
 	<br>
 	

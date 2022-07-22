@@ -14,7 +14,7 @@
 Kakao.init('e9b8314301529a33db2e3f1e889eb001');
 console.log(Kakao.isInitialized());
 </script>
-
+ 
 <!-- 생년월일 select option -->
 <script type="text/javascript">
 $(document).ready(function(){
