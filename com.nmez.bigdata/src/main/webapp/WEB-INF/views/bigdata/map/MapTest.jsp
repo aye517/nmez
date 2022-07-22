@@ -7,7 +7,7 @@
 <!-- jquery 사용 -->
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Map Test</title>
 <style type="text/css">
 .map_wrap {
 	position: relative;
@@ -56,7 +56,7 @@
 	</table>
 	<div class="map_wrap">
 		<div id="map"
-			style="width: 100%; height: 800px; position: relative; overflow: hidden;"></div>
+			style="width: 50%; height: 500px; position: relative; overflow: hidden;"></div>
 		<div class="hAddr">
 			<span class="title">지도중심기준 행정동 주소정보</span> <span id="centerAddr"></span>
 		</div>
@@ -120,7 +120,7 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
 });
 kakao.maps.event.addListener(marker, 'click', function() {
     // 마커 위에 인포윈도우를 표시합니다
-    window.open("logo","상권분석","width=800px,height=1500px,left=100,top=50");  
+    window.open("logo","상권분석","width=1000px,height=1500px,left=100,top=50");  
 });
 // 중심 좌표나 확대 수준이 변경됐을 때 지도 중심 좌표에 대한 주소 정보를 표시하도록 이벤트를 등록합니다
 kakao.maps.event.addListener(map, 'idle', function() {
