@@ -25,4 +25,21 @@
 		]]>
 	</select>
 	
+	<select id="login" parameterType="UserVO" resultType="UserVO">
+		<![CDATA[
+			select * from user where uId = #{uId};
+		]]>
+	</select>
+	
+	<update id="update" parameterType="UserVO">
+		<![CDATA[
+			update user
+			set uPhone1 = #{uPhone1}, uPhone2 = #{uPhone2}, uPhone3 = #{uPhone3},
+			uAddr1 = #{uAddr1}, uAddr2 = #{uAddr2}, uAddr3 = #{uAddr3},
+			uEmail = #{uEmail}, uEmail_domain = #{uEmail_domain},
+			uAddr_x = #{uAddr_x}, uAddr_y = #{uAddr_y}
+			where uId = #{uId};
+		]]>
+	</update>
+	
 </mapper>

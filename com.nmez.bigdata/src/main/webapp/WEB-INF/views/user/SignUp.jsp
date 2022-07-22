@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>SignUp.jsp</title>
 <%@ include file="../main/Header.jsp"%>
-<link rel="stylesheet" href="resources/css/style.css">
+<!-- <link rel="stylesheet" href="resources/css/style.css"> -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js">
@@ -183,6 +183,8 @@ $(function(){
 		if (p2 != null && p2 != ''){
 			if(p2.length < 3){
 				phoneCheck1 = false;
+			}else if(p2.length == 3){
+				phoneCheck1 = true;
 			}else if(p2.length == 4){
 				phoneCheck1 = true;
 				$('#uPhone3').focus();
@@ -328,7 +330,7 @@ function finalCheck() {
 	<br>
 	이메일
 	<input type="text" name="uEmail"> @
-	<input type="email" id="domain-txt" readonly="readonly" name="uEmail_domain">
+	<input type="text" id="domain-txt" readonly="readonly" name="uEmail_domain">
 	<select id="domain-list">
 		<option value="naver.com" selected="selected">naver.com</option>
 		<option value="google.com">google.com</option>
