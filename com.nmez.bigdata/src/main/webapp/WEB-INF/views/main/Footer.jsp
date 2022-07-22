@@ -23,8 +23,13 @@
 					src="https://cdn.icon-icons.com/icons2/1753/PNG/512/iconfinder-social-media-applications-5line-4102577_113787.png">
 			  	-->
 			</div>
+
 			<span>copyright 2022 by NMEZ. All Rights Reserved.</span>
 	</div>
+
+			<span><h5>copyright 2022 by NMEZ. All Rights Reserved.</h5></span>
+	</div> 
+
 
 		</div>
 

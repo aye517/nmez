@@ -6,12 +6,21 @@
 <meta charset="UTF-8">
 <title>Main.jsp</title>
 </head>
+
 <body>
 
 <%@ include file="Header.jsp"%>
 
 
 	<h1> Hello 네명이조~</h1>
+
+<body id="signUp_main">
+<%@ include file="Header.jsp"%>
+<main>
+ 
+	<br>
+	<br>
+
 	
 	<br>
 	<br>
