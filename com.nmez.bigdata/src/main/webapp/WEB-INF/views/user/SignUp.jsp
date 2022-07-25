@@ -408,7 +408,7 @@ function finalCheck() {
 	<span class="uMail">
 	
 	<input type="text" name="uEmail" class="int_mail" id="email"> @
-	<input type="email" id="domain-txt" readonly="readonly" name="uEmail_domain" class="int_mail" >
+	<input text="email" id="domain-txt" readonly="readonly" name="uEmail_domain" class="int_mail" >
 		<select id="domain-list">
 			<option value="naver.com" selected="selected">naver.com</option>
 			<option value="google.com">google.com</option>

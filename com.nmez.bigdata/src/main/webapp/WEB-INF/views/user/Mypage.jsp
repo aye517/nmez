@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/style.css">
 <meta charset="UTF-8">
 <title>Mypage.jsp</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -16,24 +17,6 @@ $(document).ready(function() {
 	}
 });
 </script>
-
-
-<!-- 모달창 css확인해주세요! -->
-<style type="text/css">
-.modal{ 
-  position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.8); top:0; left:0; display:none;
-}
-
-.modal_content{
-  width:400px; height:200px;
-  background:#fff; border-radius:10px;
-  position:relative; top:50%; left:50%;
-  margin-top:-100px; margin-left:-200px;
-  text-align:center;
-  box-sizing:border-box; padding:74px 0;
-  line-height:23px; cursor:pointer;
-}
-</style>
 <script type="text/javascript">
 $(function(){ 
 	  $("#pwCheck").click(function(){
@@ -45,6 +28,7 @@ $(function(){
 	  });
 	  
 	});
+
 </script>
 
 </head>
@@ -52,10 +36,11 @@ $(function(){
 
 <%@ include file="../main/Header.jsp"%>
 
-<h1> 회원정보수정</h1>
-
+<div class="userForm">
+<h1> 마이페이지</h1>
+<hr>
 <form action="update" id="mypage" method="get">
-	<table>
+	<table class="user_info_table">
 	
 	<tr>
 		<th><i></i>아이디 </th>
@@ -82,19 +67,21 @@ $(function(){
 		<td> ${session.uEmail} @ ${session.uEmail_domain} </td>
 	</tr>
 	</table>
-
+	<br>
 	<input type="submit" value="정보 수정">
-	</form>
+	<br>
 	<button id="pwCheck" onclick=>비밀번호 변경</button>
 	<!-- 팝업창에서 비밀번호 확인 후, 비밀번호 변경 창 연결
 	<div id ="">
 	<a href="#" onclick='window.open("/bigdata/user/PwCheck","_blank","height=100,width=150, status=yes,toolbar=no,menubar=no,location=no");return false'>
 	<button>비밀번호 수정</button></a>
 	</div> -->
+	</form>
+</div>
 	
 <div class="modal">
   <div class="modal_content">
-  <div class="modal_close" style="border:1px; border-color: red">x</div>
+  <div class="modal_close">x</div>
    	<div>
 	    <form action="pwCheck" method="post">
 	    비밀번호 입력 <input type="password" name="uPw">
@@ -105,4 +92,5 @@ $(function(){
 </div>
 	
 </body>
+<%@ include file="../main/Footer.jsp"%>
 </html>

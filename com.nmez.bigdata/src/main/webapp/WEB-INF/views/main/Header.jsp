@@ -16,19 +16,7 @@
 
 <!-- 모달창 css확인해주세요! -->
 <style type="text/css">
-.modal{ 
-  position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.8); top:0; left:0; display:none;
-}
 
-.modal_content{
-  width:400px; height:200px;
-  background:#fff; border-radius:10px;
-  position:relative; top:50%; left:50%;
-  margin-top:-100px; margin-left:-200px;
-  text-align:center;
-  box-sizing:border-box; padding:74px 0;
-  line-height:23px; cursor:pointer;
-}
 </style>
 <script type="text/javascript">
 $(function(){ 
@@ -69,7 +57,7 @@ $(document).ready(function() {
 <body id="header">
 	<nav class="navbar">
 		<div class="navbar_logo">
-			<i class="fa-brands fa-bilibili"></i> <a href="/bigdata/logo">NMEZ</a>
+			<h3><i class="fa-brands fa-bilibili"></i> <a href="/bigdata/logo">NMEZ</h3></a>
 		</div>
 
 		<ul class="navbar_menu">
@@ -96,17 +84,20 @@ $(document).ready(function() {
 </main>
 
 <div class="modal">
+   
   <div class="modal_content">
-  <div class="modal_close" style="border:1px; border-color: red">x</div>
-   	<div>
+  <div class="modal_close">X</div>
+  <div class="login_form">
+	    <div class="login_msg"><h5>로그인</h5></div>
 	    <form action="login" method="post">
-	    로그인
+	    <h5>아이디</h5> <input type="text" name="uId" class="login_input">
+	    <h5>비밀번호</h5> <input type="password" name="uPw" class="login_input">
 	    <br>
-	    아이디 <input type="text" name="uId"> <br>
-	    비밀번호 <input type="password" name="uPw">
-	    <input type="submit" value="로그인">
+	    <input type="submit" value="로그인" class="login_button" >
 	    </form>
-   	</div>
+  </div>
+<div></div>
+   	
    	  </div>
 </div>
 </body>
