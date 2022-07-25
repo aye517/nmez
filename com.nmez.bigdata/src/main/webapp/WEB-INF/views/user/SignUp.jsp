@@ -14,7 +14,7 @@
 Kakao.init('e9b8314301529a33db2e3f1e889eb001');
 console.log(Kakao.isInitialized());
 </script>
-
+ 
 <!-- 생년월일 select option -->
 <script type="text/javascript">
 $(document).ready(function(){
@@ -43,6 +43,35 @@ $(document).ready(function(){
     $("#uBDay  > option[value="+day+"]").attr("selected", "true");       
   
 })
+</script>
+
+
+<!-- 다음API -->
+<script type="text/javascript">
+function findAddr(){
+	new daum.Postcode({
+        oncomplete: function(data) {
+        	
+        	console.log(data);
+        	
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+            // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+            var roadAddr = data.roadAddress; // 도로명 주소 변수
+            var jibunAddr = data.jibunAddress; // 지번 주소 변수
+            document.getElementById('uAddr1').value = data.zonecode;
+            if(roadAddr !== ''){
+                document.getElementById("uAddr2").value = roadAddr;
+            } 
+            else if(jibunAddr !== ''){
+                document.getElementById("uAddr2").value = jibunAddr;
+            }
+        }
+    }).open();
+}
+
+
+
 </script>
 
 <!-- 좌표 가져오기 -->
@@ -183,8 +212,6 @@ $(function(){
 		if (p2 != null && p2 != ''){
 			if(p2.length < 3){
 				phoneCheck1 = false;
-			}else if(p2.length == 3){
-				phoneCheck1 = true;
 			}else if(p2.length == 4){
 				phoneCheck1 = true;
 				$('#uPhone3').focus();
@@ -278,72 +305,129 @@ function finalCheck() {
 <body id="signUp_main">
 
 <main>
-	<h1>회원가입</h1>
+	<div id="wrap" class="wrapper">
+		<h1>회원가입</h1>
+	</div>
+	<div class="permit">
+	<div class="permit_box">
 	<textarea rows="5" cols="60">
 	개인정보 및 위치정보 제공 동의
 	1. nmez~
 	2. 동의 안하면 정보 입력 못함..
-	</textarea> <br>
-	<input id="agreeCheck" onclick="isChecked()" type="checkbox" > 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
+	</textarea>
 	
+	<br>
+	
+	<div class="checkbox_div">
+	<input id="agreeCheck" onclick="isChecked()" type="checkbox" > 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
+	</div>
+	</div>
+	</div>
 	<hr>
+	<div class="userForm">
+	<div class="row_group">
+	<div class="userInput">
 	<form action="signUp" id="signUp" method="post" onsubmit="return finalCheck();">
 
 	<!-- 모든 input값에 공백처리 -->
-	*아이디 <input id="uId" type="text" name="uId" oninput="uIdCheck()" 
-	maxlength="18" placeholder="6~16자 아이디 입력"  style="ime-mode:disabled;"> 
+	<h3>*아이디</h3>
+	<span class="box_int_id">
+	<input id="uId" type="text" name="uId" oninput="uIdCheck()" 
+	maxlength="18" placeholder="6~16자 아이디 입력"  style="ime-mode:disabled;" class="int"> 
 	<font id="checkId" size=2></font>
-	<br>
-	*비밀번호 <input type="password" id="uPw" name="uPw" placeholder="8~16자 비밀번호 입력">
-	<font id="pwalert" size=2></font>
-	<br>
-	*비밀번호 확인 <input type="password" id="uPwCheck" name="uPwCheck" placeholder="비밀번호 확인">
-	<font id="checkPw" size=2></font>
-	<br>
-	*이름 <input type="text" id="uName" name="uName" style="ime-mode:active;">
-	<br>
-	*생년월일
-	<select id="uBYear" name="uBYear"></select>년
-	<select id="uBMonth" name="uBMonth"></select>월
-	<select id="uBDay" name="uBDay"></select>일
+	</span> 
 	
 	<br>
-	*휴대전화
-	<select name="uPhone1">
-	<option value="010">010</option>
-	<option value="011">011</option>
-	<option value="016">016</option>
-	<option value="017">017</option>
-	</select> - 
-	<input id="uPhone2" type="text" maxlength="4" name="uPhone2"
-	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" > -
-	<input id="uPhone3" type="text" maxlength="4" name="uPhone3"
-	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
+	
+	<div class="userInput">
+	<h3>*비밀번호</h3> 
+	<input type="password" id="uPw" name="uPw" placeholder="8~16자 비밀번호 입력" class="int">
+	<font id="pwalert" size=2></font>
+	</div>
+	
 	<br>
-	*주소
-	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" readonly>
-	  <input type="button" onclick="findAddr()" value="우편번호 찾기"><br>
-	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly> <br>
-	  <input type="text" name="uAddr3" placeholder="상세주소">
+	<div class="userInput">
+	<h3>*비밀번호 확인</h3> <input type="password" id="uPwCheck" name="uPwCheck" placeholder="비밀번호 확인" class="int">
+	<font id="checkPw" size=2></font>
+	</div>
+
+	<br>
+
+	<h3>*이름</h3> <input type="text" id="uName" name="uName" style="ime-mode:active;" class="int">
+	
+	<br>
+	
+	<h3>*생년월일</h3>
+	<div class="bir_wrap">
+	
+	<div class="uBirthday">
+		<select id="uBYear" name="uBYear" class="sel"></select>년
+		<select id="uBMonth" name="uBMonth" class="sel"></select>월
+		<select id="uBDay" name="uBDay" class="sel"></select>일
+	</div>
+
+	</div>
+	
+	<div class="userInput">
+		<h3>*휴대전화</h3>
+	<div class="uPhone_div">
+	<select name="uPhone1" class="sel" id=uPhone1>
+		<option value="010">010</option>
+		<option value="011">011</option>
+		<option value="016">016</option>
+		<option value="017">017</option>
+	</select> - 
+	<input id="uPhone2" type="text" maxlength="4" name="uPhone2" class="int"
+	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" > -
+	<input id="uPhone3" type="text" maxlength="4" name="uPhone3" class="int"
+	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
+	</div>
+	</div>
+
+
+	
+	<div class="userInput">
+		<h3>*주소</h3>
+	<div id="address" class="int_id">
+	<span>
+	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" readonly class="int">
+	  <input type="button" onclick="findAddr()" value="우편번호 찾기" class="d_form mini">
+	</span>
+	  <br>
+	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly class="int"> 
+	  <br>
+	  <input type="text" name="uAddr3" placeholder="상세주소" class="int">
 	  <input id="uAddr_x" name="uAddr_x" type="hidden">
 	  <input id="uAddr_y" name="uAddr_y" type="hidden">
-	<br>
-	이메일
-	<input type="text" name="uEmail"> @
-	<input type="text" id="domain-txt" readonly="readonly" name="uEmail_domain">
-	<select id="domain-list">
-		<option value="naver.com" selected="selected">naver.com</option>
-		<option value="google.com">google.com</option>
-		<option value="hanmail.net">hanmail.net</option>
-		<option value="nate.com">nate.com</option>
-		<option value="kakao.com">kakao.com</option>
-		<option value="type">직접 입력</option>
-	</select>
-	<br>
-	<!-- 입력값 조건 만족 안됐을 시  -->
-	<input type="submit" value="회원가입하기">
-	</form>
+	</div>
+	</div>
 
+
+	<div class="userInput">
+		<h3 class="list">이메일</h3>
+	<span class="uMail">
+	
+	<input type="text" name="uEmail" class="int_mail" id="email"> @
+	<input type="email" id="domain-txt" readonly="readonly" name="uEmail_domain" class="int_mail" >
+		<select id="domain-list">
+			<option value="naver.com" selected="selected">naver.com</option>
+			<option value="google.com">google.com</option>
+			<option value="hanmail.net">hanmail.net</option>
+			<option value="nate.com">nate.com</option>
+			<option value="kakao.com">kakao.com</option>
+			<option value="type">직접 입력</option>
+		</select>
+	</span>
+	</div>
+
+	<br>
+
+	<!-- 입력값 조건 만족 안됐을 시  -->
+	<input type="submit" value="회원가입하기" class="submit_button">
+	</form>
+</div>
+</div>
+</div>
 </main>
 	
 </body>
