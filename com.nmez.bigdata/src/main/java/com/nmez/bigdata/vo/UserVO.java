@@ -4,9 +4,8 @@ public class UserVO {
 
 	  String uId, uPw, uName;
 	  int uBYear, uBMonth,uBDay;
-	  int uPhone1, uPhone2, uPhone3;
-	  int uAddr1;
-	  String uAddr2, uAddr3;
+	  String uPhone1, uPhone2, uPhone3;
+	  String uAddr1, uAddr2, uAddr3;
 	  String uEmail, uEmail_domain;
 	  String uAddr_x;
 	String uAddr_y;
@@ -59,28 +58,28 @@ public class UserVO {
 	public void setuBDay(int uBDay) {
 		this.uBDay = uBDay;
 	}
-	public int getuPhone1() {
+	public String getuPhone1() {
 		return uPhone1;
 	}
-	public void setuPhone1(int uPhone1) {
+	public void setuPhone1(String uPhone1) {
 		this.uPhone1 = uPhone1;
 	}
-	public int getuPhone2() {
+	public String getuPhone2() {
 		return uPhone2;
 	}
-	public void setuPhone2(int uPhone2) {
+	public void setuPhone2(String uPhone2) {
 		this.uPhone2 = uPhone2;
 	}
-	public int getuPhone3() {
+	public String getuPhone3() {
 		return uPhone3;
 	}
-	public void setuPhone3(int uPhone3) {
+	public void setuPhone3(String uPhone3) {
 		this.uPhone3 = uPhone3;
 	}
-	public int getuAddr1() {
+	public String getuAddr1() {
 		return uAddr1;
 	}
-	public void setuAddr1(int uAddr1) {
+	public void setuAddr1(String uAddr1) {
 		this.uAddr1 = uAddr1;
 	}
 	public String getuAddr2() {

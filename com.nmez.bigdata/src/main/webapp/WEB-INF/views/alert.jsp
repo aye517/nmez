@@ -10,7 +10,6 @@
 <script type="text/javascript">
 		var message = "${msg}";
 		var url = "${url}";
-		var cri = "${cri}";
 		alert(message);
 		document.location.href = url;
 	</script>

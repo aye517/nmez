@@ -8,4 +8,8 @@ public interface UserService {
 	public int userSignUp(UserVO vo);
 
 	public int userIdCheck(String uId);
+
+	public UserVO userLogin(UserVO vo);
+
+	public int userUpdate(UserVO vo);
 }
