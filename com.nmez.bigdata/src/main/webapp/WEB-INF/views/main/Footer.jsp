@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Footer.jsp</title>
 </head>
-<body>
+<body> 
 <hr>
 	<footer style="width: 100%; z-index: 1; bottom: 0; position: related;">
 	<div class="foo_div">
