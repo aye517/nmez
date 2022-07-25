@@ -42,4 +42,11 @@
 		]]>
 	</update>
 	
+	<update id="pwUpdate" parameterType="UserVO">
+		<![CDATA[
+			update user set uPw = #{uPw}
+			where uId = #{uId};
+			]]>
+	</update>
+	
 </mapper>

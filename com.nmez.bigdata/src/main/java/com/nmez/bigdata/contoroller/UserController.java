@@ -84,6 +84,7 @@ public class UserController {
 	public ModelAndView modifyPost(UserVO vo) {
 		System.out.println("수정요청정보: "+ vo);
 		int rs = userService.userUpdate(vo);
+		//수정된 정보 가져와서 세션담기
 		UserVO m_user = userService.userLogin(vo);
 		ModelAndView mav = new ModelAndView();
 		if(rs == 1) {
@@ -100,11 +101,10 @@ public class UserController {
 	}
 
 	//팝업창 띄우기
-	@RequestMapping(value="/user/PwCheck", method = RequestMethod.GET)
+	@RequestMapping(value="/user/PwUpdate", method = RequestMethod.GET)
 	public String pwCheck() {
-		return "user/PwCheck";
+		return "user/PwUpdate";
 	}
-
 
 
 } //class end 

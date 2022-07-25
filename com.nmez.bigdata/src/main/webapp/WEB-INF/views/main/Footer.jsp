@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/style.css?ver=1">
 <meta charset="UTF-8">
 <title>Footer.jsp</title>
 </head>

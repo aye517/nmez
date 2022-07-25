@@ -33,6 +33,10 @@ public class UserServiceImpl implements UserService {
 		return userDao.userUpdate(vo);
 	}
 
+	@Override
+	public int pwUpdate(UserVO vo) {
+		return userDao.pwUpdate(vo);
+	}
 
 
 	

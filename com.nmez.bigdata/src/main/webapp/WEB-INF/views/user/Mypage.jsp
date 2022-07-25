@@ -34,18 +34,24 @@ $(document).ready(function() {
   line-height:23px; cursor:pointer;
 }
 </style>
+
 <script type="text/javascript">
-$(function(){ 
-	  $("#pwCheck").click(function(){
-	    $(".modal").fadeIn();
-	  });
-	  
-	  $(".modal_close").click(function(){
-	    $(".modal").fadeOut();
-	  });
-	  
-	});
+
+function sessionOut() {
+	//var sessionData = keyName;
+	//sessionStorage.setItem(keyName, keyValue ); // 저장
+	//sessionStorage.getItem(keyName); // keyName에 해당하는 값 return (없으면 null)
+	//sessionStorage.length; // 저장된 데이터의 갯수 리턴
+	//sessionStorage.key(index); // index 번째의 키 이름 return
+	//sessionStorage.removeItem(keyName); // keyName에 해당하는 값 삭제
+	//sessionStorage.clear(); // 모든 데이터 삭제
+	alert("비밀번호가 변경되었습니다. 다시 로그인해주세요");
+	session.invalidate();
+	window.location.href = 'http://localhost:8000/bigdata';
+}
+
 </script>
+
 
 </head>
 <body>
@@ -85,24 +91,13 @@ $(function(){
 
 	<input type="submit" value="정보 수정">
 	</form>
-	<button id="pwCheck" onclick=>비밀번호 변경</button>
-	<!-- 팝업창에서 비밀번호 확인 후, 비밀번호 변경 창 연결
+	<!-- 팝업창에서 비밀번호 변경  -->
 	<div id ="">
-	<a href="#" onclick='window.open("/bigdata/user/PwCheck","_blank","height=100,width=150, status=yes,toolbar=no,menubar=no,location=no");return false'>
-	<button>비밀번호 수정</button></a>
-	</div> -->
+	<a href="#" onclick='window.open("/bigdata/user/PwUpdate","_blank","height=300,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>
+	<button>비밀번호 변경</button></a>
+	</div>
 	
-<div class="modal">
-  <div class="modal_content">
-  <div class="modal_close" style="border:1px; border-color: red">x</div>
-   	<div>
-	    <form action="pwCheck" method="post">
-	    비밀번호 입력 <input type="password" name="uPw">
-	    <input type="submit" value="변경하기">
-	    </form>
-   	</div>
-   	  </div>
-</div>
+
 	
 </body>
 </html>
