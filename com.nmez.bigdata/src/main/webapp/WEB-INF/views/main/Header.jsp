@@ -61,7 +61,7 @@ $(document).ready(function() {
 		$('#logout').prop('hidden', false);
 	}
 });
-
+ 
 </script>
 
 </head>
