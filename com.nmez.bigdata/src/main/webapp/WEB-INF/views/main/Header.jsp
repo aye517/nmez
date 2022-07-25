@@ -13,6 +13,7 @@
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="resources/css/style.css">
 
+
 <!-- 모달창 css확인해주세요! -->
 <style type="text/css">
 .modal{ 
@@ -62,6 +63,7 @@ $(document).ready(function() {
 });
 
 </script>
+
 </head>
 
 <body id="header">
