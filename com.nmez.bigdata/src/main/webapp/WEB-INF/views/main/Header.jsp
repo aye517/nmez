@@ -12,12 +12,9 @@
 <script src="https://kit.fontawesome.com/ff98a1e189.js"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="resources/css/style.css?ver=1">
+<script type="text/javascript" src="resources/js/main.js" defer="defer"></script>
 
 
-<!-- 모달창 css확인해주세요! -->
-<style type="text/css">
-
-</style>
 <script type="text/javascript">
 $(function(){ 
 	  $("#login").click(function(){
@@ -96,7 +93,7 @@ $(document).ready(function() {
 	    <input type="submit" value="로그인" class="login_button" >
 	    </form>
   </div>
-<div></div>
+
    	
    	  </div>
 </div>

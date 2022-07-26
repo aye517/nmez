@@ -180,7 +180,6 @@ function uPwCheck() {
 	    }
 	});
 };
-
 //입력값 무결성 check
 var nameCheck = false;
 var phoneCheck1 = false;
@@ -310,7 +309,7 @@ function finalCheck() {
 	</div>
 	<div class="permit">
 	<div class="permit_box">
-	<textarea rows="5" cols="60">
+	<textarea rows="5" cols="60" readonly="readonly">
 	개인정보 및 위치정보 제공 동의
 	1. nmez~
 	2. 동의 안하면 정보 입력 못함..

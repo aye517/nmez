@@ -1,27 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>MapTest.jsp</title>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001"></script>
-
-
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eef03eabb1ab19e0ded35169777e6b7f&libraries=services,clusterer">	
+	</script>
 </head>
 <body>
-<<<<<<< HEAD
-hi, Map Test
-<div id="map" style="width:500px;height:400px;"></div>
-<!-- 검색창 -->
-<input type="text">
-<!-- 다음지도 띄우기 -->
-=======
+<table>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" name="detailAddress" id="address"></td>
+				<td><button type="button" id="searchBtn">검색</button></td>
+			</tr>
+			
+		</table>
 	hi, Map Test
-	<div id="map" style="width: 700px; height: 500px;"></div>
+	<div id="map" style="width: 500px; height: 400px;"></div>
+	<!-- 검색창 -->
+	<input type="text">
+	<!-- 다음지도 띄우기 -->
+
 
 	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eef03eabb1ab19e0ded35169777e6b7f&libraries=clusterer">
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eef03eabb1ab19e0ded35169777e6b7f&libraries=services,clusterer">
 		
 	</script>
 	<script>
@@ -29,7 +35,8 @@ hi, Map Test
         center : new kakao.maps.LatLng(37.57002838826, 126.97962084516), // 지도의 중심좌표
         level : 10 // 지도의 확대 레벨
     });
-
+    
+   
  // 마커 클러스터러를 생성합니다 
     var clusterer = new kakao.maps.MarkerClusterer({
         map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
@@ -39,8 +46,8 @@ hi, Map Test
     });
 
     var data = {
-      "positions": [
-    	  {
+      "positions" : [
+  	 		 {
     		  "address_code": 11110530,
     		  "address": "종로구 사직동",
     		  "lat": "37.5761869658796",
@@ -2585,20 +2592,42 @@ hi, Map Test
     		  "lng": "127.142712345548"
     		 }
     		]};
-
-    var marker = data.positions.map(function(position) {
-        return new kakao.maps.Marker({
-        	map : map,
-            position : new kakao.maps.LatLng(position.lat, position.lng),
-
-        }); 
-        
-        
-        
-    });
+	var markers = [];
+   
+   
+	var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
+    imageSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
+    imageOption = {offset: new kakao.maps.Point(15, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+				
 	
-    // 클러스터러에 마커들을 추가합니다
-    clusterer.addMarkers(marker);
+		for(var n = 0; n < data.positions.length; n++) {
+			   var markerPosition  = new kakao.maps.LatLng(data.positions[n].lat,data.positions[n].lng); 
+			   
+			   var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
+			   
+			   var marker	= new kakao.maps.Marker({
+					position: markerPosition,
+					map: map,
+					clickable: true,
+					image : markerImage
+				});
+			// 인포윈도우를 생성합니다
+			    var infowindow = new kakao.maps.InfoWindow({
+			        content : '&nbsp;&nbsp;&nbsp;'+data.positions[n].address
+			    });
+			
+			   
+
+			   
+			    markers.push(marker);
+			    kakao.maps.event.addListener(marker,'mouseover',makeClick(map, marker, infowindow));
+			    kakao.maps.event.addListener(marker,'mouseout',infoOut(map, marker, infowindow));
+			    kakao.maps.event.addListener(marker, 'click', function() {
+			        // 마커 위에 인포윈도우를 표시합니다
+			        window.open("logo","상세페이지","width=700,height=1500,left=100,top=50"); 
+			  });
+		}
+			clusterer.addMarkers(markers);
     
  // 마커 클러스터러에 클릭이벤트를 등록합니다
     // 마커 클러스터러를 생성할 때 disableClickZoom을 true로 설정하지 않은 경우
@@ -2612,21 +2641,25 @@ hi, Map Test
         map.setLevel(level, {anchor: cluster.getCenter()});
         
     });
-    var infowindow = new kakao.maps.InfoWindow({
-        content: data.positions.address // 인포윈도우에 표시할 내용
-    });
+    function makeClick(map, marker, infowindow){
+        return function(){
+            infowindow.open(map, marker);
+        };
+    };   
+    function infoOut(map, marker, infowindow){
+        return function(){
+            infowindow.close();
+        };
+    };   
+ 
+   
 
     
-	</script>
+
+	
 
 
 
-
-
-
-
-	<!-- 검색창 -->
-	<input type="text">
-
+</script>
 </body>
 </html>
