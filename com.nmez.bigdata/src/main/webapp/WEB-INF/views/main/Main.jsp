@@ -3,10 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/style.css?vre=1">
 <meta charset="UTF-8">
 <title>Main.jsp</title>
+
 </head>
-<body id="signUp_main">
+<body>
 <%@ include file="Header.jsp"%>
 <main>
 
@@ -14,7 +16,7 @@
 	<br>
 	<br>
 
-	<div id="wrap">
+	<div class="wrap_main">
 	<div class="userForm">
 	
 	<div>

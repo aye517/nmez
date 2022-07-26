@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/style.css">
 <meta charset="UTF-8">
 <title>Mypage.jsp</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -16,7 +17,6 @@ $(document).ready(function() {
 	}
 });
 </script>
-
 
 <!-- 모달창 css확인해주세요! -->
 <style type="text/css">
@@ -37,6 +37,7 @@ $(document).ready(function() {
 
 <script type="text/javascript">
 
+
 function sessionOut() {
 	//var sessionData = keyName;
 	//sessionStorage.setItem(keyName, keyValue ); // 저장
@@ -50,6 +51,18 @@ function sessionOut() {
 	window.location.href = 'http://localhost:8000/bigdata';
 }
 
+$(function(){ 
+	  $("#pwCheck").click(function(){
+	    $(".modal").fadeIn();
+	  });
+	  
+	  $(".modal_close").click(function(){
+	    $(".modal").fadeOut();
+	  });
+	  
+	});
+
+
 </script>
 
 
@@ -58,10 +71,11 @@ function sessionOut() {
 
 <%@ include file="../main/Header.jsp"%>
 
-<h1> 회원정보수정</h1>
-
+<div class="userForm">
+<h1> 마이페이지</h1>
+<hr>
 <form action="update" id="mypage" method="get">
-	<table>
+	<table class="user_info_table">
 	
 	<tr>
 		<th><i></i>아이디 </th>
@@ -88,16 +102,44 @@ function sessionOut() {
 		<td> ${session.uEmail} @ ${session.uEmail_domain} </td>
 	</tr>
 	</table>
-
+	<br>
 	<input type="submit" value="정보 수정">
 	</form>
 	<!-- 팝업창에서 비밀번호 변경  -->
+
+	<br>
+	<button id="pwCheck" onclick=>비밀번호 변경</button>
+	<!-- 팝업창에서 비밀번호 확인 후, 비밀번호 변경 창 연결
+>>>>>>> refs/remotes/origin/catdogbranch0725
 	<div id ="">
+<<<<<<< HEAD
 	<a href="#" onclick='window.open("/bigdata/user/PwUpdate","_blank","height=300,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>
 	<button>비밀번호 변경</button></a>
 	</div>
+=======
+	<a href="#" onclick='window.open("/bigdata/user/PwCheck","_blank","height=100,width=150, status=yes,toolbar=no,menubar=no,location=no");return false'>
+	<button>비밀번호 수정</button></a>
+	</div> -->
+	</form>
+</div>
+>>>>>>> refs/remotes/origin/catdogbranch0725
 	
+<<<<<<< HEAD
 
+=======
+<div class="modal">
+  <div class="modal_content">
+  <div class="modal_close">x</div>
+   	<div>
+	    <form action="pwCheck" method="post">
+	    비밀번호 입력 <input type="password" name="uPw">
+	    <input type="submit" value="변경하기">
+	    </form>
+   	</div>
+   	  </div>
+</div>
+>>>>>>> refs/remotes/origin/catdogbranch0725
 	
 </body>
+<%@ include file="../main/Footer.jsp"%>
 </html>

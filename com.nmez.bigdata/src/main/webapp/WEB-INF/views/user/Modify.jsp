@@ -119,37 +119,67 @@ function updateCheck() {
 
 <%@ include file="../main/Header.jsp"%>
 
-<h1> 회원정보수정</h1>
-
+	<div class="userForm">
+	<h1> 회원정보수정</h1>
+	<div class="userInput">
 <form action="update" id="update" method="post" onsubmit="return updateCheck()">
+	<div class="userInput">
+	<h3>아이디</h3>
+	<span class="box_int_id">
+	<input type="text" name="uId" value="${session.uId }" readonly="readonly" class="int"> 
+	</span>
 
-	<i></i>아이디
-	<input type="text" name="uId" value="${session.uId }" readonly="readonly"> <br>
-	<i></i>이름 : ${session.uName };<br>
-	<i></i>생년월일 : ${session.uBYear }/${session.uBMonth }/${session.uBDay }<br>
-	<i></i>휴대전화
-	<select name="uPhone1">
+	</div>
+	
+	<div class="userInput">
+	<h3>
+	이름 : ${session.uName };<br>
+	</h3>
+	</div>
+	
+	<div class="userInput">
+	<h3>
+	생년월일 : ${session.uBYear }/${session.uBMonth }/${session.uBDay }<br>
+	</h3>
+	</div>
+	
+	<div class="userInput">
+	<h3>휴대전화</h3>
+	<div class="uPhone_div">
+	<select name="uPhone1" class="sel"  id=uPhone1>
 	<option value="010">010</option>
 	<option value="011">011</option>
 	<option value="016">016</option>
 	<option value="017">017</option>
-	</select> 
+	</select> -
 	<input id="uPhone2" type="text" maxlength="4" name="uPhone2" value="${session.uPhone2 }"
-	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" > -
+	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="int"> -
 	<input id="uPhone3" type="text" maxlength="4" name="uPhone3"  value="${session.uPhone3 }"
-	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" >
-	<br>
-	<i></i>주소
-	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" value="${session.uAddr1}" readonly>
+	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="int">
+	</div>
+	</div>
+
+	<div class="userInput">
+	<h3>*주소</h3>
+	<div id="address" class="int_id">
+	<span>
+	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" value="${session.uAddr1}" readonly class="int">
 	  <input type="button" onclick="findAddr()" value="우편번호 찾기"><br>
-	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" value="${session.uAddr2}" readonly> <br>
-	  <input type="text" name="uAddr3" placeholder="상세주소" value="${session.uAddr3}">
+	</span>
+	<br>
+	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" value="${session.uAddr2}" readonly class="int"> <br>
+	  <input type="text" name="uAddr3" placeholder="상세주소" value="${session.uAddr3}" class="int">
 	  <input id="uAddr_x" name="uAddr_x" type="hidden" value="${session.uAddr_x}">
 	  <input id="uAddr_y" name="uAddr_y" type="hidden" value="${session.uAddr_y}">
-	<br>
-	이메일
-	<input type="text" name="uEmail" value="${session.uEmail}"> @
-	<input type="email" id="domain-txt" readonly="readonly" name="uEmail_domain" value="${session.uEmail_domain}">
+	
+	</div>
+	</div>
+
+	<div class="userInput">
+	<h3>이메일</h3>
+	<span class="uMail">
+	<input type="text" name="uEmail" value="${session.uEmail}" class="int_mail" id="email"> @
+	<input text="email" id="domain-txt" readonly="readonly" name="uEmail_domain" value="${session.uEmail_domain}" class="int_mail">
 	<select id="domain-list">
 		<option value="naver.com">naver.com</option>
 		<option value="google.com">google.com</option>
@@ -158,8 +188,14 @@ function updateCheck() {
 		<option value="kakao.com">kakao.com</option>
 		<option value="type">직접 입력</option>
 	</select>
+	</span>
 	<br>
-	<input type="submit" value="수정">
+	<input type="submit" value="수정" class="submit_button">
+	</div>
 	</form>
+	</div>
+	</div>
+	
 </body>
+<%@ include file="../main/Footer.jsp"%>
 </html>

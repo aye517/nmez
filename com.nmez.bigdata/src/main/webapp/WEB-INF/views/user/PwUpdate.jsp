@@ -102,7 +102,7 @@ function pwUpdate() {
 	const param = {
 			"uId" : uId,
 			"uPw" : newPw
-	}
+		};
 	$.ajax({
 		type : "post",
 		url : "pwUpdate",
