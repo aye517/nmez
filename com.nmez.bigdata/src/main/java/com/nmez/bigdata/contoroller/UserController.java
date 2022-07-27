@@ -101,10 +101,16 @@ public class UserController {
 	}
 
 	//팝업창 띄우기
-	@RequestMapping(value="/user/PwUpdate", method = RequestMethod.GET)
+	@RequestMapping(value="/pwUpdate", method = RequestMethod.GET)
 	public String pwCheck() {
 		return "user/PwUpdate";
 	}
+	
+	@RequestMapping(value="/userDrop", method = RequestMethod.GET)
+	public String userDrop() {
+		return "user/UserDrop";
+	}
+
 
 
 } //class end 

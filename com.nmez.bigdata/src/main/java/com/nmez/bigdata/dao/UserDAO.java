@@ -39,5 +39,9 @@ public class UserDAO {
 	public int pwUpdate(UserVO vo) {
 		return sqlSessionTemplate.update("UserVO.pwUpdate", vo);
 	}
+
+	public int userDrop(UserVO vo) {
+		return sqlSessionTemplate.delete("UserVO.delete", vo);
+	}
 				
 } //class end

@@ -13,9 +13,15 @@ public interface DataService {
 
 	public List<T_dataVO> timeData(T_dataVO vo);
 
+	public List<T_dataVO> timeData(String code);
+	
 	public P_dataVO popData(P_dataVO vo);
-
+	
+	public P_dataVO popData(String code);
+	
 	public List<S_dataVO> genderData(S_dataVO vo);
+
+	public List<S_dataVO> genderData(String code);
 }
 	
 

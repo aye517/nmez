@@ -14,4 +14,6 @@ public interface UserService {
 	public int userUpdate(UserVO vo);
 
 	public int pwUpdate(UserVO vo);
+
+	public int userDrop(UserVO vo);
 }

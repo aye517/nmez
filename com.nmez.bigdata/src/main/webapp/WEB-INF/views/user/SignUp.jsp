@@ -267,6 +267,7 @@ function isChecked() {
 	if($('#agreeCheck').is(':checked')){
 		agreeChecked = true;
 		$('input').attr('readonly', false);
+		$('#domain-txt').attr('readonly', true);
 	}else{
 		agreeChecked = false;
 		$('input').attr('readonly', true);
@@ -410,7 +411,7 @@ function finalCheck() {
 	<input type="text" name="uEmail" class="int_mail" id="email"> @
 	<input type="text" id="domain-txt" readonly="readonly" name="uEmail_domain" class="int_mail" >
 		<select id="domain-list">
-			<option value="naver.com" selected="selected">naver.com</option>
+			<option value="naver.com">naver.com</option>
 			<option value="google.com">google.com</option>
 			<option value="hanmail.net">hanmail.net</option>
 			<option value="nate.com">nate.com</option>

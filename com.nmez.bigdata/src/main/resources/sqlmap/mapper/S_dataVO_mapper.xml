@@ -11,4 +11,10 @@
 		]]>
 	</select>
 	
+		<select id="codeData" parameterType="String" resultType="hashmap">
+		<![CDATA[
+			select * from sex where s_code = #{s_code};
+		]]>
+	</select>
+
 </mapper>
