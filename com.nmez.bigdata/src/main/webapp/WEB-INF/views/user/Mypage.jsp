@@ -28,20 +28,6 @@ $(document).ready(function() {
 </script>
 <script type="text/javascript">
 
-
-function sessionOut() {
-	//var sessionData = keyName;
-	//sessionStorage.setItem(keyName, keyValue ); // 저장
-	//sessionStorage.getItem(keyName); // keyName에 해당하는 값 return (없으면 null)
-	//sessionStorage.length; // 저장된 데이터의 갯수 리턴
-	//sessionStorage.key(index); // index 번째의 키 이름 return
-	//sessionStorage.removeItem(keyName); // keyName에 해당하는 값 삭제
-	//sessionStorage.clear(); // 모든 데이터 삭제
-	alert("비밀번호가 변경되었습니다. 다시 로그인해주세요");
-	session.invalidate();
-	window.location.href = 'http://localhost:8000/bigdata';
-}
-
 $(function(){ 
 	  $("#pwCheck").click(function(){
 	    $(".modal").fadeIn();
@@ -60,7 +46,7 @@ var popupX = (window.screen.width/2)-(popupWidth/2);
 var popupY = (window.screen.height/2)-(popupHeight/2);
 function popup(){
 	console.log(popupX,popupY);
-	window.open("/bigdata/user/PwUpdate","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
+	window.open("pwUpdate","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
 }
 function showModalessPopupHelp(sURL,sParam,sWinName) {
 	Left = screen.width - 650;
@@ -118,16 +104,25 @@ function showModalessPopupHelp(sURL,sParam,sWinName) {
 	<br>
 	<input type="submit" value="정보 수정" class="login_button">
 	</form>
-	<!-- 팝업창에서 비밀번호 변경  -->
+
 
 	<br>
 	 
 	
 	<input type="button" value="비밀번호 변경" onclick="popup();" class="login_button">
+
+<!-- 팝업창이 하나 열려있으면 더이상 열리지않도록 하기 
+	<a href="#" onclick='window.open("/bigdata/pwUpdate","_blank","height=300,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>
+	<button>비밀번호 변경</button></a>
+-->
+	<br>
+	<a href="#" onclick='window.open("/bigdata/userDrop","_blank","height=300,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>
+	<button class="login_button">회원탈퇴하기</button></a>
+
 	</div>
 
 
-	
+
 </body>
 <%@ include file="../main/Footer.jsp"%>
 </html>

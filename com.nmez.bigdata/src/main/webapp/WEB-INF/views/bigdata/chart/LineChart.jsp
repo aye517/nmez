@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 code search:
 <form action="lineChart" method="post">
-	<input type="text" name="t_code" placeholder="행정코드">
+	<input type="text" name="t_code" placeholder="행정코드" value="${t_dataList[0].t_code}">
 	<select name="t_month">
 		<option selected="selected">1월</option>
 		<%for (int i=2; i<=12; i++) {%>
@@ -99,7 +99,8 @@ code search:
 	</div>
 	<hr>
 	
-	<div>
+
+	<div hidden="hidden">
 	<table>
 		<thead>
 			<tr>

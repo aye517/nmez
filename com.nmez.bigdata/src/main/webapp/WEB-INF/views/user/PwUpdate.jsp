@@ -48,6 +48,19 @@ body{
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+
+$(document).ready(function() {
+	var sessionCheck = false;
+	if ('${session.uId }' == null || '${session.uId }' == ''){
+		alert("회원정보가 없습니다. 메인페이지로 이동합니다.");
+		window.location.href = 'http://localhost:8000/bigdata';
+	}
+});
+
+</script>
+
+
+<script type="text/javascript">
 //new 비밀번호 check
 var newCheck = false;
 var sPw = '${session.uPw}';
@@ -120,18 +133,17 @@ function check() {
 			alert("비밀번호를 올바르게 입력해주세요.");
 		}else{
 			pwUpdate();
-			//alert("비밀번호가 변경되었습니다.");
+			alert("비밀번호가 변경되었습니다. 다시 로그인해주세요.");			
+			sessionOut();
+			window.opener.location.href="/bigdata";
 			self.close();
-			window.opener.sessionOut();
-			//window.opener.location.href="/bigdata";
 		}
 	}
 };
 
-
 </script>
 
-
+<!-- 비밀번호 변경 ajax -->
 <script type="text/javascript">
 
 function pwUpdate() {
@@ -162,6 +174,28 @@ function pwUpdate() {
 
 };
 
+
+</script>
+
+<!-- session invalidate -->
+<script type="text/javascript">
+function sessionOut() {
+	//alert("session out실행");
+	$.ajax({
+		type : "post",
+		url : "sessionOut",
+		success : function(result) {
+			if(result == 1) {
+				console.log("session invalidate");
+			}else{
+				console.log("유효하지 않은 실행");
+			}
+		},
+		error : function() {
+			console.log("요청 실패");
+		}		
+	});
+};
 
 </script>
 

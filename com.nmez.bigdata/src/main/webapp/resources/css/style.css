@@ -341,3 +341,13 @@ th, tr, td {
   z-index: 1000;
   border: 1px solid white;
 }
+.chart_div{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.mapToChart_div{
+	display: flex;
+	flex-direction: column;
+	
+}

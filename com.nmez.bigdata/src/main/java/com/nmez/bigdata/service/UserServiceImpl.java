@@ -38,6 +38,11 @@ public class UserServiceImpl implements UserService {
 		return userDao.pwUpdate(vo);
 	}
 
+	@Override
+	public int userDrop(UserVO vo) {
+		return userDao.userDrop(vo);
+	}
+
 
 	
 }

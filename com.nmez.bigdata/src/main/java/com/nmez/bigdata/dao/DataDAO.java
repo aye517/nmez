@@ -30,14 +30,27 @@ public class DataDAO {
 	public List<T_dataVO> timeData(T_dataVO vo) {
 		return sqlSessionTemplate.selectList("T_dataVO.data",vo);
 	}
+	
+	public List<T_dataVO> timeData(String code) {
+		return sqlSessionTemplate.selectList("T_dataVO.codeData",code);
+	}
 
 	public P_dataVO popData(P_dataVO vo) {
 		return sqlSessionTemplate.selectOne("P_dataVO.data",vo);
 	}
 
+	public P_dataVO popData(String code) {
+		return sqlSessionTemplate.selectOne("P_dataVO.codeData",code);
+	}	
+	
 	public List<S_dataVO> genderData(S_dataVO vo) {
 		return sqlSessionTemplate.selectList("S_dataVO.data",vo);
 	}
 	
+	public List<S_dataVO> genderData(String code) {
+		return sqlSessionTemplate.selectList("S_dataVO.codeData",code);
+	}
+
+
 	
 } //class end
