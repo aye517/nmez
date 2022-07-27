@@ -47,7 +47,9 @@ var popupY = (window.screen.height/2)-(popupHeight/2);
 
 function popup(){
 	console.log(popupX,popupY);
-	window.open("/bigdata/pwUpdate","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
+
+	window.open("pwUpdate","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
+>>>>>>> branch 'catdogbranch0725' of http://github.com/aye517/nmez.git
 }
 function showModalessPopupHelp(sURL,sParam,sWinName) {
 	Left = screen.width - 650;
@@ -106,23 +108,23 @@ function showModalessPopupHelp(sURL,sParam,sWinName) {
 	<input type="submit" value="정보 수정" class="login_button">
 	</form>
 
+	<br>
+	 
+	
+	<input type="button" value="비밀번호 변경" onclick="popup();" class="login_button">
 
 <!-- 팝업창이 하나 열려있으면 더이상 열리지않도록 하기 
 	<a href="#" onclick='window.open("/bigdata/pwUpdate","_blank","height=300,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>
-	<button>비밀번호 변경</button></a>-->
-	
-
-	<br>	 
-	<input type="button" value="비밀번호 변경" onclick="popup();" class="login_button">
+	<button>비밀번호 변경</button></a>
+-->
+	<br>
 	<a href="#" onclick='window.open("/bigdata/userDrop","_blank","height=300,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>
-	<button>회원탈퇴하기</button></a>
+	<button class="login_button">회원탈퇴하기</button></a>
+
 	</div>
 
 
-<<<<<<< HEAD
-=======
-	
->>>>>>> branch 'catdogbranch0725' of http://github.com/aye517/nmez.git
+
 </body>
 <%@ include file="../main/Footer.jsp"%>
 </html>

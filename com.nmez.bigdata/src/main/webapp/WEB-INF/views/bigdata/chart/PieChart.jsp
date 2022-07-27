@@ -61,7 +61,8 @@ new Chart(document.getElementById("pie-chart"), {
       }]
     },
     options: {
-      title: {
+    	responsive: false,
+    	title: {
         display: true,
         text: '<'+ data_arr[2]+ '> 총 생활인구 : ' + data_arr[3] + '명'
       }

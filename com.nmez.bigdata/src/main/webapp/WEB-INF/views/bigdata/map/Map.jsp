@@ -8,10 +8,19 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 <%@ include file="../../main/Header.jsp"%>
 <link rel="stylesheet" href="resources/css/style.css?ver=1">
+
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001&libraries=services,clusterer">	
 </script>
-
+<style type="text/css">
+.info-title {
+    display: block;
+    text-align: center;
+    line-height:30px;
+    width: 200px;
+    height: 30px;
+}
+</style>
 </head>
 <body>
 
@@ -2605,7 +2614,9 @@
     var imageSrc = 'https://cdn.pixabay.com/photo/2017/09/29/00/30/checkmark-icon-2797531_1280.png',
 	imageSize = new kakao.maps.Size(20, 20), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(15, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
+
    		
+    
     for(var n = 0; n < data.positions.length; n++){
     	code[n] = data.positions[n].address_code;
     };
@@ -2624,7 +2635,9 @@
 			   var iwRemoveable = true;
 			// 인포윈도우를 생성합니다
 			    var infowindow = new kakao.maps.InfoWindow({
-			        content : '<a href=\"#\" onclick=window.open(\"/bigdata/getChart?code='+code[n]+'\")  style=\"color:black\">' + data.positions[n].address+' 생활인구</a>'
+			    	removable : true, 
+			    	position : markerPosition,
+			        content : '<a href=\"#\" onclick=window.open(\"/bigdata/getChart?code='+code[n]+'\")  style=\"color:black\" class="info-title"><h5>' + data.positions[n].address+' 생활인구</h5></a>'
 			    });
 				
 			//console.log(infowindow.cc.split('[')[1].split(']')[0]);
@@ -2656,9 +2669,8 @@
             //infowindow.close();
         };
     };   
-    
 </script>
 
-<%@ include file="../../main/Footer.jsp"%>
 </body>
+<%@ include file="../../main/Footer.jsp"%>
 </html>

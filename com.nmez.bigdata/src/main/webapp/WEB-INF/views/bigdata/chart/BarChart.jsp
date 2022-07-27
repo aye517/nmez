@@ -11,7 +11,7 @@
 
 <body> 
 
-<canvas id="bar-chart" width="100" height="100"></canvas>
+<canvas id="bar-chart" width="500" height="300"></canvas>
 
 
 <table>
@@ -79,6 +79,7 @@ new Chart(document.getElementById("bar-chart"), {
       ]
     },
     options: {
+      responsive: false,
       legend: { display: false },
       title: {
         display: true,
