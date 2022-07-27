@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/css/style.css">
 <title>LineChart.jsp</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -69,21 +70,29 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 <body>
 
+<div class="canvas-container">
 <canvas id="line_chart" width="500" height="300"></canvas>
+</div>
 
-	<div>
+<div>
+
+	<div class="chart_table_line">
 	<h4>활동인구 가장 많은 시간</h4>
+	<div class="chart_sex">
 	남 <font id="mhigh_t" ></font>
 	<font type="text" id="mhigh"></font><br>
 	여 <font id="whigh_t"></font>
 	<font type="text" id="whigh"></font>
+	</div>
 	<br>
 	<br>
 	<h4>활동인구 가장 적은 시간</h4>
+	<div class="chart_sex">
 	남 <font id="mlow_t"></font>
 	<font type="text" id="mlow"></font><br>
 	여 <font id="wlow_t"></font>
 	<font type="text" id="wlow"></font>
+	</div>
 	</div>
 	<hr>
 	
@@ -117,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		</tbody>
 	</table>
 	</div>
-
+</div>
 
 
 

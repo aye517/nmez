@@ -391,7 +391,7 @@ function finalCheck() {
 	<div id="address" class="int_id">
 	<span>
 	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" readonly class="int">
-	  <input type="button" onclick="findAddr()" value="우편번호 찾기" class="d_form mini">
+	  <input type="button" onclick="findAddr()" value="우편번호 찾기" class="d_form_mini">
 	</span>
 	  <br>
 	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly class="int"> 

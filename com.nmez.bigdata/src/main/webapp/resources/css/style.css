@@ -252,17 +252,20 @@ button, dd, dl, dt, fieldset, form, h1, h2, h3, h3, h5, h6, input,
 	flex-direction: column;
 	
 }
+.d_form_mini{
+	border-width: 1px;
+	border-radius: 3px;
+}
 .submit_button{
+	height:40px;
 	width: 100%;
-	height: 40px;
+	border-width: 1px;
+	border-radius: 3px;
 }
 #mypage{
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-    align-content: space-around;
-    flex-wrap: nowrap;
+    align-items: center;
 }
 .modal{ 
   position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.8); top:0; left:0; display:none; z-index: 1000;
@@ -295,6 +298,7 @@ button, dd, dl, dt, fieldset, form, h1, h2, h3, h3, h5, h6, input,
 	padding-bottom: 10px;
 	padding-top: 10px;
 	text-align: center;
+	
 }
 .modal_close{
 	position:absolute;
@@ -311,9 +315,24 @@ button, dd, dl, dt, fieldset, form, h1, h2, h3, h3, h5, h6, input,
     text-align: center;
     padding-top: 13px;
 }
+.button_div{
+	display: flex;
+	justify-content: center;
+}
+.myPage_button_div{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
 .login_button{
 	height:40px;
-	width: 100%;
+	width: 60%;
+	border-width: 1px;
+	border-radius: 3px;
+}
+.drop_button_div{
+	display: flex;
+	justify-content: center;
 }
 th, tr ,td{
 	padding-right: 25px;
@@ -340,4 +359,37 @@ th, tr, td {
   line-height:23px; cursor:pointer;
   z-index: 1000;
   border: 1px solid white;
+<<<<<<< HEAD
 }
+=======
+}
+.chart_div{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-content: center;
+}
+.mapToChart_div{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	
+}
+.chart_table{
+	display : flex;
+	justify-content: center;
+}
+.canvas-container{
+	display: flex;
+	justify-content: center;
+}
+.chart_table_line{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.myPage_h1{
+	display: flex;
+	justify-content : center;
+}
+>>>>>>> refs/remotes/origin/catdogbranch0725

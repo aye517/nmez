@@ -53,8 +53,12 @@ $(document).ready(function() {
 <body id="header">
 	<nav class="navbar">
 		<div class="navbar_logo">
-		<h3><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i>
-			<a href="/bigdata/logo">NMEZ</a></h3>
+			<h3>
+				<a href="/bigdata/logo"> 
+				<i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i> 
+				NMEZ
+				</a>
+			</h3>
 		</div>
 
 		<ul class="navbar_menu">
@@ -91,7 +95,9 @@ $(document).ready(function() {
 	    <h5>아이디</h5> <input type="text" name="uId" class="login_input">
 	    <h5>비밀번호</h5> <input type="password" name="uPw" class="login_input">
 	    <br>
+	    <div class="button_div">
 	    <input type="submit" value="로그인" class="login_button" >
+	    </div>
 	    </form>
   </div>
 
