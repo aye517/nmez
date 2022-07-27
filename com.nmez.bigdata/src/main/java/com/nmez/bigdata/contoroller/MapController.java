@@ -49,7 +49,25 @@ public class MapController {
 		return mav;
 	}
 	
-	
+	@RequestMapping(value = "/getChartM", method = RequestMethod.GET)
+	public ModelAndView getChartM(String code, String t_month) {
+		ModelAndView mav = new ModelAndView();
+		System.out.println(code);
+		T_dataVO vo = new T_dataVO();
+		vo.setT_code(code);
+		vo.setT_month(t_month);
+		
+		List<T_dataVO> t_dataList = dataService.timeData(vo);
+		List<S_dataVO> s_dataList = dataService.genderData(code);
+		P_dataVO p_data = dataService.popData(code);
+		
+		mav.addObject("t_dataList", t_dataList);
+		mav.addObject("p_data", p_data);
+		mav.addObject("s_dataList", s_dataList);
+		
+		mav.setViewName("/bigdata/map/MapToChart");
+		return mav;
+	}
 	
 	
 }

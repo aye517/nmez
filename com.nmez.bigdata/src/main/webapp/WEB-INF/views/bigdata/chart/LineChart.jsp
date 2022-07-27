@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/css/style.css">
 <title>LineChart.jsp</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -69,33 +70,29 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 <body>
 
-code search:
-<form action="lineChart" method="post">
-	<input type="text" name="t_code" placeholder="행정코드" value="${t_dataList[0].t_code}">
-	<select name="t_month">
-		<option selected="selected">1월</option>
-		<%for (int i=2; i<=12; i++) {%>
-		<option><%=i %>월</option>
-		<%}; %>
-	</select>
-	<input type="submit">
-</form>
-
+<div class="canvas-container">
 <canvas id="line_chart" width="500" height="300"></canvas>
+</div>
 
-	<div>
+<div>
+
+	<div class="chart_table_line">
 	<h4>활동인구 가장 많은 시간</h4>
+	<div class="chart_sex">
 	남 <font id="mhigh_t" ></font>
 	<font type="text" id="mhigh"></font><br>
 	여 <font id="whigh_t"></font>
 	<font type="text" id="whigh"></font>
+	</div>
 	<br>
 	<br>
 	<h4>활동인구 가장 적은 시간</h4>
+	<div class="chart_sex">
 	남 <font id="mlow_t"></font>
 	<font type="text" id="mlow"></font><br>
 	여 <font id="wlow_t"></font>
 	<font type="text" id="wlow"></font>
+	</div>
 	</div>
 	<hr>
 	
@@ -129,7 +126,7 @@ code search:
 		</tbody>
 	</table>
 	</div>
-
+</div>
 
 
 

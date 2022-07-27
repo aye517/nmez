@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/css/style.css">
 <title>PieChart.jsp</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -12,9 +13,12 @@
 </head>
 <body>
 
+<div class="canvas-container">
 <canvas id="pie-chart" width="500" height="300"></canvas>
+</div>
 
-<div>
+
+<div class="chart_table">
 	<table>
 		<thead>
 			<tr>
@@ -37,6 +41,7 @@
 		</tbody>
 	</table>
 	</div>
+<hr>
 
 
 <script type="text/javascript">
