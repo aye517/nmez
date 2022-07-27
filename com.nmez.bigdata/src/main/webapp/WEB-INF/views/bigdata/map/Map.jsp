@@ -14,7 +14,7 @@
 
 </head>
 <body>
-<a href="#" onclick="window.open()" style="color: black">생활인구</a>
+
 <h1>생활인구분석</h1>
 <br>
 <h3>지도를 확대해 행정구역을 클릭하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
@@ -2601,8 +2601,9 @@
 	var code = [];
     
     
-	var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
-    imageSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
+	//var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
+    var imageSrc = 'https://cdn.pixabay.com/photo/2017/09/29/00/30/checkmark-icon-2797531_1280.png',
+	imageSize = new kakao.maps.Size(20, 20), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(15, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
    		
     for(var n = 0; n < data.positions.length; n++){
@@ -2620,6 +2621,7 @@
 					image : markerImage
 				});
 			
+			   var iwRemoveable = true;
 			// 인포윈도우를 생성합니다
 			    var infowindow = new kakao.maps.InfoWindow({
 			        content : '<a href=\"#\" onclick=window.open(\"/bigdata/getChart?code='+code[n]+'\")  style=\"color:black\">' + data.positions[n].address+' 생활인구</a>'
@@ -2630,7 +2632,7 @@
 			    kakao.maps.event.addListener(marker,'mouseover',makeClick(map, marker, infowindow));
 			    kakao.maps.event.addListener(marker,'mouseout',infoOut(map, marker,infowindow));
 			    kakao.maps.event.addListener(marker, 'click', function() {
-			    	
+			  
 			    //window.open("/bigdata/getChart?code="+marker.Gb,"상세페이지","width=700,height=1500,left=100,top=50"); 
 			  });
 		}

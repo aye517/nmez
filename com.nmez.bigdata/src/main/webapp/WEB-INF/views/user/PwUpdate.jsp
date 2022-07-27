@@ -3,8 +3,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>PwUpdate.jsp</title>
+<style type="text/css">
+.userForm{
+	width:50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	align-items: center;
+}
+.uesrInput{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	justify-content: center;	
+	padding-bottom: 10px;
+	padding-top: 10px;
+	height: auto;
+	align-items: center;
+}
+.login_button{
+	height:40px;
+	width: 100%;
+}
+body{
+
+	font-family: 'Nanum Gothic', sans-serif;
+	background: #f5f6f7;
+	
+}
+.int{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 29px;
+    border: none;
+    background: #fff;
+    font-size: 15px;
+}
+</style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
@@ -134,6 +174,7 @@ function pwUpdate() {
 
 };
 
+
 </script>
 
 <!-- session invalidate -->
@@ -161,16 +202,19 @@ function sessionOut() {
 </head>
 
 <body>	
-
+<div class="userForm">
 <h1>비밀번호 변경</h1>
+<div class="userInput">
 	<form>
-	기존 비밀번호 입력 <input id="oldPw" type="password"> <br>
-	변경 비밀번호 입력 <input id="newPw" type="password" name="uPw">
+	기존 비밀번호 입력 <input id="oldPw" type="password" class="int"> <br>
+	변경 비밀번호 입력 <input id="newPw" type="password" name="uPw" class="int">
 	<font id="pwalert" size=2></font><br>
-	변경 비밀번호 확인 <input id="newPwCheck" type="password">
+	변경 비밀번호 확인 <input id="newPwCheck" type="password" class="int">
 	<font id="checkPw" size=2></font><br>
 	<br>
-	<input type="button" value="변경하기"  onclick="check()"> 
+	<input type="button" value="변경하기"  onclick="check()" class="login_button"> 
 	</form>
+</div>
+</div>
 </body>
 </html>

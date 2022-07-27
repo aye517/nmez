@@ -24,7 +24,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/logo", method = RequestMethod.GET)
 	public String logoMain() {
-		return "/main/Main";
+		return "redirect:/";
 	}
 	
 	

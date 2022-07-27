@@ -69,18 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </head>
 <body>
 
-code search:
-<form action="lineChart" method="post">
-	<input type="text" name="t_code" placeholder="행정코드" value="${t_dataList[0].t_code}">
-	<select name="t_month">
-		<option selected="selected">1월</option>
-		<%for (int i=2; i<=12; i++) {%>
-		<option><%=i %>월</option>
-		<%}; %>
-	</select>
-	<input type="submit">
-</form>
-
 <canvas id="line_chart" width="500" height="300"></canvas>
 
 	<div>
