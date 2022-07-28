@@ -37,8 +37,13 @@
 <div class="chart_div">
 
 <div class="chart_div_div"> 
+
 <%@ include file="../chart/LineChart.jsp"%>
+
 </div>
+
+<br>
+
 <br>
 
 
@@ -46,7 +51,10 @@
 <div class="chart_div_div">
 <h3>남녀 생활인구 비율</h3>
 
+
+<div class="chart_div_div"> 
 <%@ include file="../chart/PieChart.jsp"%>
+</div>
 </div>
 <br>
 
@@ -55,7 +63,6 @@
 <%@ include file="../chart/BarChart.jsp"%>
 </div>
 
-</div>
 </div>
 </div>
 </div>
