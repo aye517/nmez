@@ -119,16 +119,6 @@ function dropPopup(){
 
 	</form>
 
-
-	<br>
-	 
-	
-	<input type="button" value="비밀번호 변경" onclick="popup();" class="login_button">
-	<br>
-	<a href="#" onclick='window.open("/bigdata/userDrop","_blank","height=300,width=500, status=yes,toolbar=no,menubar=no,location=no");return false'>
-	<button class="login_button">회원탈퇴하기</button></a>
-
-
 	</div>
 
 </body>

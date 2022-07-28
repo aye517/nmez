@@ -16,10 +16,6 @@
 <h1>${p_data.p_place }의 상권 정보</h1>
 </div>
 
-
-<div class="chart_div">
-<div class="chart_div_div"> 
-
 <h3>월별 생활인구</h3>
 <form action="getChartM?t_code=${t_dataList[0].t_code}&t_month=${t_dataList[0].t_month}" method="get">
 	<input type="hidden" name="code" placeholder="행정코드" value="${t_dataList[0].t_code}">
@@ -32,7 +28,6 @@
 	<input type="submit">
 </form>
 
-<<<<<<< HEAD
 <div class="chart_div">
 
 <div class="chart_div_div"> 

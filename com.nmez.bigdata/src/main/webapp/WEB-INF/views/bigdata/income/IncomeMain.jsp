@@ -13,7 +13,7 @@
 
 <%@ include file="../../main/Header.jsp"%>
 </head>
-
+<div>
 <c:forEach var="gu" items="${guList }">
 <span id="gu" hidden="hidden">${gu.gu}</span>
 </c:forEach>
@@ -25,78 +25,218 @@
 <c:forEach var="sector" items="${sectorList }">
 <span id="sector" hidden="hidden">${sector.sector}</span>
 </c:forEach>
-
+</div>
 <script type="text/javascript">
 
 //구 리스트
 var guList = [];
 guList = document.querySelectorAll('#gu');
-var gu = [];
+var guselect = [];
 
 var i = 0;
 for(i=0; i<25; i++){
-	gu[i] = guList[i].innerText;
+	guselect[i] = guList[i].innerText;
 }
 //console.log(gu);
+
+
+//업종별 리스트
+var sectorList = [];
+sectorList = document.querySelectorAll('#sector');
+var sectorselect = [];
+
+for(i=0; i<23; i++){
+	sectorselect[i] = sectorList[i].innerText;
+};
+//console.log(sector);
 
 
 //동 리스트
 var dongList = [];
 dongList = document.querySelectorAll('#dong');
-var dong = [];
-
-for(i=0; i<369; i++){
-	dong[i] = dongList[i].innerText;
-	}
 //console.log(dong);
 
-//업종별 리스트
-var sectorList = [];
-sectorList = document.querySelectorAll('#sector');
-var sector = [];
 
-for(i=0; i<23; i++){
-	sector[i] = sectorList[i].innerText;
+//구별 동 리스트 생성 시작=============================
+
+//구 옵션 select 시 동 옵션 변경
+const getGu = (target) => {
+	  const guValue = target.value;
+	  const guText =  target.options[target.selectedIndex].text;
+	  console.log(guValue);
+	  getDong(guValue);
 	}
-//console.log(sector);
 
+const dongselect = [];
+
+
+//시작시 강남구의 동
+function dongFirst(dongselect) {
+	//console.log(dongselect);
+ 	for(var i=0; i < dongselect.length; i++) {
+         $('#select_dong').append('<option value="' + dongselect[i] + '">' + dongselect[i] + '</option>');    
+     }
+};
+
+//구 변경시 바뀐 동 가져오기
+function dongUpdate(dongselect) {
+	var pieDong = document.getElementById("hDong").innerText;
+	$("#select_dong").empty();
+  for(var i=0; i < dongselect.length; i++) {
+  	$("#select_dong").append('<option value="' + dongselect[i] + '">' + dongselect[i] + '</option>');
+  }
+  	$("#select_dong  > option[value="+pieDong+"]").attr("selected", "true");  
+}
+
+
+function getDong(guValue) {
+	
+	//alert("getDong ajax실행");
+	const param = {
+			"gu" : guValue
+		};
+	$.ajax({
+		type : "post",
+		url : "getDong",
+		contentType : 'application/json',
+		data : JSON.stringify(param),
+		success : function(result) {
+			if(result != null) {
+				for(i=0; i<result.length; i++){
+					dongselect[i] = result[i].dong;
+					}
+				
+				dongUpdate(dongselect);
+			//console.log(dongselect[0]);
+			}else{
+				console.log("없는 정보");
+			}
+		},
+		error : function() {
+			console.log("요청 실패");
+		}		
+	});
+};
+
+
+function getDongFirst(guValue) {
+	
+	//alert("getDong ajax실행");
+	const param = {
+			"gu" : guValue
+		};
+	$.ajax({
+		type : "post",
+		url : "getDong",
+		contentType : 'application/json',
+		data : JSON.stringify(param),
+		success : function(result) {
+			if(result != null) {
+				for(i=0; i<result.length; i++){
+					dongselect[i] = result[i].dong;
+					}				
+			//console.log(dongselect[0]);
+			dongFirst(dongselect);
+			}else{
+				console.log("없는 정보");
+			}
+		},
+		error : function() {
+			console.log("요청 실패");
+		}		
+	});
+};
+
+
+//console.log(dongselect);
 $(document).ready(function(){
-    //구 selectbox
-    for(var i=0 ; i < gu.length ; i++) {
-        $('#select_gu').append('<option value="' + gu[i] + '">' + gu[i] + '</option>');    
-    }
-    //동 selectbox            
-    for(var i=0; i < dong.length; i++) {
-        $('#select_dong').append('<option value="' + dong[i] + '">' + dong[i] + '</option>');    
-    }
-    //업종 selectbox
-    for(var i=0; i < sector.length; i++) {
-        $('#select_sector').append('<option value="' + sector[i] + '">' +sector[i] + '</option>');    
-    }
-    //받아온 데이터값이 없으면 0번째 option default
-    if ('${pieData}' != ''){
-    $("#select_gu  > option[value=${pieData[0].gu}]").attr("selected", "true");        
-    $("#select_dong  > option[value=${pieData[0].dong}").attr("selected", "true");    
-    $("#select_sector  > option[value=${pieData[0].sector}]").attr("selected", "true");           	
-    } else{
-    	$("#select_gu  > option[value="+gu[0]+"]").attr("selected", "true");        
-        $("#select_dong  > option[value="+dong[0]+"]").attr("selected", "true");    
-        $("#select_sector  > option[value="+sector[0]+"]").attr("selected", "true");           	
-    }
+	
+    var pieId = document.getElementById("hId").innerText;
+    console.log(pieId);
+    var pieGu = document.getElementById("hGu").innerText;
+    var pieDong = document.getElementById("hDong").innerText;
+    var pieSector = document.getElementById("hSector").innerText;
+    console.log(pieGu, pieDong, pieSector);
+    //console.log("pieId="+pieId);
     
-});
+     if ( pieId === '' || pieId === null){
+    	$('#showCharts').hide();
+ 		$('#noData').append("<h1>해당 지역의 데이터가 없습니다!</h1>");
+     }else{
+    	 $('#showCharts').show();
+     }
+	
+    //구 selectbox
+	 if ( pieId === '' || pieId === null){
+		for(var i=0 ; i < guselect.length ; i++) {
+			$('#select_gu').append('<option value="' + guselect[i] + '">' + guselect[i] + '</option>');    
+		}
+		$("#select_gu  > option[value="+guselect[0]+"]").attr("selected", "true"); 
+		
+	 } else{
+		for(var i=0 ; i < guselect.length ; i++) {
+			$('#select_gu').append('<option value="' + guselect[i] + '">' + guselect[i] + '</option>');    
+		}
+		$("#select_gu  > option[value="+pieGu+"]").attr("selected", "true");     
+	 }
+  
+   //동 selectbox   
+    if ( pieId === '' || pieId === null){
+		getDongFirst(guselect[0]);
+        $("#select_dong  > option[value="+dongselect[0]+"]").attr("selected", "true");    
+	}else {
+		getDong(pieGu);
+	};
+   //console.log(dongselect[0]);
+   
+   //업종 selectbox
+   
+	   if ( pieId === '' || pieId === null){
+		   for(var i=0; i < sectorselect.length; i++) {
+		       $('#select_sector').append('<option value="' + sectorselect[i] + '">' + sectorselect[i] + '</option>');   
+			}	
+		   $("#select_sector  > option[value="+sectorselect[0]+"]").attr("selected", "true");
+		}else {
+			for(var i=0; i < sectorselect.length; i++) {
+			       $('#select_sector').append('<option value="' + sectorselect[i] + '">' + sectorselect[i] + '</option>');   
+			}
+		    $("#select_sector > option[value="+pieSector+"]").attr("selected", "true");
+		}
+
+    
+
+}); //function end
+
+
 </script>
 
-
 <body>
+<span id="hId" hidden="hidden">${pieData[0].id}</span>
+<span id="hGu" hidden="hidden">${pieData[0].gu}</span>
+<span id="hDong" hidden="hidden">${pieData[0].dong}</span>
+<span id="hSector" hidden="hidden">${pieData[0].sector}</span>
+
+<h1>매출분석</h1>
+<br>
+<h3>지역과 업종을 선택하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
+
 <form action="incomeCharts" method="get" >
-<select id="select_gu" name="gu" class="sel"></select>
+<select onchange="getGu(this)" id="select_gu" name="gu" class="sel"></select>
 <select id="select_dong" name="dong" class="sel"></select>
 <select id="select_sector" name="sector" class="sel"></select>
 <input type="submit">
 </form>
 
+<hr>
+<div id="showCharts">
+<h1>${pieData[0].gu} ${pieData[0].dong} ${pieData[0].sector} 매출정보</h1>
 <%@ include file="./IncomeCharts.jsp"%>
+</div>
+
+<!--넓게 나오게 해주세요 -->
+<div id="noData">
+
+</div>
 
 </body>
 <%@ include file="../../main/Footer.jsp"%>

@@ -11,21 +11,24 @@
 
 </head>
 <body>
-
-<table>
+<h2>매출 남녀비율</h2>
+<table hidden="hidden">
 <thead>
 <tr>
 <th>woman</th>
 <th>man</th>
-<th>법카</th>
+<th>gu</th>
+<th>dong</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<c:forEach var="pie" items="${pieData }">
-<td class="woman">${pie.woman }</td>
-<td class="man">${pie.man }</td>
-<td class="bc_card">${pie.bc_card }</td>
+<c:forEach var="data" items="${pieData }">
+<td class="woman">${data.woman }</td>
+<td class="man">${data.man }</td>
+<td class="gu">${data.gu }</td>
+<td class="dong">${data.dong }</td>
+<td class="sector">${data.sector }</td>
 </c:forEach>
 </tr>
 </tbody>
@@ -38,25 +41,31 @@
 
 <script type="text/javascript">
 
-var man = document.getElementsByClassName("man");
-console.log(man[0].innerText);
+var man = document.getElementsByClassName("man")[0].innerText;
+//console.log(man);
+var woman = document.getElementsByClassName("woman")[0].innerText;
+var gu = document.getElementsByClassName("gu")[0].innerText;
+var dong = document.getElementsByClassName("dong")[0].innerText;
+var sector = document.getElementsByClassName("sector")[0].innerText;
+
 
 
 new Chart(document.getElementById("pie-chart"), {
     type: 'pie',
     data: {
-      labels: ["남성","여성","법인카드"],
+      labels: ["남자 하루매출 : "+ man +"원"
+    	  	,"여자 하루매출 : "+ woman +"원"],
       datasets: [{
         label: "Population",
-        backgroundColor: ["#3e95cd", "#e8c3b9",'#b1c2ff'],
-        data: [,]
+        backgroundColor: ["#3e95cd", "#e8c3b9"],
+        data: [man, woman]
       }]
     },
     options: {
     	responsive: false,
     	title: {
-        display: true,
-        text: '<'+ + '> 총 생활인구 : ' + + '명'
+        display: false,
+        text: '<' +gu +' '+ dong +' '+ sector +'>'
       }
     }
 });
