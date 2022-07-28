@@ -38,10 +38,19 @@ public class MainController {
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public ModelAndView mypage() {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("session");
+		mav.addObject("session"); //정보수정후 바뀐 세션 add
 		mav.setViewName("/user/Mypage");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/cloud", method = RequestMethod.GET)
+	public ModelAndView cloud() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/bigdata/cloud/Cloud");
+		return mav;
+	}
+	
+
 
 	
 }

@@ -21,6 +21,7 @@
 
 <div class="chart_div_div"> 
 
+
 <h3>월별 생활인구</h3>
 <form action="getChartM?t_code=${t_dataList[0].t_code}&t_month=${t_dataList[0].t_month}" method="get">
 	<input type="hidden" name="code" placeholder="행정코드" value="${t_dataList[0].t_code}">
@@ -33,22 +34,29 @@
 	<input type="submit">
 </form>
 
+<div class="chart_div">
 
+<div class="chart_div_div"> 
 <%@ include file="../chart/LineChart.jsp"%>
 </div>
 <br>
 
-<div class="chart_div_div"> 
+
+
+<div class="chart_div_div">
+<h3>남녀 생활인구 비율</h3>
+
 <%@ include file="../chart/PieChart.jsp"%>
 </div>
 <br>
 
+<h3>연령대별 생활인구</h3>
 <div class="chart_div_div">
 <%@ include file="../chart/BarChart.jsp"%>
 </div>
 
-
-
+</div>
+</div>
 </div>
 </div>
 </body>

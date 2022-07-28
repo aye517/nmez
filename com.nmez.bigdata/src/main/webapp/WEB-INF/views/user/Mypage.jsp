@@ -50,7 +50,6 @@ function popup(){
 	window.open("pwUpdate","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
 
 }
-
 function dropPopup(){
 	console.log(popupX,popupY);
 	window.open("/bigdata/userDrop","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
@@ -109,8 +108,6 @@ function dropPopup(){
 	<input type="button" value="회원탈퇴하기" onclick="dropPopup();" class="login_button">
 
 	</form>
-
-
 	</div>
 
 </body>

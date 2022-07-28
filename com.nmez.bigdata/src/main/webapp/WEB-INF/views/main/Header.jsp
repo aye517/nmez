@@ -63,9 +63,9 @@ $(document).ready(function() {
 
 		<ul class="navbar_menu">
 			<li><i class="fa-solid fa-chart-pie" style="color:orange;"></i> <a href="map">생활인구분석</a></li>
-			<li><i class="fa-solid fa-chart-line"  style="color:#CC99FF;"></i> <a href="">매출분석</a></li>
+			<li><i class="fa-solid fa-chart-line"  style="color:#CC99FF;"></i> <a href="income">매출분석</a></li>
 			<li><i class="fa-solid fa-magnifying-glass" style="color:#4CBB17"></i> <a href="">상권분류</a></li>
-			<li><i class="fa-solid fa-cloud" style="color:skyblue"></i> <a href="">트렌드분석</a></li>
+			<li><i class="fa-solid fa-cloud" style="color:skyblue"></i> <a href="cloud">트렌드분석</a></li>
 			<li><i class="fa-regular fa-comment-dots" style="color: #F64A8A;"></i> <a href="">문의하기</a>
 			
 		</ul>
