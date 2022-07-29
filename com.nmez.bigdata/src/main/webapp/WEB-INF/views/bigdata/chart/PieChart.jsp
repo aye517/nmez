@@ -19,7 +19,7 @@
 
 
 <div class="chart_table">
-	<table>
+	<table hidden="hidden">
 		<thead>
 			<tr>
 				<th>no.</th>

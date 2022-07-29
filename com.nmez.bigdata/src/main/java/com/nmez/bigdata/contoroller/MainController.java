@@ -51,6 +51,12 @@ public class MainController {
 	}
 	
 
-
+	@RequestMapping(value = "/portfolio", method = RequestMethod.GET)
+	public ModelAndView pfMain() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/portfolio/PfMain");
+		return mav;
+	}
+	
 	
 }

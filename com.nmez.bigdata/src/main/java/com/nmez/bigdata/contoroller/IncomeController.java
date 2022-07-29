@@ -82,10 +82,12 @@ public class IncomeController {
 		
 		ModelAndView mav = new ModelAndView();
 		
+		boolean isLoad = true;
+		
 		mav.addObject("guList", guList);
 		mav.addObject("dongList",dongList);
 		mav.addObject("sectorList",sectorList);
-		
+		mav.addObject("isLoad",isLoad);
 		mav.addObject("pieData", pieData);
 		mav.addObject("lineData", lineData);
 		mav.addObject("ageBarData", ageBarData);

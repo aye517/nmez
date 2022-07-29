@@ -150,21 +150,33 @@ function getDongFirst(guValue) {
 
 //console.log(dongselect);
 $(document).ready(function(){
-	
+	//console.log('${isLoad}');
     var pieId = document.getElementById("hId").innerText;
-    console.log(pieId);
+    //console.log(pieId);
     var pieGu = document.getElementById("hGu").innerText;
     var pieDong = document.getElementById("hDong").innerText;
     var pieSector = document.getElementById("hSector").innerText;
-    console.log(pieGu, pieDong, pieSector);
+    //console.log(pieGu, pieDong, pieSector);
     //console.log("pieId="+pieId);
+    //$('#noData').hide();
     
-     if ( pieId === '' || pieId === null){
-    	$('#showCharts').hide();
- 		$('#noData').append("<h1>해당 지역의 데이터가 없습니다!</h1>");
-     }else{
-    	 $('#showCharts').show();
-     }
+    //첫 검색 페이지, 정보 검색 후 페이지 처리
+    if( '${isLoad}' === 'true'){
+    	  if ( pieId === '' || pieId === null){
+    	    	$('#showCharts').hide();
+    	 		$('#noData').append("<h1>해당 지역의 데이터가 없습니다!</h1>");
+    	     }else{
+    	    	 $('#showCharts').show();
+    	     }
+    }else{
+    	if ( pieId === '' || pieId === null){
+	    	$('#showCharts').hide();
+	     }else{
+	    	 $('#showCharts').show();
+	     }
+    	
+    };
+   
 	
     //구 selectbox
 	 if ( pieId === '' || pieId === null){
@@ -202,9 +214,6 @@ $(document).ready(function(){
 			}
 		    $("#select_sector > option[value="+pieSector+"]").attr("selected", "true");
 		}
-
-    
-
 }); //function end
 
 
@@ -220,7 +229,7 @@ $(document).ready(function(){
 <br>
 <h3>지역과 업종을 선택하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
 
-<form action="incomeCharts" method="get" >
+<form id="select" action="incomeCharts" method="get" >
 <select onchange="getGu(this)" id="select_gu" name="gu" class="sel"></select>
 <select id="select_dong" name="dong" class="sel"></select>
 <select id="select_sector" name="sector" class="sel"></select>
