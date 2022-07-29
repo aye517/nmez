@@ -11,9 +11,11 @@
 
 </head>
 <body>
-<h2>개인카드(성별), 법인카드 매출</h2>
-<%@ include file="./IncomePie.jsp"%>
 
+<%@ include file="./IncomePie.jsp"%>
+<%@ include file="./IncomeLine.jsp"%>
+<%@ include file="./IncomeAgeBar.jsp"%>
+<%@ include file="./IncomeDayBar.jsp"%>
 
 </body>
 </html>

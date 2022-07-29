@@ -17,6 +17,12 @@
 		]]>
 	</select>
 	
+	<select id="guDong" parameterType="IsexVO" resultType="hashmap">
+		<![CDATA[
+			select distinct dong from income_sex where gu = #{gu};
+		]]>
+	</select>
+	
 	<select id="sector" parameterType="IsexVO" resultType="hashmap">
 		<![CDATA[
 			select distinct sector from income_sex;

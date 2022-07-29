@@ -20,7 +20,7 @@ code search:
 <canvas id="line_chart" width="500" height="300"></canvas>
 
 
-<table>
+<table hidden="hidden">
 	<thead>
 		<tr>
 			<th>no.</th>

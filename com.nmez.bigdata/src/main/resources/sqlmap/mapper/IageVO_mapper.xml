@@ -5,9 +5,10 @@
 
 <mapper namespace="IageVO">
 
-	<select id="data" parameterType="IageVO" resultType="hashmap">
+	<select id="selectData" parameterType="IageVO" resultType="hashmap">
 		<![CDATA[
-			
+			select * from income_age
+			where gu = #{gu} and dong = #{dong} and sector = #{sector};
 		]]>
 	</select>
 	

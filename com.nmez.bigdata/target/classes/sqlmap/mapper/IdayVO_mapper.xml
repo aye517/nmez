@@ -5,9 +5,10 @@
 
 <mapper namespace="IdayVO">
 
-	<select id="data" parameterType="IdayVO" resultType="hashmap">
+	<select id="selectData" parameterType="IdayVO" resultType="hashmap">
 		<![CDATA[
-		
+			select * from income_day
+			where gu = #{gu} and dong = #{dong} and sector = #{sector};
 		]]>
 	</select>
 	

@@ -5,10 +5,12 @@
 
 <mapper namespace="ItimeVO">
 
-	<select id="data" parameterType="ItimeVO" resultType="hashmap">
+	<select id="selectData" parameterType="ItimeVO" resultType="hashmap">
 		<![CDATA[
-			
+			select * from income_time
+			where gu = #{gu} and dong = #{dong} and sector = #{sector};
 		]]>
 	</select>
+
 	
 </mapper>

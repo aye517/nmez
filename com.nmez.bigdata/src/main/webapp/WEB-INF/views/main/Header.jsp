@@ -77,7 +77,7 @@ $(document).ready(function() {
 			<li id="login"><i class="fa-solid fa-right-to-bracket"></i> 로그인</li>
 			<li hidden="hidden" id="logout"><i class="fa-solid fa-right-from-bracket"></i> <a href="logout">로그아웃</a></li>
 		
-			<li><i class="fa-solid fa-folder" style="color:white"></i> <a href="">포트폴리오</a></li>
+			<li><i class="fa-solid fa-folder" style="color:white"></i> <a href="portfolio">포트폴리오</a></li>
 		</ul>
 		<a href="#" class="navbar_toogleBtn"><i class="fa-solid fa-bars"></i></a>
 	</nav>
