@@ -66,7 +66,7 @@ function userDrop() {
 		};
 	$.ajax({
 		type : "post",
-		url : "user/userDrop",
+		url : "userDrop",
 		contentType : 'application/json',
 		data : JSON.stringify(param),
 		success : function(result) {
@@ -90,7 +90,7 @@ function sessionOut() {
 	alert("session out실행");
 	$.ajax({
 		type : "post",
-		url : "user/sessionOut",
+		url : "sessionOut",
 		success : function(result) {
 			if(result == 1) {
 				console.log("session invalidate");

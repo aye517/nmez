@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">   
+
+<mapper namespace="StoreVO">
+
+	<select id="gu" parameterType="StoreVO" resultType="hashmap">
+		<![CDATA[
+			select distinct gu from store;
+		]]>
+	</select>
+
+	<select id="dong" parameterType="StoreVO" resultType="hashmap">
+		<![CDATA[
+			select distinct dong from store where gu = #{gu};
+		]]>
+	</select>
+
+	<select id="category" parameterType="StoreVO" resultType="hashmap">
+		<![CDATA[
+			select distinct category from store;
+		]]>
+	</select>
+	
+	<select id="sector" parameterType="StoreVO" resultType="hashmap">
+		<![CDATA[
+			select distinct sector from store where category = #{category};
+		]]>
+	</select>
+
+	<select id="selectData" parameterType="StoreVO" resultType="hashmap">
+		<![CDATA[
+			select gu, dong, category, sector, x, y, count(sector) as count from store
+			where gu = #{gu} and category = #{category} and sector = #{sector}
+			group by dong;
+		]]>
+	</select>
+	
+</mapper>

@@ -201,19 +201,19 @@ $(document).ready(function(){
 	};
    //console.log(dongselect[0]);
    
-   //업종 selectbox
+   //sector selectbox
    
-	   if ( pieId === '' || pieId === null){
-		   for(var i=0; i < sectorselect.length; i++) {
+   if ( pieId === '' || pieId === null){
+	   for(var i=0; i < sectorselect.length; i++) {
+	       $('#select_sector').append('<option value="' + sectorselect[i] + '">' + sectorselect[i] + '</option>');   
+		}	
+	   $("#select_sector  > option[value="+sectorselect[0]+"]").attr("selected", "true");
+	}else {
+		for(var i=0; i < sectorselect.length; i++) {
 		       $('#select_sector').append('<option value="' + sectorselect[i] + '">' + sectorselect[i] + '</option>');   
-			}	
-		   $("#select_sector  > option[value="+sectorselect[0]+"]").attr("selected", "true");
-		}else {
-			for(var i=0; i < sectorselect.length; i++) {
-			       $('#select_sector').append('<option value="' + sectorselect[i] + '">' + sectorselect[i] + '</option>');   
-			}
-		    $("#select_sector > option[value="+pieSector+"]").attr("selected", "true");
 		}
+	    $("#select_sector > option[value="+pieSector+"]").attr("selected", "true");
+	}
 }); //function end
 
 
