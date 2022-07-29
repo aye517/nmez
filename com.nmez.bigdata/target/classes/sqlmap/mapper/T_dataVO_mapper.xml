@@ -12,4 +12,11 @@
 		]]>
 	</select>
 	
+	<select id="codeData" parameterType="String" resultType="hashmap">
+		<![CDATA[
+			select * from time
+			where t_code = #{t_code};
+		]]>
+	</select>
+	
 </mapper>

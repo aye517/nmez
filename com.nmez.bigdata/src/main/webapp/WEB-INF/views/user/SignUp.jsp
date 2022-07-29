@@ -180,7 +180,6 @@ function uPwCheck() {
 	    }
 	});
 };
-
 //입력값 무결성 check
 var nameCheck = false;
 var phoneCheck1 = false;
@@ -267,6 +266,7 @@ function isChecked() {
 	if($('#agreeCheck').is(':checked')){
 		agreeChecked = true;
 		$('input').attr('readonly', false);
+		$('#domain-txt').attr('readonly', true);
 	}else{
 		agreeChecked = false;
 		$('input').attr('readonly', true);
@@ -310,7 +310,7 @@ function finalCheck() {
 	</div>
 	<div class="permit">
 	<div class="permit_box">
-	<textarea rows="5" cols="60">
+	<textarea rows="5" cols="60" readonly="readonly">
 	개인정보 및 위치정보 제공 동의
 	1. nmez~
 	2. 동의 안하면 정보 입력 못함..
@@ -391,7 +391,7 @@ function finalCheck() {
 	<div id="address" class="int_id">
 	<span>
 	  <input id="uAddr1" type="text" name="uAddr1" placeholder="우편번호" readonly class="int">
-	  <input type="button" onclick="findAddr()" value="우편번호 찾기" class="d_form mini">
+	  <input type="button" onclick="findAddr()" value="우편번호 찾기" class="d_form_mini">
 	</span>
 	  <br>
 	  <input id="uAddr2" type="text" name="uAddr2" placeholder="주소" readonly class="int"> 
@@ -408,9 +408,9 @@ function finalCheck() {
 	<span class="uMail">
 	
 	<input type="text" name="uEmail" class="int_mail" id="email"> @
-	<input type="email" id="domain-txt" readonly="readonly" name="uEmail_domain" class="int_mail" >
+	<input type="text" id="domain-txt" readonly="readonly" name="uEmail_domain" class="int_mail" >
 		<select id="domain-list">
-			<option value="naver.com" selected="selected">naver.com</option>
+			<option value="naver.com">naver.com</option>
 			<option value="google.com">google.com</option>
 			<option value="hanmail.net">hanmail.net</option>
 			<option value="nate.com">nate.com</option>

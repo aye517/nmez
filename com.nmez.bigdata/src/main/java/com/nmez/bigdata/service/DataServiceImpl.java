@@ -28,15 +28,30 @@ public class DataServiceImpl implements DataService {
 	public List<T_dataVO> timeData(T_dataVO vo) {
 		return dataDao.timeData(vo);
 	}
+	
+	@Override
+	public List<T_dataVO> timeData(String code) {
+		return dataDao.timeData(code);
+	}
 
 	@Override
 	public P_dataVO popData(P_dataVO vo) {
 		return dataDao.popData(vo);
 	}
+	
+	@Override
+	public P_dataVO popData(String code) {
+		return dataDao.popData(code);
+	}
 
 	@Override
 	public List<S_dataVO> genderData(S_dataVO vo) {
 		return dataDao.genderData(vo);
+	}
+
+	@Override
+	public List<S_dataVO> genderData(String code) {
+		return dataDao.genderData(code);
 	}
 	
 }

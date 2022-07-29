@@ -25,7 +25,23 @@ public class UserDAO {
 	}
 
 	public int userIdCheck(String uId) {
-		return sqlSessionTemplate.selectOne("uIdCheck", uId);
+		return sqlSessionTemplate.selectOne("UserVO.uIdCheck", uId);
+	}
+
+	public UserVO userLogin(UserVO vo) {
+		return sqlSessionTemplate.selectOne("UserVO.login", vo);
+	}
+
+	public int userUpdate(UserVO vo) {
+		return sqlSessionTemplate.update("UserVO.update", vo);
+	}
+
+	public int pwUpdate(UserVO vo) {
+		return sqlSessionTemplate.update("UserVO.pwUpdate", vo);
+	}
+
+	public int userDrop(UserVO vo) {
+		return sqlSessionTemplate.delete("UserVO.delete", vo);
 	}
 				
 } //class end

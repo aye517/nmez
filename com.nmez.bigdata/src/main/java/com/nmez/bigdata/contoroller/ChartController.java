@@ -16,20 +16,14 @@ import com.nmez.bigdata.vo.T_dataVO;
 
 
 @Controller
-public class DataController {
+public class ChartController {
 
 	@Autowired
 	DataService dataService;
 	
 
-	public DataController() {
+	public ChartController() {
 //		System.out.println("Data Controller 생성");
-	}
-	
-	@RequestMapping(value = "/MapTest", method = RequestMethod.GET)
-	public String mapTest(DataVO vo) {
-
-		return "/bigdata/map/MapTest";
 	}
 	
 	@RequestMapping(value = "/chartTest", method = RequestMethod.GET)
@@ -98,5 +92,6 @@ public class DataController {
 		mav.setViewName("bigdata/chart/BarChart");
 		return mav;
 	}
+
 	
 }

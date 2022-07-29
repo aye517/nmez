@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/style.css?ver=1">
 <meta charset="UTF-8">
 <title>Footer.jsp</title>
 </head>
-<body>
+<body> 
 <hr>
 	<footer style="width: 100%; z-index: 1; bottom: 0; position: related;">
 	<div class="foo_div">
@@ -27,11 +27,11 @@
 			  	-->
 			</div>
 			<span><h5>copyright 2022 by NMEZ. All Rights Reserved.</h5></span>
+	</div>
 	</div> 
 
 		</div>
 
 	</footer>
-
 </body>
 </html>

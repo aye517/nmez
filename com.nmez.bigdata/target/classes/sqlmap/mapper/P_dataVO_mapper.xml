@@ -11,5 +11,10 @@
 			where p_code = #{p_code};
 		]]>
 	</select>
-	
+
+	<select id="codeData" parameterType="String" resultType="P_dataVO">
+		<![CDATA[
+			select * from pie where p_code = #{p_code};
+		]]>
+	</select>
 </mapper>

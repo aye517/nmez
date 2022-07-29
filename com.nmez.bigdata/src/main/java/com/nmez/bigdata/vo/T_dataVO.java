@@ -2,7 +2,8 @@ package com.nmez.bigdata.vo;
 
 public class T_dataVO {
 
-	int t_id, t_code;
+	int t_id;
+	String t_code;
 	String t_month, t_place, t_time;
 	double t_total, t_man, t_woman;
 	
@@ -14,12 +15,12 @@ public class T_dataVO {
 		this.t_id = t_id;
 	}
 
-	public int getT_code() {
+	public String getT_code() {
 		return t_code;
 	}
 
-	public void setT_code(int t_code) {
-		this.t_code = t_code;
+	public void setT_code(String code) {
+		this.t_code = code;
 	}
 
 	public String getT_month() {

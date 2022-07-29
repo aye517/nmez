@@ -6,13 +6,13 @@ body{
 	
 }
 html{
-	height: auto;;
+	height: 100%;
 }
 #signUp_main{
 	height: auto;
 	min-height: 100%;
 }
-#wrap_main{
+.wrap_main{
 	height: auto;
 	min-height: 100%;
 	display: flex;
@@ -26,7 +26,6 @@ a {
 	text-decoration: none;
 	color: white;
 }
-
 .navbar {
 	display: flex;
 	justify-content: space-between;
@@ -40,42 +39,34 @@ a {
 	height: auto;
 	z-index: 100;
 }
-
 .navbar_logo {
 	font-size: 24px;
 	color: white;
 }
-
 .navbar_logo i {
 	color: #d49466;
 }
-
 .navbar_menu {
 	display: flex;
 	list-style: none;
 	padding-left: 0;
 }
-
 .navbar_menu li {
 	padding: 8px 12px;
 }
-
 .navbar_icons {
 	list-style: none;
 	color: white;
 	display: flex;
-	padding-left: 0;
+	justify-content: flex-end;
 }
-
 .navbar_icons li {
 	padding: 8px 12px;
 }
-
 .navbar_menu li:hover {
 	background-color: #d49466;
 	border-radius: 4px;
 }
-
 .navbar_toogleBtn {
 	display: none;
 	position: absolute;
@@ -83,7 +74,10 @@ a {
 	font-size: 24px;
 	color: #d49466;
 }
-
+.navbar_menu.active,
+.navbar_icons.active{
+		display: flex;
+	}
 @media screen and (max-width:768px) {
 	.navbar {
 		flex-direction: column;
@@ -116,7 +110,6 @@ a {
 		display: flex;
 	}
 }
-
 footer {
 	display: flex;
 	position: relative;
@@ -127,11 +120,9 @@ footer {
 	background-color: #f5f6f7;
 	
 }
-
 footer span{
 	color: #d49466;
 }
-
 footer img {
 	width: 50px;
 	height: 50px;
@@ -140,7 +131,6 @@ footer img {
 	margin-top: 15px;
 	
 }
-
 .foo_div1 {
 	width:100%;
     height: auto;
@@ -149,24 +139,20 @@ footer img {
 	align-items: center;
 	justify-content: center;
 }
-
 .foo_div1 span {
 	font-size: 15px;
 	color: black;
 }
-
 .foo_div1 img {
 	width: 20px;
 	height: 20px;
 }
-
 .foo_div1 i {
 	color: #d49466;
 	width: 30px;
 	height: 30px;
 	margin-bottom: 12px;
 }
-
 #wrap{
 	display: flex;
 	justify-content: center;
@@ -180,7 +166,6 @@ footer img {
 	display: flex;
 	width:auto;
 	justify-content: center;
-
 }
 .permit_box  textarea{
 	width:50%;
@@ -198,17 +183,16 @@ footer img {
 
 }
 .userInput {
-	display: flex; 
+	display: flex;
 	flex-direction: column;
 	position: relative;
 	justify-content: center;	
 	padding-bottom: 10px;
 	padding-top: 10px;
 	height: auto;
-
 }
 button, dd, dl, dt, fieldset, form, h1, h2, h3, h3, h5, h6, input,
-   legend, li, ol, p, select, option, div, table, label, td, textarea, th, ul {
+   legend, li, ol, p, select, option, label, textarea, ul {
    margin: 0;
    padding: 0;
 }
@@ -268,7 +252,145 @@ button, dd, dl, dt, fieldset, form, h1, h2, h3, h3, h5, h6, input,
 	flex-direction: column;
 	
 }
+.d_form_mini{
+	border-width: 1px;
+	border-radius: 3px;
+}
 .submit_button{
+	height:40px;
 	width: 100%;
-	height: 40px;
+	border-width: 1px;
+	border-radius: 3px;
+}
+#mypage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal{ 
+  position:absolute; width:100%; height:100%; background: rgba(0,0,0,0.8); top:0; left:0; display:none; z-index: 1000;
+}
+
+.modal_content{
+  width:400px; height:300px;
+  background:#fff; border-radius:10px;
+  position:relative; top:40%; left:50%;
+  margin-top:-100px; margin-left:-200px;
+  text-align:center;
+  box-sizing:border-box;
+  line-height:23px; cursor:pointer;
+  z-index: 1000;
+  border: 1px solid white;
+}
+.login_form form{
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px auto 0px auto;
+}
+.login_input{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	justify-content: center;	
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	
+}
+.modal_close{
+	position:absolute;
+	justify-content: flex-end;
+	padding: 1px 375px;
+	color: white;
+}
+.login_msg{
+    border-radius: 10px;
+    color: white;
+    background-color: #263343;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+    padding-top: 13px;
+}
+.button_div{
+	display: flex;
+	justify-content: center;
+}
+.myPage_button_div{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+.login_button{
+	height:40px;
+	width: 60%;
+	border-width: 1px;
+	border-radius: 3px;
+}
+.drop_button_div{
+	display: flex;
+	justify-content: center;
+}
+th, tr ,td{
+	padding-right: 25px;
+	padding-left: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+input:read-only, textarea:read-only {
+  background-color: #DDDDDD;
+}
+th, tr, td {
+	padding-right: 25px;
+	padding-left: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.modal_content_pw{
+  width:400px; height:auto;
+  background:#fff; border-radius:10px;
+  position:relative; top:40%; left:50%;
+  margin-top:-100px; margin-left:-200px;
+  text-align:center;
+  box-sizing:border-box;
+  line-height:23px; cursor:pointer;
+  z-index: 1000;
+  border: 1px solid white;
+}
+.chart_div{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-content: center;
+}
+.mapToChart_div{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	
+}
+.chart_table{
+	display : flex;
+	justify-content: center;
+}
+.canvas-container{
+	display: flex;
+	justify-content: center;
+}
+.chart_table_line{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.myPage_h1{
+	display: flex;
+	justify-content : center;
+}
+.cat_div{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -3,23 +3,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="resources/css/style.css?vre=1">
 <meta charset="UTF-8">
 <title>Main.jsp</title>
+
 </head>
-<body id="signUp_main">
+<body>
 <%@ include file="Header.jsp"%>
 <main>
+
  
 	<br>
 	<br>
-	
-	<div id="wrap">
+
+	<div class="wrap_main">
 	<div class="userForm">
 	
 	<div>
 	<h1> Hello 네명이조~</h1>
 	</div>
-	
+	<hr>
+	<h3>session test</h3>
+	<p>id: ${session.uId }</p>
+	<p> x: ${session.uAddr_x } , y:${session.uAddr_y }</p>
+	<hr>
 	<h2>TEST 중입니다</h2>
 	<br>
 	<h3><a href="/bigdata/chartTest" style="color: blue">차트테스트</a></h3>
@@ -54,7 +61,7 @@
 	</div>	
 	
 	<hr>
-	
+	 
 	<div class="userInput">
 	<!-- 지역별 나이-성별 생활인구수 -->
 	<form action="barChart" method="post">
@@ -68,7 +75,6 @@
 	</div>
 	<br>
 	<br>
-
 </main>
 </body>
 <%@ include file="Footer.jsp"%>

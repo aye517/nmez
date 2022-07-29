@@ -4,47 +4,61 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MapTest.jsp</title>
+<title>Map.jsp</title>
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
+<%@ include file="../../main/Header.jsp"%>
+<link rel="stylesheet" href="resources/css/style.css?ver=1">
+
 <script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eef03eabb1ab19e0ded35169777e6b7f&libraries=services,clusterer">	
-	</script>
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e9b8314301529a33db2e3f1e889eb001&libraries=services,clusterer">	
+</script>
+<style type="text/css">
+.info-title {
+    display: block;
+    text-align: center;
+    line-height:30px;
+    width: 200px;
+    height: 30px;
+}
+</style>
 </head>
 <body>
-<table>
-			<tr>
-				<td>주소</td>
-				<td><input type="text" name="detailAddress" id="address"></td>
-				<td><button type="button" id="searchBtn">검색</button></td>
-			</tr>
-			
-		</table>
-	hi, Map Test
-	<div id="map" style="width: 500px; height: 400px;"></div>
+
+<h1>생활인구분석</h1>
+<br>
+<h3>지도를 확대해 행정구역을 클릭하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
+<hr>
+
+	<table>
+		<tr>
+			<td>주소 검색 </td>
+			<td><input type="text" name="detailAddress" id="address"></td>
+			<td><button type="button" id="searchBtn">검색</button></td>
+		</tr>	
+	</table>
+
+	<div id="map" style="width: 100%; height: 500px;"></div>
 	<!-- 검색창 -->
-	<input type="text">
+	
 	<!-- 다음지도 띄우기 -->
-
-
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eef03eabb1ab19e0ded35169777e6b7f&libraries=services,clusterer">
-		
 	</script>
+	
 	<script>
-    var map = new kakao.maps.Map(document.getElementById('map'), { // 지도를 표시할 div
-        center : new kakao.maps.LatLng(37.57002838826, 126.97962084516), // 지도의 중심좌표
-        level : 10 // 지도의 확대 레벨
+	
+    var map = new kakao.maps.Map(document.getElementById('map'), {
+        center : new kakao.maps.LatLng(37.57002838826, 126.97962084516),
+        level : 9 // 지도의 확대 레벨
     });
     
-   
- // 마커 클러스터러를 생성합니다 
     var clusterer = new kakao.maps.MarkerClusterer({
-        map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
-        averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
-        minLevel: 8 ,// 클러스터 할 최소 지도 레벨 
-        disableClickZoom: true // 클러스터 마커를 클릭했을 때 지도가 확대되지 않도록 설정한다
+        map: map, 
+  		averageCenter: true,  
+        minLevel: 8 ,
+        disableClickZoom: true
     });
-
+    
     var data = {
       "positions" : [
   	 		 {
@@ -2593,73 +2607,68 @@
     		 }
     		]};
 	var markers = [];
-   
-   
-	var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
-    imageSize = new kakao.maps.Size(40, 40), // 마커이미지의 크기입니다
+	var code = [];
+    
+    var imageSrc = 'https://cdn.pixabay.com/photo/2017/09/29/00/30/checkmark-icon-2797531_1280.png',
+	imageSize = new kakao.maps.Size(20, 20), // 마커이미지의 크기입니다
     imageOption = {offset: new kakao.maps.Point(15, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-				
-	
+
+   		
+    
+    for(var n = 0; n < data.positions.length; n++){
+    	code[n] = data.positions[n].address_code;
+    };
+    
 		for(var n = 0; n < data.positions.length; n++) {
-			   var markerPosition  = new kakao.maps.LatLng(data.positions[n].lat,data.positions[n].lng); 
-			   
+			   var markerPosition  = new kakao.maps.LatLng(data.positions[n].lat,data.positions[n].lng);
+			   //console.log(markerPosition);
 			   var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-			   
 			   var marker	= new kakao.maps.Marker({
 					position: markerPosition,
 					map: map,
 					clickable: true,
 					image : markerImage
 				});
+			
+			   var iwRemoveable = true;
 			// 인포윈도우를 생성합니다
 			    var infowindow = new kakao.maps.InfoWindow({
-			        content : '&nbsp;&nbsp;&nbsp;'+data.positions[n].address
+			    	removable : true, 
+			    	position : markerPosition,
+			        content : '<a href=\"#\" onclick=window.open(\"/bigdata/getChart?code='+code[n]+'\")  style=\"color:black\" class="info-title"><h5>' + data.positions[n].address+' 생활인구</h5></a>'
 			    });
-			
-			   
-
-			   
+				
+			//console.log(infowindow.cc.split('[')[1].split(']')[0]);
 			    markers.push(marker);
 			    kakao.maps.event.addListener(marker,'mouseover',makeClick(map, marker, infowindow));
-			    kakao.maps.event.addListener(marker,'mouseout',infoOut(map, marker, infowindow));
+			    kakao.maps.event.addListener(marker,'mouseout',infoOut(map, marker,infowindow));
 			    kakao.maps.event.addListener(marker, 'click', function() {
-			        // 마커 위에 인포윈도우를 표시합니다
-			        window.open("logo","상세페이지","width=700,height=1500,left=100,top=50"); 
+			  
+			    //window.open("/bigdata/getChart?code="+marker.Gb,"상세페이지","width=700,height=1500,left=100,top=50"); 
 			  });
 		}
 			clusterer.addMarkers(markers);
-    
- // 마커 클러스터러에 클릭이벤트를 등록합니다
-    // 마커 클러스터러를 생성할 때 disableClickZoom을 true로 설정하지 않은 경우
-    // 이벤트 헨들러로 cluster 객체가 넘어오지 않을 수도 있습니다
-    kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
 
+    kakao.maps.event.addListener(clusterer, 'clusterclick', function(cluster) {
         // 현재 지도 레벨에서 1레벨 확대한 레벨
         var level = map.getLevel()-1;
-
         // 지도를 클릭된 클러스터의 마커의 위치를 기준으로 확대합니다
         map.setLevel(level, {anchor: cluster.getCenter()});
-        
     });
+ 
     function makeClick(map, marker, infowindow){
         return function(){
             infowindow.open(map, marker);
         };
     };   
+    
     function infoOut(map, marker, infowindow){
         return function(){
-            infowindow.close();
+            //infowindow.close();
         };
     };   
- 
-   
-
-    
-
-	
-
-
-
 </script>
+
 </body>
+<%@ include file="../../main/Footer.jsp"%>
 </html>

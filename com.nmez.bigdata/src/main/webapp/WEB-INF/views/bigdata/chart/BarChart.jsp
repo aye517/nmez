@@ -5,15 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/css/style.css">
 <title>BarChart.jsp</title>
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 <body> 
 
-<canvas id="bar-chart" width="100" height="100"></canvas>
+<div class="canvas-container">
+<canvas id="bar-chart" width="500" height="300"></canvas>
+</div>
 
-
+<div class="chart_table">
 <table>
 		<thead>
 			<tr>
@@ -24,7 +27,7 @@
 		<c:forEach var="s_data" items="${s_dataList}">
 		<tr class="s_data" align="center">
 			<td class="s_code">${s_data.s_code}</td>
-			<td class="s_palce">${s_data.s_place}</td>
+			<td class="s_palce"><h5>${s_data.s_place}</h5></td>
 			<td class="s_under_10s">${s_data.s_under_10s}</td>
 			<td class="s_10s">${s_data.s_10s}</td>
 			<td class="s_early20s">${s_data.s_early20s}</td>
@@ -35,10 +38,11 @@
 			<td class="s_50s">${s_data.s_50s}</td>
 			<td class="s_60s">${s_data.s_60s}</td>
 			<td class="s_upper70s">${s_data.s_upper70s}</td>
-			<td class="s_gender">${s_data.s_gender}</td>
+			<td class="s_gender"><h5>${s_data.s_gender}</h5></td>
 		</c:forEach>
 		</tbody>
 	</table>
+</div>
 
 <script type="text/javascript">
 var s_data = document.getElementsByClassName('s_data');
@@ -79,6 +83,7 @@ new Chart(document.getElementById("bar-chart"), {
       ]
     },
     options: {
+      responsive: false,
       legend: { display: false },
       title: {
         display: true,

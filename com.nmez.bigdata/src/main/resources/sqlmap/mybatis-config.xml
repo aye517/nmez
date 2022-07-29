@@ -10,6 +10,11 @@
 		<typeAlias type="com.nmez.bigdata.vo.T_dataVO" alias="T_dataVO"/>
 		<typeAlias type="com.nmez.bigdata.vo.S_dataVO" alias="S_dataVO"/>
 		<typeAlias type="com.nmez.bigdata.vo.P_dataVO" alias="P_dataVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.IageVO" alias="IageVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.IdayVO" alias="IdayVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.IsexVO" alias="IsexVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.ItimeVO" alias="ItimeVO"/>
+		
 	</typeAliases>
   
   <mappers>
@@ -18,6 +23,10 @@
 		<mapper resource="/sqlmap/mapper/T_dataVO_mapper.xml" />
 		<mapper resource="/sqlmap/mapper/S_dataVO_mapper.xml" />
 		<mapper resource="/sqlmap/mapper/P_dataVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/IageVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/IdayVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/IsexVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/ItimeVO_mapper.xml" />
 		
   </mappers>
 </configuration>

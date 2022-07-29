@@ -1,8 +1,6 @@
 package com.nmez.bigdata.service;
 
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +22,27 @@ public class UserServiceImpl implements UserService {
 	public int userIdCheck(String uId) {
 		return userDao.userIdCheck(uId);
 	}
+
+	@Override
+	public UserVO userLogin(UserVO vo) {
+		return userDao.userLogin(vo);
+	}
+
+	@Override
+	public int userUpdate(UserVO vo) {
+		return userDao.userUpdate(vo);
+	}
+
+	@Override
+	public int pwUpdate(UserVO vo) {
+		return userDao.pwUpdate(vo);
+	}
+
+	@Override
+	public int userDrop(UserVO vo) {
+		return userDao.userDrop(vo);
+	}
+
 
 	
 }
