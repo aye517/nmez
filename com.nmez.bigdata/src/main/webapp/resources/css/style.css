@@ -19,9 +19,6 @@ html{
 	flex-direction: column;
 	justify-content: center;
 }
-main{
-	min-height: 100%;
-}
 a {
 	text-decoration: none;
 	color: white;
