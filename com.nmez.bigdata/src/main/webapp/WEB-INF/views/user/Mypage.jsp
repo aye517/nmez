@@ -47,8 +47,8 @@ var popupY = (window.screen.height/2)-(popupHeight/2);
 
 function popup(){
 	console.log(popupX,popupY);
-
 	window.open("pwUpdate","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
+
 }
 function showModalessPopupHelp(sURL,sParam,sWinName) {
 	Left = screen.width - 650;
@@ -57,9 +57,7 @@ function showModalessPopupHelp(sURL,sParam,sWinName) {
 	Height = 900;
 	features = "width="+ Width + ",height=" + Height + ",left=" + Left + ",top=" + Top +",scrollbars=auto,directories=no,menubar=no";
 	sURL = sURL + sParam;
-
 }
-
 function dropPopup(){
 	console.log(popupX,popupY);
 	window.open("/bigdata/userDrop","_blank","status=yes,width="+popupWidth+',height='+popupHeight+',left='+popupX+',top='+popupY+',menubar=yes,toolbar=no,menubar=no,location=no');
@@ -118,7 +116,11 @@ function dropPopup(){
 	<input type="button" value="회원탈퇴하기" onclick="dropPopup();" class="login_button">
 
 	</form>
+<<<<<<< HEAD
+	<br>
+=======
 
+>>>>>>> branch 'backup' of https://github.com/aye517/nmez.git
 	</div>
 
 </body>

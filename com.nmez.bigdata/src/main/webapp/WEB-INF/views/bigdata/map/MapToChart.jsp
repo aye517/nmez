@@ -16,6 +16,15 @@
 <h1>${p_data.p_place }의 상권 정보</h1>
 </div>
 
+<<<<<<< HEAD
+
+<div class="chart_div">
+
+<div class="chart_div_div"> 
+
+
+=======
+>>>>>>> branch 'backup' of https://github.com/aye517/nmez.git
 <h3>월별 생활인구</h3>
 <form action="getChartM?t_code=${t_dataList[0].t_code}&t_month=${t_dataList[0].t_month}" method="get">
 	<input type="hidden" name="code" placeholder="행정코드" value="${t_dataList[0].t_code}">
@@ -32,20 +41,23 @@
 
 <div class="chart_div_div"> 
 
-
 <%@ include file="../chart/LineChart.jsp"%>
 
 </div>
 
 <br>
 
+<br>
+
+
 
 <div class="chart_div_div">
 <h3>남녀 생활인구 비율</h3>
 
-<div class="chart_div_div"> 
 
+<div class="chart_div_div"> 
 <%@ include file="../chart/PieChart.jsp"%>
+</div>
 </div>
 <br>
 
@@ -54,8 +66,7 @@
 <%@ include file="../chart/BarChart.jsp"%>
 </div>
 
-
-
+</div>
 </div>
 </div>
 </body>

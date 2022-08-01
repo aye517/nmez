@@ -19,9 +19,6 @@ html{
 	flex-direction: column;
 	justify-content: center;
 }
-main{
-	min-height: 100%;
-}
 a {
 	text-decoration: none;
 	color: white;
@@ -359,9 +356,6 @@ th, tr, td {
   line-height:23px; cursor:pointer;
   z-index: 1000;
   border: 1px solid white;
-<<<<<<< HEAD
-}
-=======
 }
 .chart_div{
 	display: flex;
@@ -392,4 +386,8 @@ th, tr, td {
 	display: flex;
 	justify-content : center;
 }
->>>>>>> refs/remotes/origin/catdogbranch0725
+.cat_div{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
