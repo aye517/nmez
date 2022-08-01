@@ -11,13 +11,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nmez.bigdata.service.IncomeService;
+import com.nmez.bigdata.service.StoreService;
 import com.nmez.bigdata.vo.IsexVO;
+import com.nmez.bigdata.vo.StoreVO;
 
 @RestController
 public class ChartAjaxController {
 
 	@Autowired
 	IncomeService incomeService;
+	
+	@Autowired
+	StoreService storeService;
 	
 	public ChartAjaxController() {
 		//System.out.println("@RestController 생성");
@@ -32,4 +37,20 @@ public class ChartAjaxController {
 		return dongList;
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/getStoreDong", method = RequestMethod.POST)
+	public List<StoreVO> getStoreDong(@RequestBody StoreVO vo) {
+		List<StoreVO> dongList = storeService.dongList(vo);
+		//System.out.println("rs== " + dongList);
+		return dongList;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/getStoreSector", method = RequestMethod.POST)
+	public List<StoreVO> getStoreSector(@RequestBody StoreVO vo) {
+		System.out.println(vo);
+		List<StoreVO> sectorList = storeService.sectorList(vo);
+		System.out.println(sectorList);
+		return sectorList;
+	}
 }

@@ -133,7 +133,7 @@ function updateCheck() {
 	
 	<div class="userInput">
 	<h3>
-	이름 : ${session.uName };<br>
+	이름 : ${session.uName }<br>
 	</h3>
 	</div>
 	

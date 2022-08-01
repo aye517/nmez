@@ -14,6 +14,7 @@
 		<typeAlias type="com.nmez.bigdata.vo.IdayVO" alias="IdayVO"/>
 		<typeAlias type="com.nmez.bigdata.vo.IsexVO" alias="IsexVO"/>
 		<typeAlias type="com.nmez.bigdata.vo.ItimeVO" alias="ItimeVO"/>
+		<typeAlias type="com.nmez.bigdata.vo.StoreVO" alias="StoreVO"/>
 		
 	</typeAliases>
   
@@ -27,6 +28,7 @@
 		<mapper resource="/sqlmap/mapper/IdayVO_mapper.xml" />
 		<mapper resource="/sqlmap/mapper/IsexVO_mapper.xml" />
 		<mapper resource="/sqlmap/mapper/ItimeVO_mapper.xml" />
+		<mapper resource="/sqlmap/mapper/StoreVO_mapper.xml" />
 		
   </mappers>
 </configuration>
