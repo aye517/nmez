@@ -122,6 +122,7 @@ function getStoreSector(cateValue) {
 	const param = {
 			"category" : cateValue
 		};
+	var sectorselect = [];
 	$.ajax({
 		type : "post",
 		url : "getStoreSector",
@@ -129,9 +130,11 @@ function getStoreSector(cateValue) {
 		data : JSON.stringify(param),
 		success : function(result) {
 			if(result != null) {
+				//alert(result);
 				for(i=0; i<result.length; i++){
 					sectorselect[i] = result[i].sector;
 					}
+				//alert(sectorselect);
 				sectorUpdate(sectorselect);
 			}else{
 				console.log("없는 정보");
@@ -147,6 +150,8 @@ function getStoreSector(cateValue) {
 function sectorUpdate(sectorselect) {
 	var dataSector = document.getElementById("hSector").innerText;
 	$("#select_sector").empty();
+	//alert($('#select_sector').val());
+	//alert(sectorselect);
   for(var i=0; i < sectorselect.length; i++) {
   	$("#select_sector").append('<option value="' + sectorselect[i] + '">' + sectorselect[i] + '</option>');
   }
@@ -292,12 +297,13 @@ $(document).ready(function(){
 		$("#select_category  > option[value="+dataCategory+"]").attr("selected", "true");     
 	 }
    
-	//셀터 selectbox   
+	//섹터 selectbox   
 	    if ( dataGu === '' || dataGu === null){
 			getSectorFirst(categoryselect[0]);
 	        $("#select_sector  > option[value="+sectorselect[0]+"]").attr("selected", "true");    
 		}else {
 			getStoreSector(dataCategory);
+			
 		};
 }); //function end
 

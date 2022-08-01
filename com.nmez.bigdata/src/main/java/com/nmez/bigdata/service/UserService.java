@@ -16,4 +16,8 @@ public interface UserService {
 	public int pwUpdate(UserVO vo);
 
 	public int userDrop(UserVO vo);
+
+	public void sendEmail(String toAddress, String fromAddress,
+			String subject, String msgBody);
+	
 }

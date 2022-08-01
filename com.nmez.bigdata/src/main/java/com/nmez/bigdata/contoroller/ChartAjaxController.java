@@ -48,9 +48,9 @@ public class ChartAjaxController {
 	@ResponseBody
 	@RequestMapping(value = "/getStoreSector", method = RequestMethod.POST)
 	public List<StoreVO> getStoreSector(@RequestBody StoreVO vo) {
-		System.out.println(vo);
+		//System.out.println(vo);
 		List<StoreVO> sectorList = storeService.sectorList(vo);
-		System.out.println(sectorList);
+		//System.out.println(sectorList);
 		return sectorList;
 	}
 }
