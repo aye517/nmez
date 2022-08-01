@@ -15,26 +15,27 @@ body {
 	margin: 0 auto;
 }
 .main{
+	padding-top: 48px;
 	padding-left: 200px;
 	font-size:0;
 }
 #top_menu {
 	position: fixed;
 	width: 200px;
-	height: 500px;
+	height: 100vh;
 	margin: 0 auto;
 	text-align: center;
-	top: 200px;
+	/* top: 200px; */
 	background: #545454;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
 	align-items: center;
+	justify-content: center;
 }
 
 #top_menu ul {
 	float: right;
-	/* margin-right: 33px; */
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -42,8 +43,6 @@ body {
 }
 
 #top_menu ul li {
-	/* display: flex; */
-	/* margin-top: 30px; */
 	top: 100px;
 	padding: 30px;
 	float: left;

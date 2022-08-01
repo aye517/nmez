@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <body>
 
 <div class="canvas-container">
-<canvas id="line_chart" width="500" height="300"></canvas>
+<canvas id="line_chart" width="300" height="230"></canvas>
 </div>
 
 <div>
@@ -94,7 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	<font type="text" id="wlow"></font>
 	</div>
 	</div>
-	<hr>
 	
 
 	<div hidden="hidden">

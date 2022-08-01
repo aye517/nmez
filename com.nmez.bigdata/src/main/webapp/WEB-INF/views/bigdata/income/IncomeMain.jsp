@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>IncomeMain.jsp</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="resources/css/chart.css">
 <%@ include file="../../main/Header.jsp"%>
 </head>
 <div>
@@ -220,26 +220,45 @@ $(document).ready(function(){
 </script>
 
 <body>
+
+
 <span id="hId" hidden="hidden">${pieData[0].id}</span>
 <span id="hGu" hidden="hidden">${pieData[0].gu}</span>
 <span id="hDong" hidden="hidden">${pieData[0].dong}</span>
 <span id="hSector" hidden="hidden">${pieData[0].sector}</span>
 
+<article class="area_select">
+<div>
 <h1>매출분석</h1>
+</div>
 <br>
+<div>
 <h3>지역과 업종을 선택하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
+<br>
+</div>
 
 <form id="select" action="incomeCharts" method="get" >
 <select onchange="getGu(this)" id="select_gu" name="gu" class="sel"></select>
 <select id="select_dong" name="dong" class="sel"></select>
 <select id="select_sector" name="sector" class="sel"></select>
-<input type="submit">
+<br>
+<input type="submit" id="chart_submit_button">
 </form>
+</article>
 
 <hr>
+
 <div id="showCharts">
+
+<div class="Sales_information">
 <h1>${pieData[0].gu} ${pieData[0].dong} ${pieData[0].sector} 매출정보</h1>
+</div>
+<br>
+
+<div class="charts_main">
 <%@ include file="./IncomeCharts.jsp"%>
+</div>
+
 </div>
 
 <!--넓게 나오게 해주세요 -->

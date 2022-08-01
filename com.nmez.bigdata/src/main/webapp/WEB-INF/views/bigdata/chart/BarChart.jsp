@@ -13,7 +13,7 @@
 <body> 
 
 <div class="canvas-container">
-<canvas id="bar-chart" width="500" height="300"></canvas>
+<canvas id="bar-chart" width="300" height="230"></canvas>
 </div>
 
 <div class="chart_table">

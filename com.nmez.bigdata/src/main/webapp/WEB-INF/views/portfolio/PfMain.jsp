@@ -15,7 +15,7 @@
 </head>
 <%@ include file="../main/Header.jsp"%>
 <body style="margin: 0" class="wrap" style="overflow: hidden">
-<header id="top_menu">
+<nav id="top_menu">
 <div id="NMEZ"><h1>Portfolio</h1></div>
 <ul>
 	<li class="on"><a href="project_development">프로젝트 개발단계</a></li>
@@ -23,16 +23,29 @@
 	<li><a href="web_develoment">웹 개발</a></li>
 	<li><a href="impression">소감</a></li>
 </ul>
-</header>
+</nav>
 <div class="main">
 <div id="contents">
-    <div id="project_development"><img alt="" src="resources/img/cat1.jpg"><img src="resources/img/cat9.jpg"></div>
-    <div id="data_anal"><img alt="" src="resources/img/cat2.jpg"></div>
-    <div id="web_develoment"><img alt="" src="resources/img/cat3.jpg"></div>
-    <div id="impression"><img alt="" src="resources/img/cat4.jpg"><img alt="" src="resources/img/cat1.jpg"></div>
-</div>
-</div>
 
+    <div id="project_development">
+    <img src="resources/img/cat1.jpg">
+    <img src="resources/img/cat9.jpg">
+    </div>
+    
+    <div id="data_anal">
+    <img src="resources/img/cat2.jpg">
+    </div>
+    
+    <div id="web_develoment">
+    <img src="resources/img/cat3.jpg">
+    </div>
+    
+    <div id="impression">
+    <img src="resources/img/cat4.jpg">
+    <img src="resources/img/cat1.jpg">
+    </div>
+</div>
+</div>
 </body>
 <%@ include file="../main/Footer.jsp"%>
 
