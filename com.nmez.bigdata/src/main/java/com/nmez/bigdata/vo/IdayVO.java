@@ -2,31 +2,14 @@ package com.nmez.bigdata.vo;
 
 public class IdayVO {
 
-	int id, man, woman, bc_card;
-	String gu, dong, sector;
-	public int getId() {
+	String id, gu, dong, sector;
+	int Mon, Tue, Wed, Thu, Fri, Sat, Sun;
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
-	}
-	public int getMan() {
-		return man;
-	}
-	public void setMan(int man) {
-		this.man = man;
-	}
-	public int getWoman() {
-		return woman;
-	}
-	public void setWoman(int woman) {
-		this.woman = woman;
-	}
-	public int getBc_card() {
-		return bc_card;
-	}
-	public void setBc_card(int bc_card) {
-		this.bc_card = bc_card;
 	}
 	public String getGu() {
 		return gu;
@@ -46,12 +29,54 @@ public class IdayVO {
 	public void setSector(String sector) {
 		this.sector = sector;
 	}
+	public int getMon() {
+		return Mon;
+	}
+	public void setMon(int mon) {
+		Mon = mon;
+	}
+	public int getTue() {
+		return Tue;
+	}
+	public void setTue(int tue) {
+		Tue = tue;
+	}
+	public int getWed() {
+		return Wed;
+	}
+	public void setWed(int wed) {
+		Wed = wed;
+	}
+	public int getThu() {
+		return Thu;
+	}
+	public void setThu(int thu) {
+		Thu = thu;
+	}
+	public int getFri() {
+		return Fri;
+	}
+	public void setFri(int fri) {
+		Fri = fri;
+	}
+	public int getSat() {
+		return Sat;
+	}
+	public void setSat(int sat) {
+		Sat = sat;
+	}
+	public int getSun() {
+		return Sun;
+	}
+	public void setSun(int sun) {
+		Sun = sun;
+	}
 	
 	
 	@Override
 	public String toString() {
-		return "IsexVO [id=" + id + ", man=" + man + ", woman=" + woman + ", bc_card=" + bc_card + ", gu=" + gu
-				+ ", dong=" + dong + ", sector=" + sector + "]";
+		return "IdayVO [id=" + id + ", gu=" + gu + ", dong=" + dong + ", sector=" + sector + ", Mon=" + Mon + ", Tue="
+				+ Tue + ", Wed=" + Wed + ", Thu=" + Thu + ", Fri=" + Fri + ", Sat=" + Sat + ", Sun=" + Sun + "]";
 	}
 	
 	
