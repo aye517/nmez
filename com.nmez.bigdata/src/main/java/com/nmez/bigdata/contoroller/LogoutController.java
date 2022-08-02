@@ -20,7 +20,7 @@ public class LogoutController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("msg","로그아웃 되었습니다.");
 		mav.addObject("url","/bigdata");
-		mav.setViewName("alert");
+		mav.setViewName("main/alert");
 		
 		return mav;
 	}

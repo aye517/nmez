@@ -39,7 +39,7 @@ public class UserController {
 		if(rs == 1) {
 			mav.addObject("msg","회원가입 성공. 메인 페이지로 돌아갑니다.");
 			mav.addObject("url","/bigdata");
-			mav.setViewName("alert");
+			mav.setViewName("main/alert");
 		}else {
 			System.out.println("가입실패");
 			mav.addObject("failvo", vo); //실패시 입력값 리턴
@@ -69,7 +69,7 @@ public class UserController {
 				mav.addObject("msg","입력이 틀렸거나 없는 회원입니다.");
 				mav.addObject("state","nope"); //헤더에서 받을 파라미터 > 다시모달창 띄우기
 				mav.addObject("url","/bigdata"); //string그대로 반환
-				mav.setViewName("alert");
+				mav.setViewName("main/alert");
 			}
 		};
 		return mav; 		
@@ -94,7 +94,7 @@ public class UserController {
 		}else {
 			mav.addObject("msg","수정에 실패했습니다.");
 			mav.addObject("url","/bigdata/update");
-			mav.setViewName("alert");
+			mav.setViewName("main/alert");
 		}		
 		
 		return mav;
@@ -121,7 +121,7 @@ public class UserController {
 		userService.sendEmail(email, addr, subject, content);
 		mav.addObject("msg","문의 메일이 발송되었습니다.");
 		mav.addObject("url","/bigdata");
-		mav.setViewName("alert");
+		mav.setViewName("main/alert");
 		return mav;
 	}
 	
