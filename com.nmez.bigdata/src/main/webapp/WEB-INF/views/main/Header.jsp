@@ -55,8 +55,9 @@ $(document).ready(function() {
 		<div class="navbar_logo">
 			<h3>
 				<a href="/bigdata/logo"> 
-				<i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i> 
-				NMEZ
+				<!-- <i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i> 
+				NMEZ -->
+				<img src="./">
 				</a>
 			</h3>
 		</div>

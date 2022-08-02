@@ -308,12 +308,20 @@ function finalCheck() {
 	<div id="wrap" class="wrapper">
 		<h1>회원가입</h1>
 	</div>
+	<br>
 	<div class="permit">
 	<div class="permit_box">
-	<textarea rows="5" cols="60" readonly="readonly">
-	개인정보 및 위치정보 제공 동의
-	1. nmez~
-	2. 동의 안하면 정보 입력 못함..
+	<textarea rows="10" cols="60" readonly="readonly">
+	□ 개인정보의 수집ㆍ이용
+	- 개인정보 수집ㆍ이용 목적 : 서비스 제공을 위한 개인정보 수집
+	- 수집ㆍ이용하는 개인정보의 항목 : 성명, 생년월일, 주소, 전화번호, 이메일
+	- 개인정보의 보유 및 이용 기간 : 가입 후부터 1개월
+	- 위 개인정보 수집에 대한 동의는 거부할 수 있으며, 이 경우 가입이 불가합니다.
+	 	
+	□ 위치정보의 수집ㆍ이용
+	- 위치정보수집ㆍ이용 목적 : 서비스 제공을 위한 위치정보 수집
+	- 위치정보의 보유 및 이용기간 : 가입 후부터 1개월
+	- 위 위치정보 수집에 대한 동의는 거부할 수 있으며, 이 경우 가입이 불가합니다.
 	</textarea>
 	
 	<br>

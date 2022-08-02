@@ -119,9 +119,7 @@ public class UserController {
 		//String subject = "[😀😀] 알림메일 입니다.";
 		//String body = "안녕하세요?\r\n소통해요~\r\n SMTP메일 테스트입니다.";
 		userService.sendEmail(email, addr, subject, content);
-		System.out.println("발송완료");
-		System.out.println();
-		mav.addObject("msg","메시지 발송 완료");
+		mav.addObject("msg","문의 메일이 발송되었습니다.");
 		mav.addObject("url","/bigdata");
 		mav.setViewName("alert");
 		return mav;
