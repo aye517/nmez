@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>IncomeMain.jsp</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="resources/css/chart.css">
+<link rel="stylesheet" href="resources/css/chart.css?ver=1">
 <%@ include file="../../main/Header.jsp"%>
 </head>
 <div>
@@ -238,11 +238,14 @@ $(document).ready(function(){
 </div>
 
 <form id="select" action="incomeCharts" method="get" >
+<div class="select_form">
 <select onchange="getGu(this)" id="select_gu" name="gu" class="sel"></select>
 <select id="select_dong" name="dong" class="sel"></select>
 <select id="select_sector" name="sector" class="sel"></select>
-<br>
-<input type="submit" id="chart_submit_button">
+</div>
+<div class="form_submit">
+<input type="submit" value="검색" class="chart_submit_button">
+</div>
 </form>
 </article>
 

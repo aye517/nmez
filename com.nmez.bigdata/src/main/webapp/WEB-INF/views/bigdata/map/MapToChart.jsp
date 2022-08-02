@@ -20,6 +20,7 @@
 
 <div class="select_code">
 <h3>월별 생활인구</h3><br>
+
 <form action="getChartM?t_code=${t_dataList[0].t_code}&t_month=${t_dataList[0].t_month}" method="get">
 	<input type="hidden" name="code" placeholder="행정코드" value="${t_dataList[0].t_code}">
 	<select name="t_month" class="sel">

@@ -14,18 +14,13 @@ body {
 	width: 100%;
 	margin: 0 auto;
 }
-.main{
-	padding-top: 48px;
-	padding-left: 200px;
-	font-size:0;
-}
+
 #top_menu {
 	position: fixed;
 	width: 200px;
 	height: 100vh;
 	margin: 0 auto;
 	text-align: center;
-	/* top: 200px; */
 	background: #545454;
 	display: flex;
 	flex-direction: column;
@@ -33,40 +28,62 @@ body {
 	align-items: center;
 	justify-content: center;
 }
-
-#top_menu ul {
-	float: right;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	align-items: center;
+#contents {
+    overflow: hidden;
+    font-size: 0;
+    padding-left: 200px;
+    padding-top: 61px;
 }
-
-#top_menu ul li {
-	top: 100px;
-	padding: 30px;
-	float: left;
-	list-style: none;
-	color: #CCCCCC;
-}
-
-#top_menu ul li a {
-	color: #fff;
-	text-decoration: none;
-}
-
-#top_menu ul li.on a {
-	color: #000;
-	font-weight: bold;
-}
-
 #NMEZ {
-	float: left;
-	width: 125px;
-	padding: 40px 0px 50px 0px;
-	color: #FFFFFF;
+    float: left;
+    width: 125px;
+    color: #FFFFFF;
+    padding-top: 100px;
+    padding: 100px 0px 40px 0px;
 }
 img{
 	width: 100%;
 	height: 100vh;
+}
+.menu {
+    width: 200px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.menu > li {
+	width: 100%;
+    text-align: center;
+    background-color: #0286ad;
+    line-height: 100px;
+}
+.menu > li > ul{
+    display: flex;
+    line-height: 40px;
+}
+.submenu {
+  height: 0; /*ul의 높이를 안보이게 처리*/
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.menu > li:hover {
+  background-color: #90cbdd;
+  transition-duration: 0.5s;
+}
+
+.menu > li:hover .submenu {
+  height: 250px; /*서브메뉴 li한개의 높이 50*5*/
+  display:flex;
+  transition-duration: 1s;
+  color: black;
+}
+.menu > li > ul :hover {
+	background-color: #f2eae3;
+	border-radius: 4px; 
+	display: block;
+	color: black;
+}
+.menu > li > ul{
+	padding: 5px 10px 5px 10px;
 }

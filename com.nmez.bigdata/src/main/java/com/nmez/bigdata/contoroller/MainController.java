@@ -58,5 +58,12 @@ public class MainController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/qna", method = RequestMethod.GET)
+	public ModelAndView qna() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("/main/QnA");
+		return mav;
+	}
+	
 	
 }

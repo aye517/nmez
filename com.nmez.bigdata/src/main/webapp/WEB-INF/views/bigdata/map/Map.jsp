@@ -29,15 +29,7 @@
 <h3>지도를 확대해 행정구역을 클릭하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
 <hr>
 
-	<table>
-		<tr>
-			<td>주소 검색 </td>
-			<td><input type="text" name="detailAddress" id="address"></td>
-			<td><button type="button" id="searchBtn">검색</button></td>
-		</tr>	
-	</table>
-
-	<div id="map" style="width: 100%; height: 500px;"></div>
+	<div id="map" style="width: 100%; height: 800px;"></div>
 	<!-- 검색창 -->
 	
 	<!-- 다음지도 띄우기 -->
@@ -49,7 +41,7 @@
 	
     var map = new kakao.maps.Map(document.getElementById('map'), {
         center : new kakao.maps.LatLng(37.57002838826, 126.97962084516),
-        level : 9 // 지도의 확대 레벨
+        level : 8 // 지도의 확대 레벨
     });
     
     var clusterer = new kakao.maps.MarkerClusterer({

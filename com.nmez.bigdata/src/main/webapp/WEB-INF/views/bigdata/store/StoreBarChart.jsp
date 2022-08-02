@@ -21,7 +21,7 @@
 <hr>
 
 
-<canvas id="bar-chart" width="300" height="230"></canvas>
+<canvas id="bar-chart" width="600" height="400"></canvas>
 
 
 
@@ -56,6 +56,7 @@ new Chart(document.getElementById("bar-chart"), {
       ]
     },
     options: {
+      responsive: false,
       legend: { display: false },
       title: {
         display: true,

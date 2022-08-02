@@ -53,12 +53,10 @@ $(document).ready(function() {
 <body id="header">
 	<nav class="navbar">
 		<div class="navbar_logo">
-			<h3>
 				<a href="/bigdata/logo"> 
 				<i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i> 
-				NMEZ
+				<img src="resources/img/logo.png" style="width: 80px;height: 40px;">
 				</a>
-			</h3>
 		</div>
 
 		<ul class="navbar_menu">
@@ -66,7 +64,7 @@ $(document).ready(function() {
 			<li><i class="fa-solid fa-chart-line"  style="color:#CC99FF;"></i> <a href="income">매출분석</a></li>
 			<li><i class="fa-solid fa-magnifying-glass" style="color:#4CBB17"></i> <a href="store">상권분류</a></li>
 			<li><i class="fa-solid fa-cloud" style="color:skyblue"></i> <a href="cloud">트렌드분석</a></li>
-			<li><i class="fa-regular fa-comment-dots" style="color: #F64A8A;"></i> <a href="">문의하기</a>
+			<li><i class="fa-regular fa-comment-dots" style="color: #F64A8A;"></i> <a href="qna">문의하기</a>
 			
 		</ul>
 

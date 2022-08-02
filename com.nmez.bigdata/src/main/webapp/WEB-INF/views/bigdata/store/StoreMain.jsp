@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>StoreMain.jsp</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="resources/css/chart.css?ver=1">
 <%@ include file="../../main/Header.jsp"%>
 </head>
 
@@ -122,6 +122,7 @@ function getStoreSector(cateValue) {
 	const param = {
 			"category" : cateValue
 		};
+	var sectorselect = [];
 	$.ajax({
 		type : "post",
 		url : "getStoreSector",
@@ -129,9 +130,11 @@ function getStoreSector(cateValue) {
 		data : JSON.stringify(param),
 		success : function(result) {
 			if(result != null) {
+				//alert(result);
 				for(i=0; i<result.length; i++){
 					sectorselect[i] = result[i].sector;
 					}
+				//alert(sectorselect);
 				sectorUpdate(sectorselect);
 			}else{
 				console.log("없는 정보");
@@ -147,6 +150,8 @@ function getStoreSector(cateValue) {
 function sectorUpdate(sectorselect) {
 	var dataSector = document.getElementById("hSector").innerText;
 	$("#select_sector").empty();
+	//alert($('#select_sector').val());
+	//alert(sectorselect);
   for(var i=0; i < sectorselect.length; i++) {
   	$("#select_sector").append('<option value="' + sectorselect[i] + '">' + sectorselect[i] + '</option>');
   }
@@ -292,12 +297,13 @@ $(document).ready(function(){
 		$("#select_category  > option[value="+dataCategory+"]").attr("selected", "true");     
 	 }
    
-	//셀터 selectbox   
+	//섹터 selectbox   
 	    if ( dataGu === '' || dataGu === null){
 			getSectorFirst(categoryselect[0]);
 	        $("#select_sector  > option[value="+sectorselect[0]+"]").attr("selected", "true");    
 		}else {
 			getStoreSector(dataCategory);
+			
 		};
 }); //function end
 
@@ -307,23 +313,43 @@ $(document).ready(function(){
 
 <body>
 
-
+<article class="area_select">
+<div>
 <h1>상권분류</h1>
+</div>
 <br>
+<div>
 <h3>지역과 분류를 선택하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
+<br>
+</div>
 
-<form id="select" action="storeChart" method="get" >
-지역구 <select onchange="getGu(this)" id="select_gu" name="gu"></select>
+<form id="select" action="storeChart" method="get">
+<div class="select_form">
+<div>
+<h5>지역구</h5> <select onchange="getGu(this)" id="select_gu" name="gu" class="sel"></select>
 <select id="select_dong" hidden="hidden"></select>
-대분류 <select onchange="getCategory(this)" id='select_category' name="category"></select>
-소분류 <select id="select_sector" name="sector"></select>
-<input type="submit" value="검색">
+</div>
+<div>
+</div>
+<div>
+<h5>대분류</h5> <select onchange="getCategory(this)" id='select_category' name="category" class="sel"></select>
+</div>
+<div>
+<h5>소분류</h5> <select id="select_sector" name="sector" class="sel"></select>
+</div>
+</div>
+<div class="form_submit">
+<input type="submit" value="검색" class="chart_submit_button">
+</div>
 </form>
-
+</article>
 <hr>
 <div id="showCharts">
 <h1></h1>
+
+<div id="store_charts_main">
 <%@ include file="./StoreBarChart.jsp"%>
+</div>
 </div>
 
 <div id="noData">
