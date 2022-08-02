@@ -36,7 +36,6 @@
 	</div>
 </div>
 
-
 <script type="text/javascript">
 
 function loadApp() {
@@ -79,7 +78,6 @@ yepnope({
 	both: ['resources/js/book/scissor.min.js','resources/css/basic.css'],
 	complete: loadApp
 });
-
 </script>
 
 </body>

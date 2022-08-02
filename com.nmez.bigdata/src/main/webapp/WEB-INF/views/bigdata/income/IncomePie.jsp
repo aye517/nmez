@@ -36,7 +36,7 @@
 
 
 
-<canvas id="pie-chart" width="500" height="300"></canvas>
+<canvas id="pie-chart" width="300" height="230"></canvas>
 
 
 <script type="text/javascript">

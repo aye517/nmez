@@ -76,6 +76,7 @@ new Chart(document.getElementById("bar-chart"), {
       ]
     },
     options: {
+    	responsive: false,
       legend: { display: false },
       title: {
         display: false,

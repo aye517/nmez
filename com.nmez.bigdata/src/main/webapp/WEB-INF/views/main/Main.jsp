@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/style.css?vre=1">
+<link rel="stylesheet" href="resources/css/style.css">
 <meta charset="UTF-8">
 <title>Main.jsp</title>
 

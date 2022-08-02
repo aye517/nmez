@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/ff98a1e189.js"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="resources/css/style.css?ver=1">
+<link rel="stylesheet" href="resources/css/style.css">
 <script type="text/javascript" src="resources/js/main.js" defer="defer"></script>
 
 <script type="text/javascript">
@@ -53,13 +53,10 @@ $(document).ready(function() {
 <body id="header">
 	<nav class="navbar">
 		<div class="navbar_logo">
-			<h3>
 				<a href="/bigdata/logo"> 
-				<!-- <i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i> 
-				NMEZ -->
-				<img src="./">
+				<i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i><i class="fa-solid fa-person"></i> 
+				<img src="resources/img/logo.png" style="width: 80px;height: 40px;">
 				</a>
-			</h3>
 		</div>
 
 		<ul class="navbar_menu">

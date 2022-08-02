@@ -101,6 +101,7 @@ a {
 	}
 	.navbar_toogleBtn {
 		display: block;
+		top: 16px;
 	}
 	.navbar_menu.active,
 	.navbar_icons.active{
@@ -358,10 +359,10 @@ th, tr, td {
   border: 1px solid white;
 }
 .chart_div{
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	align-content: center;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
 }
 .mapToChart_div{
 	display: flex;
@@ -390,4 +391,48 @@ th, tr, td {
 	display: flex;
     flex-direction: column;
     align-items: center;
+}
+.sel {
+    width: 20vh;
+    text-align: center;
+    height: 30px;
+    border: none;
+}
+input.chart_submit_button {
+    display: flex;
+    height: 30px;
+    width: 20vh;
+    justify-content: center;
+    border-width: 1px;
+    border-radius: 3px;
+    margin: 20px 0px 0px 0px;
+}
+.select_code {
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    align-items: center;
+}
+#qna_div{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.qna_input{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.qna_input input{
+	width: 20vh;
+    text-align: center;
+    height: 30px;
+}
+.qna_submit{
+	display: flex;
+    height: 30px;
+    width: 20vh;
+    justify-content: center;
+    border-width: 1px;
+    border-radius: 3px;
 }

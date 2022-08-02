@@ -45,7 +45,7 @@
 
 
 
-<canvas id="line-chart" width="500" height="300"></canvas>
+<canvas id="line-chart" width="300" height="230"></canvas>
 
 
 <script type="text/javascript">
@@ -74,6 +74,7 @@ new Chart(document.getElementById("line-chart"), {
 	      }]
 	  },
 	  options: {
+		  responsive: false,
 	    title: {
 	      display: false,
 	      text: '<' +gu +' '+ dong +' '+ sector +'> 시간별 매출' 

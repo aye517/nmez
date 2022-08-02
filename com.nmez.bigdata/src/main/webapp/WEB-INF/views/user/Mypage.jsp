@@ -116,11 +116,9 @@ function dropPopup(){
 	<input type="button" value="회원탈퇴하기" onclick="dropPopup();" class="login_button">
 
 	</form>
-<<<<<<< HEAD
-	<br>
-=======
 
->>>>>>> branch 'backup' of https://github.com/aye517/nmez.git
+	<br>
+
 	</div>
 
 </body>

@@ -14,7 +14,7 @@
 <body>
 
 <div class="canvas-container">
-<canvas id="pie-chart" width="500" height="300"></canvas>
+<canvas id="pie-chart" width="300" height="230"></canvas>
 </div>
 
 
@@ -41,7 +41,6 @@
 		</tbody>
 	</table>
 	</div>
-<hr>
 
 
 <script type="text/javascript">
