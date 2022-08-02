@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/style.css?ver=1">
 <title>MapToChart.jsp</title>
 </head>
 <body>
