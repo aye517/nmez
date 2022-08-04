@@ -4,10 +4,11 @@
 }
 html{
 	width: 100%;
+	scroll-behavior: smooth;
 }
 body {
 	width:100%;
-	background: #545454;
+	background: #f5f6f7;
 }
 
 .wrap {
@@ -33,6 +34,7 @@ body {
     font-size: 0;
     padding-left: 200px;
     padding-top: 61px;
+    bottom:94px;
 }
 #NMEZ {
     float: left;
@@ -80,10 +82,23 @@ img{
 }
 .menu > li > ul :hover {
 	background-color: #f2eae3;
-	border-radius: 4px; 
-	display: block;
-	color: black;
+	border-radius: 4px;
+	color: #00608a;
 }
 .menu > li > ul{
 	padding: 5px 10px 5px 10px;
+
+}
+div#download_link {
+    width: 200px;
+    height: 1px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0286ad;
+}
+div#download_link:hover {
+	background-color: #90cbdd;
+  	transition-duration: 0.5s;
 }

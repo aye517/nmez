@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/style.css?ver=1">
 <meta charset="UTF-8">
 <title>Main.jsp</title>
 
@@ -12,12 +12,9 @@
 <%@ include file="Header.jsp"%>
 <main>
 
- 
-	<br>
-	<br>
 
-	<div class="wrap_main">
-	<img src="resources/img/mainImage.jpg" width="80%">
+	<div class="wrap_main" style="align-items: center;">
+	<img src="resources/img/mainImage.png" width="80%">
 	
 	</div>
 	<br>

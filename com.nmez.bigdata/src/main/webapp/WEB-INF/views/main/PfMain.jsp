@@ -6,72 +6,63 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="resources/css/scroll.css">
 <title>scroll_menu</title>
-<script type="text/javascript" src="resources/js/scroll/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="resources/js/scroll/jquery.easing.1.3.min.js"></script>
+<script type="text/javascript" src="resources/js/scroll/scroll_menu.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/scroll.css?ver=1">
 </head>
 <%@ include file="../main/Header.jsp"%>
 <body style="margin: 0" class="wrap" style="overflow: hidden">
 <nav id="top_menu">
-<div id="NMEZ"><h1>Portfolio</h1></div>
+<div id="NMEZ" ><h1>Portfolio</h1></div>
     <ul class="menu">
       <li>
-        <a href="#project_development">프로젝트 개발단계</a>
+        <h4><a href="#project_development">프로젝트 개요</a></h4>
         <ul class="submenu">
-          <li><a href="#sub_cat">subcat</a></li>
-          <li><a href="#">submenu02</a></li>
-          <li><a href="#">submenu03</a></li>
-          <li><a href="#">submenu04</a></li>
-          <li><a href="#">submenu05</a></li>
+          <li><h5><a href="#sub_cat">개발 환경</a></h5></li>
+          <li><h5><a href="#">개발 기간</a></h5></li>
+          <li><h5><a href="#">프로젝트 개요</a></h5></li>
         </ul>
       </li>
       <li>
-        <a href="#data_anal">데이터 분석</a>
+        <h4><a href="#data_anal">데이터 분석</a></h4>
         <ul class="submenu">
-          <li><a href="#">submenu01</a></li>
-          <li><a href="#">submenu02</a></li>
-          <li><a href="#">submenu03</a></li>
-          <li><a href="#">submenu04</a></li>
-          <li><a href="#">submenu05</a></li>
+          <li><h5><a href="#">데이터 수집</a></h5></li>
+          <li><h5><a href="#">데이터 전처리</a></h5></li>
+          <li><h5><a href="#">데이터 분석</a></h5></li>
+          <li><h5><a href="#">데이터 시각화</a></h5></li>
         </ul>
       </li>
       <li>
-        <a href="#web_develoment">웹 개발</a>
+        <h4><a href="#web_develoment">웹 개발</a></h4>
         <ul class="submenu">
-          <li><a href="#web_ppt_18">submenu01</a></li>
-          <li><a href="#web_ppt_19">submenu02</a></li>
-          <li><a href="#web_ppt_20">submenu03</a></li>
-          <li><a href="#web_ppt_21">submenu04</a></li>
-          <li><a href="#web_ppt_22">submenu05</a></li>
+          <li><h5><a href="#web_ppt_18">웹 개발 환경설정</a></h5></li>
+          <li><h5><a href="#web_ppt_19">데이터 웹 구현</a></h5></li>
+          <li><h5><a href="#web_ppt_20">사용자 웹 서비스 구현</a></h5></li>
+          <li><h5><a href="#web_ppt_21">Github Repository, Branch 활용  형상관리 경험</a></h5></li>
         </ul>
       </li>
       <li>
-        <a href="#impression">소감</a>
-        <ul class="submenu">
-          <li><a href="#web_ppt_18">submenu01</a></li>
-          <li><a href="#web_ppt_19">submenu02</a></li>
-          <li><a href="#web_ppt_20">submenu03</a></li>
-          <li><a href="#web_ppt_21">submenu04</a></li>
-          <li><a href="#web_ppt_22">submenu05</a></li>
-        </ul>
+        <h4><a href="#impression">소감</a></h4>
       </li>
     </ul>
+      <div id="download_link">
+      <h4><a href="https://drive.google.com/uc?export=download&id=14J-JVXODYx8yMpcuLfkyRuLFJfm7AMs5">데이터 정리코드 다운로드</a></h4>
+      </div>
 </nav>
 <div class="main">
 <div id="contents">
 
-    <div id="project_development" >
+    <section id="project_development" >
     <img src="resources/img/cat1.jpg">
+    <iframe width="800" height="500" src="https://www.youtube.com/embed/7pvzTXVPB90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <img id="sub_cat" src="resources/img/cat9.jpg">
-    </div>
+    </section>
     
-    <div id="data_anal">
+    <section id="data_anal">
     <img src="resources/img/cat2.jpg">
-    </div>
+    </section>
     
-    <div id="web_develoment">
+    <section id="web_develoment">
   <% 
   // page num
   int ppt = 23;
@@ -81,12 +72,12 @@
     <img src="resources/img/ppt/NMEZ_PJ.pptx.pdf-page-00<%=i %>.jpg" >
   </div>
     <%} %>
-    </div>
+    </section>
     
-    <div id="impression">
+    <section id="impression">
     <img src="resources/img/cat4.jpg">
     <img src="resources/img/cat1.jpg">
-    </div>
+    </section>
 </div>
 </div>
 </body>
