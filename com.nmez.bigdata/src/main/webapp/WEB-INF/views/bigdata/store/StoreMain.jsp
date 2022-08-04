@@ -246,7 +246,7 @@ $(document).ready(function(){
     if( '${isLoad}' === 'true'){
     	  if ( dataGu === '' || dataGu === null){
     	    	$('#showCharts').hide();
-    	 		$('#noData').append("<h1>해당 지역의 데이터가 없습니다!</h1>");
+    	 		$('.noData').append("<div style='display:flex;justify-content:center;align-items:center;height:250px;'><h1>해당 지역의 데이터가 없습니다!</h1>");
     	     }else{
     	    	 $('#showCharts').show();
     	     }
@@ -352,7 +352,7 @@ $(document).ready(function(){
 </div>
 </div>
 
-<div id="noData">
+<div class="noData">
 
 </div>
 

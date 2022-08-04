@@ -45,3 +45,9 @@ form#select {
     flex-direction: row;
     align-items: center;
 }
+.noData {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    align-items: center;
+}

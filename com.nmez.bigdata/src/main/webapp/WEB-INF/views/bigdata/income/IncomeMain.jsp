@@ -164,7 +164,7 @@ $(document).ready(function(){
     if( '${isLoad}' === 'true'){
     	  if ( pieId === '' || pieId === null){
     	    	$('#showCharts').hide();
-    	 		$('#noData').append("<h1>해당 지역의 데이터가 없습니다!</h1>");
+    	 		$('.noData').append("<div style='display:flex;justify-content:center;align-items:center;height:250px;'><h1>해당 지역의 데이터가 없습니다!</h1></div>");
     	     }else{
     	    	 $('#showCharts').show();
     	     }
@@ -265,7 +265,7 @@ $(document).ready(function(){
 </div>
 
 <!--넓게 나오게 해주세요 -->
-<div id="noData">
+<div class="noData">
 
 </div>
 

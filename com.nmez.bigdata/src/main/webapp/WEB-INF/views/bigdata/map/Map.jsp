@@ -25,6 +25,7 @@
 <body>
 
 <h1>생활인구분석</h1>
+<h5 style="color: #808080; padding-top: 10px" ><i class="fa-solid fa-circle-question"></i> 생활인구란 '특정 시점' '특정지역'에 존재하는 모든 인구를 뜻하는 것</h5>
 <br>
 <h3>지도를 확대해 행정구역을 클릭하세요 <i class="fa-solid fa-arrow-pointer"></i></h3>
 <hr>

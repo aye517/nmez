@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
+<html>
 <head>
 <meta name="viewport" content="width = 1050, user-scalable = no" charset="UTF-8"/>
 <link rel="stylesheet" href="resources/css/style.css">
@@ -15,6 +16,7 @@
 </style>
 <title>Cloud.jsp</title>
 </head>
+
 <%@ include file="../../main/Header.jsp"%>
 <body>
 <div class="cat_div">
