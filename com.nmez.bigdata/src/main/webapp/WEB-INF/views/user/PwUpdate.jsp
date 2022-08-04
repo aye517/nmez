@@ -72,7 +72,7 @@ $(function(){
 	$('#newPw').on("change keyup paste", function(){
 		$('#newPwCheck').prop('readonly', false); 
 		newPw = $('#newPw').val();
-			console.log(newPw);
+			//console.log(newPw);
 			if (newPw.length < 8 && newPw.length != ''){
 				$("#pwalert").html('8자 이상 입력하세요');
 				$("#pwalert").attr('color','red');
@@ -86,7 +86,7 @@ $(function(){
 					newCheck = false;
 				}else{
 					$("#pwalert").html('');
-					console.log('pwChecked='+newCheck);
+					//console.log('pwChecked='+newCheck);
 					uPwCheck();
 				}
 			}
@@ -136,8 +136,8 @@ function check() {
 		}else{
 			pwUpdate();
 			alert("비밀번호가 변경되었습니다. 다시 로그인해주세요.");			
-			window.opener.location.href="/bigdata";
 			sessionOut();
+			window.opener.location.href="/bigdata";
 			self.close();
 		}
 	}
@@ -149,10 +149,10 @@ function check() {
 <script type="text/javascript">
 
 function pwUpdate() {
-	alert("pwU ajax실행");
+	//alert("pwU ajax실행");
 	var uId = '${session.uId }';
 	var newPw = $('#newPw').val();
-	console.log(uId + "ajax newPw =" + newPw);
+	//console.log(uId + "ajax newPw =" + newPw);
 	const param = {
 			"uId" : uId,
 			"uPw" : newPw
@@ -182,7 +182,7 @@ function pwUpdate() {
 <!-- session invalidate -->
 <script type="text/javascript">
 function sessionOut() {
-	alert("session out실행");
+	//alert("session out실행");
 	$.ajax({
 		type : "post",
 		url : "sessionOut",

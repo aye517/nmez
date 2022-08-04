@@ -35,7 +35,7 @@ public class MapController {
 	@RequestMapping(value = "/getChart", method = RequestMethod.GET)
 	public ModelAndView getChart(String code) {
 		ModelAndView mav = new ModelAndView();
-		System.out.println(code);
+		//System.out.println(code);
 		
 		List<T_dataVO> t_dataList = dataService.timeData(code);
 		List<S_dataVO> s_dataList = dataService.genderData(code);
@@ -52,7 +52,7 @@ public class MapController {
 	@RequestMapping(value = "/getChartM", method = RequestMethod.GET)
 	public ModelAndView getChartM(String code, String t_month) {
 		ModelAndView mav = new ModelAndView();
-		System.out.println(code);
+		//System.out.println(code);
 		T_dataVO vo = new T_dataVO();
 		vo.setT_code(code);
 		vo.setT_month(t_month);

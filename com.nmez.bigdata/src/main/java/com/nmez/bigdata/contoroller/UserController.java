@@ -30,7 +30,7 @@ public class UserController {
 	
 	@PostMapping("/signUp")
 	public ModelAndView singUpPost(UserVO vo) {
-		System.out.println("가입요청정보 :"+vo); //받아온값 확인
+		//System.out.println("가입요청정보 :"+vo); //받아온값 확인
 		//값 무결성 check(추후)	
 		ModelAndView mav = new ModelAndView();		
 
@@ -114,7 +114,7 @@ public class UserController {
 	@RequestMapping("/sendMail")
 	public ModelAndView sendEmail(String email, String subject, String content) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		System.out.println(email);
+		//System.out.println(email);
 		String addr = "ayeppier@gmail.com";
 		//String subject = "[😀😀] 알림메일 입니다.";
 		//String body = "안녕하세요?\r\n소통해요~\r\n SMTP메일 테스트입니다.";

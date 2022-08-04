@@ -42,14 +42,14 @@ public class StoreController {
 
 	@RequestMapping(value = "/storeChart", method = RequestMethod.GET)
 	public ModelAndView selectData(StoreVO vo) {
-		System.out.println("vo==="+vo);
+		//System.out.println("vo==="+vo);
 		List<StoreVO> guList = storeService.guList();
 		List<StoreVO> categoryList = storeService.categoryList();
 		
 		ModelAndView mav = new ModelAndView();
 		
 		List<StoreVO> dataList = storeService.dataList(vo);
-		System.out.println(dataList);
+		//System.out.println(dataList);
 		boolean isLoad = true;
 		
 		mav.addObject("guList", guList);

@@ -42,7 +42,7 @@ public class UserAjaxController {
 		System.out.println("pw ajax실행");
 		//System.out.println("수정요청정보: "+ vo);
 		int rs = userService.pwUpdate(vo);
-		System.out.println("rs== "+rs);
+		//System.out.println("rs== "+rs);
 		return rs;
 	}
 	
@@ -50,13 +50,13 @@ public class UserAjaxController {
 	@ResponseBody
 	@RequestMapping(value = "sessionOut")
 	public int uIdCheck(HttpSession session) {
-		System.out.println("session out ajax 실행");
+		//System.out.println("session out ajax 실행");
 		session.invalidate();
 		int rs = 0;
 		if(session != null) {
 			rs = 1;
 		}
-		System.out.println("out됐으면 rs=1=="+rs);
+		//System.out.println("out됐으면 rs=1=="+rs);
 		return rs;
 	}
 	
