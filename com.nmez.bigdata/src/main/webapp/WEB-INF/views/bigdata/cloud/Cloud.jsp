@@ -25,52 +25,35 @@
 <div class="flipbook-viewport">
 	<div class="container">
 		<div class="flipbook">
-			<div style="background-image:url(resources/img/cat1.jpg)"><h5 align="center">표지</h5></div>
-			<div style="background-image:url(resources/img/instagram.png)"><h5 align="center">7월18일 트렌드분석</h5></div>
-			<div style="background-image:url(resources/img/cat3.jpg)"></div>
-			<div style="background-image:url(resources/img/cat4.jpg)"></div>
-			<div style="background-image:url(resources/img/cat5.jpg)"></div>
-			<div style="background-image:url(resources/img/cat6.jpg)"></div>
-			<div style="background-image:url(resources/img/cat7.jpg)"></div>
-			<div style="background-image:url(resources/img/cat8.jpg)"></div>
-			<div style="background-image:url(resources/img/cat9.jpg)"></div>
+			<div style="background-image:url(resources/img/cloud1.png)"></div>
+			<div style="background-image:url(resources/img/cloud2.png)"></div>
+			<div style="background-image:url(resources/img/cloud3.png)"></div>
+			<div style="background-image:url(resources/img/cloud4.png)"></div>
+
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
-
 function loadApp() {
-
-
 	// Create the flipbook
-
 	$('.flipbook').turn({
 			// Width
-
 			width:922,
 			
 			// Height
-
-			height:600,
-
+			height:536,
 			// Elevation
-
 			elevation: 50,
 			
 			// Enable gradients
-
 			gradients: true,
 			
 			// Auto center this flipbook
-
 			autoCenter: true
-
 	});
 }
-
 // Load the HTML4 version if there's not CSS transform
-
 yepnope({
 	test : Modernizr.csstransforms,
 	yep: ['resources/js/book/turn.js'],

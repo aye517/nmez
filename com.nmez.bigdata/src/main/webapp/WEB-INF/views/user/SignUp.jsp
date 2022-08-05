@@ -314,7 +314,13 @@ function finalCheck() {
 	<br>
 	<div class="permit">
 	<div class="permit_box">
-	<textarea rows="10" cols="60">
+	<div class="alert">
+	<span style="font:bold; color: red">
+	※본 사이트는 개발 및 데이터 분석 공부를 위한 프로젝트용 사이트입니다.</span>
+	<span style="font:bold; color: red">
+	민감정보를 절대 입력하지마세요※</span>
+	</div>
+	<textarea rows="10" cols="60" readonly="readonly">
 	□ 개인정보의 수집ㆍ이용
 	- 개인정보 수집ㆍ이용 목적 : 서비스 제공을 위한 개인정보 수집
 	- 수집ㆍ이용하는 개인정보의 항목 : 성명, 생년월일, 주소, 전화번호, 이메일

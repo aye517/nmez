@@ -13,7 +13,7 @@
 <main>
 
 
-	<div class="wrap_main" style="align-items: center;">
+	<div class="wrap_main"style="align-items: center;">
 	<img src="resources/img/mainImage.png" width="80%">
 	
 	</div>
