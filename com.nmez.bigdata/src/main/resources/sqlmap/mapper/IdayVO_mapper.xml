@@ -7,14 +7,10 @@
 
 	<select id="selectData" parameterType="IdayVO" resultType="hashmap">
 		<![CDATA[
-		select gu, dong, sector, format(Mon, 0) as Mon, format(Tue, 0) as Tue, 
-		format(Wed, 0) as Wed, format(Thu, 0)as Thu, format(Fri, 0) as Fri,
-		format(Sat, 0) as Sat, format(Sun, 0) as Sun
-		from income_day where gu = #{gu} and dong = #{dong} and sector= #{sector};
+			select * from income_day
+			where gu = #{gu} and dong = #{dong} and sector = #{sector};
 		]]>
 	</select>
-	
-	<!-- 	select * from income_day
-			where gu = #{gu} and dong = #{dong} and sector = #{sector}; -->
+
 
 </mapper>

@@ -314,28 +314,35 @@ function finalCheck() {
 	<br>
 	<div class="permit">
 	<div class="permit_box">
-	<span style="font:bold; color: red">
-	※본 사이트는 개발 및 데이터 분석 공부를 위한 프로젝트용 사이트입니다.</span>
-	<span style="font:bold; color: red">
-	민감정보를 절대 입력하지마세요※</span>
-	<textarea rows="10" cols="60" readonly="readonly">
-	□ 개인정보의 수집ㆍ이용
-	- 개인정보 수집ㆍ이용 목적 : 서비스 제공을 위한 개인정보 수집
-	- 수집ㆍ이용하는 개인정보의 항목 : 성명, 생년월일, 주소, 전화번호, 이메일
-	- 개인정보의 보유 및 이용 기간 : 가입 후부터 1개월
-	- 위 개인정보 수집에 대한 동의는 거부할 수 있으며, 이 경우 가입이 불가합니다.
-	 	
-	□ 위치정보의 수집ㆍ이용
-	- 위치정보수집ㆍ이용 목적 : 서비스 제공을 위한 위치정보 수집
-	- 위치정보의 보유 및 이용기간 : 가입 후부터 1개월
-	- 위 위치정보 수집에 대한 동의는 거부할 수 있으며, 이 경우 가입이 불가합니다.
+	
+	<div style="border-color: red; border: 1px">
+	<p style="font:bold; color: red; margin-left: 28% ">
+	※본 사이트는 개발 및 데이터 분석 공부를 위한 프로젝트용 사이트입니다.</p>
+	<p style="font:bold; color: red;  margin-left: 40% ">
+	민감정보를 절대 입력하지마세요※</p>
+	</div>
+	<br>
+	<textarea rows="10" cols="90" readonly="readonly">
+&#10;정보제공 등에 대해 동의거부할 수 있으며,
+미동의 시 정보 입력 및 회원 가입이 불가능합니다.
+&#10;□ 개인정보의 수집ㆍ이용&#10;
+- 개인정보 수집ㆍ이용 목적 : 서비스 제공을 위한 개인정보 수집
+- 수집ㆍ이용하는 개인정보의 항목 : 성명, 생년월일, 주소, 전화번호, 이메일
+- 개인정보의 보유 및 이용 기간 : 가입 후부터 1개월
+&#10;
+□ 위치정보의 수집ㆍ이용&#10;
+- 위치정보수집ㆍ이용 목적 : 서비스 제공을 위한 위치정보 수집
+- 위치정보의 보유 및 이용기간 : 가입 후부터 1개월
 	</textarea>
+	
 	
 	<br>
 	
 	<div class="checkbox_div">
-	<input id="agreeCheck" onclick="isChecked()" type="checkbox" > 동의합니다. <!-- 미동의 시 가입불가 처리하기 -->
+	<input id="agreeCheck" onclick="isChecked()" type="checkbox" > 동의합니다.
 	</div>
+	<br>
+	
 	</div>
 	</div>
 	<hr>

@@ -50,12 +50,12 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public ModelAndView login(UserVO vo, HttpServletRequest request) {
-		System.out.println("입력받은값:"+vo);
+		//System.out.println("입력받은값:"+vo);
 		String insertId = vo.getuId();
 		String insertPw = vo.getuPw();
 		
 		UserVO userInfo = userService.userLogin(vo);
-		System.out.println("받아온값:" + userInfo);
+		//System.out.println("받아온값:" + userInfo);
 		
 		ModelAndView mav = new ModelAndView();
 		if(userInfo != null) {
@@ -82,7 +82,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public ModelAndView modifyPost(UserVO vo) {
-		System.out.println("수정요청정보: "+ vo);
+		//System.out.println("수정요청정보: "+ vo);
 		int rs = userService.userUpdate(vo);
 		//수정된 정보 가져와서 세션담기
 		UserVO m_user = userService.userLogin(vo);
