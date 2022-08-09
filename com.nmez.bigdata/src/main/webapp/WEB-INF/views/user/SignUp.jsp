@@ -314,6 +314,7 @@ function finalCheck() {
 	<br>
 	<div class="permit">
 	<div class="permit_box">
+<<<<<<< HEAD
 	
 	<div style="border-color: red; border: 1px">
 	<p style="font:bold; color: red; margin-left: 28% ">
@@ -333,7 +334,7 @@ function finalCheck() {
 □ 위치정보의 수집ㆍ이용&#10;
 - 위치정보수집ㆍ이용 목적 : 서비스 제공을 위한 위치정보 수집
 - 위치정보의 보유 및 이용기간 : 가입 후부터 1개월
-	</textarea>
+</textarea>
 	
 	
 	<br>

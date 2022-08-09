@@ -172,6 +172,10 @@ footer img {
 	justify-content: center;
 	margin: 0 auto;
 }
+.alert{
+	display: flex;
+    justify-content: center;
+}
 .userForm {
 	width:50%;
 	display: flex;
@@ -436,10 +440,4 @@ input.chart_submit_button {
     justify-content: center;
     border-width: 1px;
     border-radius: 3px;
-}
-.noData {
-    display: flex;
-    justify-content: center;
-    height: 250px;
-    align-items: center;
 }

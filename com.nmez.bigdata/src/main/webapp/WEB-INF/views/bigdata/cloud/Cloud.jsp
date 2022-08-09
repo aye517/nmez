@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta name="viewport" content="width = 1050, user-scalable = no" charset="UTF-8"/>
-<link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/basic.css">
 <script type="text/javascript" src="resources/js/book/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="resources/js/book/modernizr.2.5.3.min.js"></script>
 <style type="text/css">
@@ -25,59 +25,40 @@
 <div class="flipbook-viewport">
 	<div class="container">
 		<div class="flipbook">
-			<div class="page" style="background-image:url(resources/img/cat1.jpg)"><h5 align="center">표지</h5></div>
-			<div class="double" style="background-image:url(resources/img/instagram.png)"><h5 align="center">7월18일 트렌드분석</h5></div>
-			<div class="double" style="background-image:url(resources/img/cat3.jpg)"></div>
-			<div class="double" style="background-image:url(resources/img/cat4.jpg)"></div>
-			<div class="double" style="background-image:url(resources/img/cat5.jpg)"></div>
-			<div class="double" style="background-image:url(resources/img/cat6.jpg)"></div>
-			<div class="double" style="background-image:url(resources/img/cat7.jpg)"></div>
-			<div class="double" style="background-image:url(resources/img/cat8.jpg)"></div>
-			<div class="page" style="background-image:url(resources/img/cat9.jpg)"></div>
+			<div style="background-image:url(resources/img/cloud1.png)"></div>
+			<div style="background-image:url(resources/img/cloud2.png)"></div>
+			<div style="background-image:url(resources/img/cloud3.png)"></div>
+			<div style="background-image:url(resources/img/cloud4.png)"></div>
+
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
-
 function loadApp() {
-
-	var flipbook = $('.flipbook');
-
- 	// Check if the CSS was already loaded
-	
-	if (flipbook.width()==0 || flipbook.height()==0) {
-		setTimeout(loadApp, 10);
-		return;
-	}
-
-	$('.flipbook .double').scissor();
-
 	// Create the flipbook
-
 	$('.flipbook').turn({
+			// Width
+			width:922,
+			
+			// Height
+			height:536,
 			// Elevation
-
 			elevation: 50,
 			
 			// Enable gradients
-
 			gradients: true,
 			
 			// Auto center this flipbook
-
 			autoCenter: true
-
 	});
 }
-
 // Load the HTML4 version if there's not CSS transform
-
 yepnope({
 	test : Modernizr.csstransforms,
 	yep: ['resources/js/book/turn.js'],
 	nope: ['resources/js/book/turn.html4.min.js'],
-	both: ['resources/js/book/scissor.min.js','resources/css/basic.css'],
+	both: ['resources/css/basic.css'],
 	complete: loadApp
 });
 </script>
