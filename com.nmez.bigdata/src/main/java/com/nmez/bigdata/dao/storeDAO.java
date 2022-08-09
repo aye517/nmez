@@ -39,7 +39,7 @@ public class storeDAO {
 
 	public List<StoreVO> storeData(StoreVO vo) {
 		List<StoreVO> dataList = sqlSessionTemplate.selectList("StoreVO.selectData", vo);
-		System.out.println("dao==="+dataList);
+		//System.out.println("dao==="+dataList);
 		return sqlSessionTemplate.selectList("StoreVO.selectData", vo);
 	}
 

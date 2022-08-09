@@ -18,7 +18,7 @@
 	<div class="qna_input">
 	<div class="mail_input">
 	<i class="fa-solid fa-at"></i> E-mail &nbsp:&nbsp 
-	<input type="email" name="email" placeholder="답변 받을 메일주소">
+	<input type="email" name="content" placeholder="답변 받을 메일주소">
 	</div>
 	<br>
 	<div class="tilte_input" style="padding-left: 15px;">
@@ -28,10 +28,10 @@
 	<br>
 	<br>
 	<div class="title_input">
-	<i class="fa-solid fa-circle-question"></i> 문의 내용을 입력하세요.(관리자에게 이메일이 발송됩니다)
+	<i class="fa-solid fa-circle-question"></i> 문의 내용
 	</div>
 	<br>
-	<textarea name="content" rows="20" cols="60" placeholder="문의하실 내용을 입력하세요"></textarea>
+	<textarea name="content" rows="20" cols="60" placeholder="&#10;  문의하실 내용을 입력하세요(관리자에게 이메일이 발송됩니다)&#10;  5~20초정도 소요될 수 있습니다."></textarea>
 	<br>
 	<input type="submit" value="문의하기" class="qna_submit">
 	</div>

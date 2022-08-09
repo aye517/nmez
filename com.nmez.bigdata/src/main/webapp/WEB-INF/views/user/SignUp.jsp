@@ -317,7 +317,7 @@ function finalCheck() {
 	
 	<div style="border-color: red; border: 1px">
 	<p style="font:bold; color: red; margin-left: 28% ">
-	※본 사이트는 개발 및 데이터 분석 공부를 위한 프로젝트용 사이트입니다.</p>
+	※본 사이트는 웹 개발 및 데이터 분석 공부를 위한 프로젝트용 사이트입니다.</p>
 	<p style="font:bold; color: red;  margin-left: 40% ">
 	민감정보를 절대 입력하지마세요※</p>
 	</div>

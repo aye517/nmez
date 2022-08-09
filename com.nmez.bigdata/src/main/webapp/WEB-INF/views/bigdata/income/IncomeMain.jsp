@@ -92,6 +92,7 @@ function dongUpdate(dongselect) {
 function getDong(guValue) {
 	
 	//alert("getDong ajax실행");
+	var dongselect = [];
 	const param = {
 			"gu" : guValue
 		};

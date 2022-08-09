@@ -112,12 +112,12 @@ public class UserController {
 	}
 
 	@RequestMapping("/sendMail")
-	public ModelAndView sendEmail(String email, String subject, String content) throws Exception {
+	public ModelAndView sendEmail(String addr, String subject, String content) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		//System.out.println(email);
-		String addr = "ayeppier@gmail.com";
-		//String subject = "[😀😀] 알림메일 입니다.";
-		//String body = "안녕하세요?\r\n소통해요~\r\n SMTP메일 테스트입니다.";
+		
+		String email = "ayeppier@gmail.com";
+
 		userService.sendEmail(email, addr, subject, content);
 		mav.addObject("msg","문의 메일이 발송되었습니다.");
 		mav.addObject("url","/bigdata");
