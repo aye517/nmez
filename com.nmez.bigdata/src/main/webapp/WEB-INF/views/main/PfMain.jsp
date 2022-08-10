@@ -16,32 +16,32 @@
 <div id="NMEZ" ><h1>Portfolio</h1></div>
     <ul class="menu">
       <li>
-        <h4><a href="#project_development">프로젝트 개요</a></h4>
+        <h4><a href="#web_ppt_3">프로젝트 개요</a></h4>
         <ul class="submenu">
-          <li><h5><a href="#sub_cat">개발 환경</a></h5></li>
-          <li><h5><a href="#">개발 기간</a></h5></li>
-          <li><h5><a href="#">프로젝트 개요</a></h5></li>
+          <li><h5><a href="#web_ppt_4">개발 환경</a></h5></li>
+          <li><h5><a href="#web_ppt_5">개발 기간</a></h5></li>
+          <li><h5><a href="#web_ppt_7">프로젝트 개요</a></h5></li>
         </ul>
       </li>
       <li>
-        <h4><a href="#data_anal">데이터 분석</a></h4>
+        <h4><a href="#web_ppt_8">데이터 분석</a></h4>
         <ul class="submenu">
-          <li><h5><a href="#">인스타그램 크롤링</a></h5></li>
-          <li><h5><a href="#">네이버 부동산 크롤링</a></h5></li>
-          <li><h5><a href="#">공공데이터 분석</a></h5></li>
+          <li><h5><a href="#web_ppt_9">인스타그램 크롤링</a></h5></li>
+          <li><h5><a href="#web_ppt_15">네이버 부동산 크롤링</a></h5></li>
+          <li><h5><a href="#web_ppt_19">공공데이터 분석</a></h5></li>
         </ul>
       </li>
       <li>
-        <h4><a href="#web_develoment">웹 개발</a></h4>
+        <h4><a href="#web_ppt_58">웹 개발</a></h4>
         <ul class="submenu">
-          <li><h5><a href="#web_ppt_3">웹 개발 환경설정</a></h5></li>
-          <li><h5><a href="#web_ppt_7">데이터 웹 구현</a></h5></li>
-          <li><h5><a href="#web_ppt_15">사용자 웹 서비스 구현</a></h5></li>
-          <li><h5><a href="#web_ppt_24">Github Repository, Branch 활용  형상관리 경험</a></h5></li>
+          <li><h5><a href="#web_ppt_59">웹 개발 환경설정</a></h5></li>
+          <li><h5><a href="#web_ppt_64">데이터 웹 구현</a></h5></li>
+          <li><h5><a href="#web_ppt_72">사용자 웹 서비스 구현</a></h5></li>
+          <li><h5><a href="#web_ppt_81">Github Repository, Branch 활용  형상관리 경험</a></h5></li>
         </ul>
       </li>
       <li>
-        <h4><a href="#impression">소감</a></h4>
+        <h4><a href="#web_ppt_82">소감</a></h4>
       </li>
     </ul>
       <div id="download_link">
@@ -52,24 +52,51 @@
 <div id="contents">
 
     <section id="project_development" >
+     <% 
+  // page num
+  int opening = 8;
+  %>
+  <% for (int i=1; i<opening; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/opening/NMEZ_PJ_0809_Page_0<%=i %>.jpg" >
+  </div>
+    <%} %>
     </section>
     
     <section id="data_anal">
+         <% 
+  // page num
+  int data = 58;
+  %>
+  <% for (int i=8; i<data; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
+  </div>
+    <%} %>
     </section>
     
     <section id="web_develoment">
   <% 
   // page num
-  int ppt = 25;
+  int web = 82;
   %>
-  <% for (int i=1; i<ppt; i++) {%>
+  <% for (int i=58; i<web; i++) {%>
   <div id="web_ppt_<%=i%>">
-    <img src="resources/img/ppt/web/NMEZ_PJ_web_Page_<%=i %>.jpg" >
+    <img src="resources/img/ppt/web/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
   </div>
     <%} %>
     </section>
     
     <section id="impression">
+         <% 
+  // page num
+  int impression = 87;
+  %>
+  <% for (int i=82; i<impression; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/impression/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
+  </div>
+    <%} %>
     </section>
 </div>
 </div>
