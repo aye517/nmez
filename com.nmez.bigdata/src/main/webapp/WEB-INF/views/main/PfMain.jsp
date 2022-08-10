@@ -20,7 +20,7 @@
         <ul class="submenu">
           <li><h5><a href="#web_ppt_4">개발 환경</a></h5></li>
           <li><h5><a href="#web_ppt_5">개발 기간</a></h5></li>
-          <li><h5><a href="#web_ppt_7">프로젝트 개요</a></h5></li>
+          <li><h5><a href="#web_ppt_6">프로젝트 개요</a></h5></li>
         </ul>
       </li>
       <li>
@@ -66,13 +66,97 @@
     <section id="data_anal">
          <% 
   // page num
-  int data = 58;
+  int data1 = 19;
   %>
-  <% for (int i=8; i<data; i++) {%>
+  <% for (int i=8; i<data1; i++) {%>
   <div id="web_ppt_<%=i%>">
     <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
   </div>
     <%} %>
+    <div id="data_video1">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KjEiWmHZfeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+     <% 
+  // page num
+  int data2 = 28;
+  %>
+  <% for (int i=19; i<data2; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
+  </div>
+    <%} %>
+    <div id="data_video2">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/sy_5PPvNiAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+         <% 
+  // page num
+  int data3 = 34;
+  %>
+  <% for (int i=28; i<data3; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
+  </div>
+    <%} %>
+    <div id="data_video3">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Z1MUVqD4Zwg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="web_ppt_34>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_34.jpg" >
+	</div>
+	<div id="web_ppt_35>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_35.jpg" >
+	</div>
+	<div id="data_video4">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/U84znMajdOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<% 
+  // page num
+  int data4 = 39;
+  %>
+  <% for (int i=36; i<data4; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
+  </div>
+    <%} %>
+    <div id="data_video5">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/DxVS56UEqBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+	<div id="web_ppt_39>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_39.jpg" >
+	</div>
+	<div id="data_video6">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/IcuY1i8kT40" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<% 
+  // page num
+  int data5 = 53;
+  %>
+  <% for (int i=40; i<data5; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
+  </div>
+    <%} %>
+    <div id="data_video7">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/I-I06ghZXro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="web_ppt_53>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_53.jpg" >
+	</div>
+	<div id="data_video8">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/uxcbxV1XHmw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+	<% 
+  // page num
+  int data6 = 58;
+  %>
+  <% for (int i=54; i<data6; i++) {%>
+  <div id="web_ppt_<%=i%>">
+    <img src="resources/img/ppt/data/NMEZ_PJ_0809_Page_<%=i %>.jpg" >
+  </div>
+    <%} %>
+    <div id="data_video9">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/pNZQppyXNX0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    </div>
     </section>
     
     <section id="web_develoment">
